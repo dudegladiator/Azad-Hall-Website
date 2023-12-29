@@ -1,0 +1,118 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/showComplaints.css">
+</head>
+<body>
+
+
+    <table id="pending_complaints">
+        <caption>
+          <h2>REQUESTS</h2>
+         <div class="complain_navigation">
+            {% if requestedBooks.has_previous %}
+      <a href="?requestedBooks_page={{ requestedBooks.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span>
+      Page {{ requestedBooks.number }} of {{ requestedBooks.paginator.num_pages }}.
+    </span>
+    {% if requestedBooks.has_next %}
+      <a href="?requestedBooks_page={{ requestedBooks.next_page_number }}">Next</a>
+    {% endif %}
+          </div>
+          {% comment %} <a href="#ongoing_complaints">Go to Ongoing complaints</a>  |  <a href="#completed_complaints">Go to Completed complaints</a> {% endcomment %}
+        </caption>
+        
+        <thead>
+          <tr>
+            <th scope="col" id="id">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Roll Number</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Department</th>
+            <th scope="col">Cancel</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for requestedBook in requestedBooks %}
+        <form action="/cancelBookRequest" method='post'>
+            {% csrf_token %}
+        <tr>
+            <td data-label="id"><input name="id" type="text" readonly value={{requestedBook.id}}></td>
+            <td data-label="Created at">{{requestedBook.created_at}}</td>
+            <td data-label="Name">{{requestedBook.studentName}}</td>
+            <td data-label="Roll Nummber">{{requestedBook.studentRoll_no}}</td>
+            <td data-label="Book Name">{{requestedBook.title}}</td>
+            <td data-label="Book Name">{{requestedBook.author}}</td>
+            <td data-label="Author">{{requestedBook.department}}</td>
+            <td data-label="button"><button type="submit">Cancel Request</button></td>
+
+          </tr>
+        </form>
+        {% endfor %} 
+        </tbody>
+      </table>
+
+
+
+
+      <table id="pending_complaints">
+        <caption>
+          <h2>CHECKED-OUT BOOKS</h2>
+         <div class="complain_navigation">
+            {% if checkedOutBooks.has_previous %}
+      <a href="?checkedOutBooks_page={{ checkedOutBooks.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span>
+      Page {{ checkedOutBooks.number }} of {{ checkedOutBooks.paginator.num_pages }}.
+    </span>
+    {% if checkedOutBooks.has_next %}
+      <a href="?checkedOutBooks_page={{ checkedOutBooks.next_page_number }}">Next</a>
+    {% endif %}
+          </div>
+          {% comment %} <a href="#ongoing_complaints">Go to Ongoing complaints</a>  |  <a href="#completed_complaints">Go to Completed complaints</a> {% endcomment %}
+        </caption>
+        
+        <thead>
+          <tr>
+            <th scope="col" id="id">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Department</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for checkedOutBook in checkedOutBooks %}
+        <form action="/checkIn" method='post'>
+            {% csrf_token %}
+        <tr>
+            <td data-label="id"><input name="id" type="text" readonly value={{checkedOutBook.id}}></td>
+            <td data-label="Created at">{{checkedOutBook.created_at}}</td>
+            <td data-label="Name">{{checkedOutBook.studentName}}</td>
+            <td data-label="Roll Nummber">{{checkedOutBook.studentRoll_no}}</td>
+            <td data-label="Book Name">{{checkedOutBook.title}}</td>
+            <td data-label="Author">{{checkedOutBook.author}}</td>
+            <td data-label="Department">{{checkedOutBook.department}}</td>
+           
+
+          </tr>
+        </form>
+        {% endfor %} 
+        </tbody>
+      </table>
+</body>
+</html>

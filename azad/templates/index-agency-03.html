@@ -1,0 +1,845 @@
+
+
+
+
+
+<!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+<!--====== HEADER PART START ======-->
+<!--====== HEADER PART ENDS ======-->
+
+<!--====== BRAND PART START ======
+<div class="brand-area pt-90">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="
+                brand-logo
+                d-flex
+                align-items-center
+                justify-content-center justify-content-md-between
+              ">
+          <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="{% static 'images/brands/uideck.svg' %}" alt="brand" />
+          </div>
+          <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
+            <img src="{% static 'images/brands/ayroui.svg' %}" alt="brand" />
+          </div>
+          <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
+            <img src="{% static 'images/brands/graygrids.svg' %}" alt="brand" />
+          </div>
+          <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.4s">
+            <img src="{% static 'images/brands/lineicons.svg' %}" alt="brand" />
+          </div>
+          <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
+            <img src="{% static 'images/brands/ecommerce-html.svg' %}" alt="brand" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+====== BRAND PART ENDS ======-->
+
+<style>
+	* {
+	  font-family: "Poppins", sans-serif !important;
+	}
+  
+	#myVideo {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  object-fit: cover;
+	}
+  
+	#myImg {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  object-fit: cover;
+	  z-index: 1;
+	  opacity: 0.5;
+	  filter: brightness(50%);
+	}
+  
+	.custom-shape-divider-bottom-1672809375 {
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	  overflow: hidden;
+	  line-height: 0;
+	  transform: rotate(180deg);
+	  z-index: 2;
+	}
+  
+	.custom-shape-divider-bottom-1672809375 svg {
+	  position: relative;
+	  display: block;
+	  width: calc(100% + 1.3px);
+	  height: 150px;
+	}
+  
+	.custom-shape-divider-bottom-1672809375 .shape-fill {
+	  fill: #FFFFFF;
+	}
+  
+	@keyframes move_wave {
+	  0% {
+		transform: translateX(0) translateZ(0) scaleY(1)
+	  }
+  
+	  50% {
+		transform: translateX(-25%) translateZ(0) scaleY(0.55)
+	  }
+  
+	  100% {
+		transform: translateX(-50%) translateZ(0) scaleY(1)
+	  }
+	}
+  
+	.waveWrapper {
+	  pointer-events: none;
+	  overflow: hidden;
+	  position: absolute;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  top: 0;
+	  margin: auto;
+	}
+  
+	.waveWrapperInner {
+	  position: absolute;
+	  width: 100%;
+	  overflow: hidden;
+	  height: 100%;
+	  bottom: -1px;
+	  /* background-image: linear-gradient(to top, #86377b 20%, #27273c 80%); */
+	}
+  
+	.bgTop {
+	  z-index: 15;
+	  opacity: 0.5;
+	}
+  
+	.bgMiddle {
+	  z-index: 10;
+	  opacity: 0.75;
+	}
+  
+	.bgBottom {
+	  z-index: 5;
+	}
+  
+	.wave {
+	  position: absolute;
+	  left: 0;
+	  width: 200%;
+	  height: 100%;
+	  background-repeat: repeat no-repeat;
+	  background-position: 0 bottom;
+	  transform-origin: center bottom;
+	}
+  
+	.waveTop {
+	  background-size: 50% 100px;
+	}
+  
+	.waveAnimation .waveTop {
+	  animation: move-wave 3s;
+	  -webkit-animation: move-wave 3s;
+	  -webkit-animation-delay: 1s;
+	  animation-delay: 1s;
+	}
+  
+	.waveMiddle {
+	  background-size: 50% 120px;
+	}
+  
+	.waveAnimation .waveMiddle {
+	  animation: move_wave 10s linear infinite;
+	}
+  
+	.waveBottom {
+	  background-size: 50% 100px;
+	}
+  
+	.waveAnimation .waveBottom {
+	  animation: move_wave 15s linear infinite;
+	}
+  
+	/*--------------------------------------------------------------
+  # Contact Section
+  --------------------------------------------------------------*/
+	.contact {
+	  background: url("../img/contact-bg.png") left top no-repeat;
+	  background-size: contain;
+	  position: relative;
+	}
+  
+	@media (max-width: 640px) {
+	  .contact {
+		background-position: center 50px;
+	  }
+	}
+  
+	.contact:before {
+	  content: "";
+	  background: rgba(255, 255, 255, 0.7);
+	  position: absolute;
+	  bottom: 0;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	}
+  
+	.contact .info-item+.info-item {
+	  margin-top: 40px;
+	}
+  
+	.contact .info-item i {
+	  font-size: 20px;
+	  background: var(--color-primary);
+	  color: #fff;
+	  width: 44px;
+	  height: 44px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  border-radius: 50px;
+	  transition: all 0.3s ease-in-out;
+	  margin-right: 15px;
+	}
+  
+	.contact .info-item h4 {
+	  padding: 0;
+	  font-size: 20px;
+	  font-weight: 700;
+	  margin-bottom: 5px;
+	  color: #1c88ba;
+	}
+  
+	.contact .info-item p {
+	  padding: 0;
+	  margin-bottom: 0;
+	  font-size: 14px;
+	}
+  
+	.contact .php-email-form {
+	  width: 100%;
+	}
+  
+	.contact .php-email-form .form-group {
+	  padding-bottom: 8px;
+	}
+  
+	.contact .php-email-form .error-message {
+	  display: none;
+	  color: #fff;
+	  background: #df1529;
+	  text-align: left;
+	  padding: 15px;
+	  font-weight: 600;
+	}
+  
+	.contact .php-email-form .error-message br+br {
+	  margin-top: 25px;
+	}
+  
+	.contact .php-email-form .sent-message {
+	  display: none;
+	  color: #fff;
+	  background: #059652;
+	  text-align: center;
+	  padding: 15px;
+	  font-weight: 600;
+	}
+  
+	.contact .php-email-form .loading {
+	  display: none;
+	  background: #fff;
+	  text-align: center;
+	  padding: 15px;
+	}
+  
+	.contact .php-email-form .loading:before {
+	  content: "";
+	  display: inline-block;
+	  border-radius: 50%;
+	  width: 24px;
+	  height: 24px;
+	  margin: 0 10px -6px 0;
+	  border: 3px solid #059652;
+	  border-top-color: #fff;
+	  -webkit-animation: animate-loading 1s linear infinite;
+	  animation: animate-loading 1s linear infinite;
+	}
+  
+	.contact .php-email-form input,
+	.contact .php-email-form textarea {
+	  border-radius: 0;
+	  box-shadow: none;
+	  font-size: 14px;
+	  padding: 12px 15px;
+	}
+  
+	.contact .php-email-form input:focus,
+	.contact .php-email-form textarea:focus {
+	  border-color: var(--color-primary);
+	}
+  
+	.contact .php-email-form textarea {
+	  padding: 10px 12px;
+	}
+  
+	.contact .php-email-form button[type=submit] {
+	  background: #1f98d1;
+	  border: 0;
+	  padding: 12px 40px;
+	  color: #fff;
+	  transition: 0.4s;
+	}
+  
+	.contact .php-email-form button[type=submit]:hover {
+	  background: var(--color-primary);
+	}
+  
+	@-webkit-keyframes animate-loading {
+	  0% {
+		transform: rotate(0deg);
+	  }
+  
+	  100% {
+		transform: rotate(360deg);
+	  }
+	}
+  
+	@keyframes animate-loading {
+	  0% {
+		transform: rotate(0deg);
+	  }
+  
+	  100% {
+		transform: rotate(360deg);
+	  }
+	}
+  </style>
+  
+  <div id="home" class="header-hero bg_cover">
+	<!-- <img id="myImg" src="{% static 'images/header/banner-bg.png' %}" /> -->
+	<video autoplay muted loop id="myVideo">
+	  <source src="{% static 'video/illu.mp4' %}" type="video/mp4">
+	</video>
+  
+	<!-- <svg xmlns="http://www.w3.org/2000/svg" opacity="0" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920.183"
+	  height="1075.636" viewBox="0 0 1920.183 1075.636">
+	  <defs>
+		<linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+		  <stop offset="0" stop-color="#361cc1" />
+		  <stop offset="1" stop-color="#2e82ef" />
+		</linearGradient>
+		<clipPath id="clip-path">
+		  <path id="Path_199" data-name="Path 199"
+			d="M-533.031,278.516s95.269,204.193,401.21,161.147,419.656-32.1,544.188,96.892,343.977,107.54,572.909,67.066,360.19,68.158,401.79,142.968c.041-2.4-.074-1075.621-.074-1075.621l-1920,.011Z"
+			transform="translate(533 329)" fill="url(#linear-gradient)" />
+		</clipPath>
+	  </defs>
+	  <g id="Group_112" data-name="Group 112" transform="translate(0.089 0.042)">
+		<path id="Path_195" data-name="Path 195"
+		  d="M-533.089,278.364s100.43,239.944,401.206,191.477,442.068,9.577,537.63,114.941,352.091,94.329,580.987,52.374S1349.9,678.95,1387.094,746.594c.016.016-.373-1075.609-.373-1075.609l-1919.766-.027Z"
+		  transform="translate(533 329)" opacity="0.11" fill="url(#linear-gradient)" />
+		<path id="Path_194" data-name="Path 194"
+		  d="M-533.031,278.516s95.269,204.193,401.21,161.147,419.656-32.1,544.188,96.892,343.977,107.54,572.909,67.066,360.19,68.158,401.79,142.968c.041-2.4-.074-1075.621-.074-1075.621l-1920,.011Z"
+		  transform="translate(533 329)" fill="url(#linear-gradient)" />
+		<g id="Mask_Group_6" data-name="Mask Group 6" clip-path="url(#clip-path)">
+		  <path id="Path_4" data-name="Path 4"
+			d="M-496.368,321.285S-322.126-70.761,321.065,66.253s869.415,77.467,1056.161-463.982"
+			transform="translate(522 366.416)" fill="none" stroke="#361cc1" stroke-width="128" opacity="0.14" />
+		</g>
+	  </g>
+	</svg> -->
+	<div class="container">
+	  <div class="row justify-content-center">
+		<div class="col-lg-8">
+		  <div class="header-hero-content text-center">
+			<h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+			  Azad Hall of Residence
+			</h2>
+			<h3 class="header-sub-title wow fadeInUp" style="font-size: 20px;" data-wow-duration="1.3s"
+			  data-wow-delay="0.2s">
+			  प्रणिपातेन परिप्रश्नेन सेवया
+			</h3>
+			<p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+			  Azad Hall of Residence is named after Maulana Abul Kalam Azad. It is famous for having
+			  started Illumination (Illu). Azad Hall is always reputed for its stellar
+			  performances in Soc-Cult events, especially Dramatics and Choreography.
+			</p>
+			<a href="#intro" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+			  style="margin-top: 0;">
+			  Explore Azad
+			</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- <div class="custom-shape-divider-bottom-1672809375">
+	  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+		<path
+		  d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+		  class="shape-fill"></path>
+	  </svg>
+	</div> -->
+	<div class="waveWrapper waveAnimation">
+	  <div class="waveWrapperInner bgTop">
+		<div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+		</div>
+	  </div>
+	  <div class="waveWrapperInner bgMiddle">
+		<div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')">
+		</div>
+	  </div>
+	  <div class="waveWrapperInner bgBottom">
+		<div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')">
+		</div>
+	  </div>
+	</div>
+  </div>
+  
+  <section id="intro" style="width: 100%;max-width: 1200px;margin: auto;padding: 50px 20px;">
+	<h4 id="myHead"
+	  style="font-size:3rem;display: flex; max-width: 100%; text-align: center;margin-right: 0;justify-content: space-around;">
+	  About Us<br><br></h4>
+	<strong
+	  style="display: flex; max-width: 100%; text-align: center;padding-left: 5%;padding-right: 5%;margin-right: 0; color: rgb(30, 31, 31);">
+	  Azad Hall, This word itself carries a lot emotions for Azadians. Every year some lucky Kgpians get a chance to
+	  be a
+	  part of Azad Family.
+	  We cannot describe in a few sentences about those feelings of being a part of the Azad family.</strong><br>
+	<h4 style="text-align: center; color: rgb(61, 78, 73);"><strong>Let's try to know about Azad Hall !</strong></h4>
+	<br>
+	<ul style="list-style-type:disc; padding-left: 8%; padding-right: 8%; color: black;">
+	  <li>Azad Hall is known for its fast-paced and energetic
+		atmosphere, with a high tempo that inspires hard work and dedication from its members.</li>
+	  <li>Azad Hall is a place where students can feel a sense of belonging and connection to
+		their community. The hall has a strong sense of identity
+		and pride, and students who live there often feel a strong attachment to the hall and its traditions.</li>
+	  <li>Azad Hall is a place where students can find a variety of activities and events that cater to their
+		interests
+		and passions. Whether it's cultural events, sports activities,
+		or community service projects, there is always
+		something going on that students can get involved in.</li>
+	  <li>The hall is home to a range of resources and facilities that are designed to
+		support student learning and well-being, including libraries, study areas, and recreational facilities.</li>
+	  <li>The hall is known for its welcoming and inclusive atmosphere, where students
+		from different backgrounds and cultures can come together and form strong bonds of friendship and support.
+	  </li>
+  
+	</ul><br>
+	<h6 style="text-align:center">Overall, Azad Hall is a place that generates positive emotions and
+	  feelings among its students and residents, fostering a sense of belonging, community, and purpose.</h6>
+  </section>
+  
+  
+  <section id="about">
+	<!--====== ABOUT PART START ======-->
+	<div class="about-area pt-70">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-lg-6">
+			<div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+			  <div class="section-title">
+				<div class="line"></div>
+				<h3 class="title">
+				  Illumination - <span>Started by Azad in 1981</span>
+				</h3>
+			  </div>
+			  <!-- section title -->
+			  <p class="text">
+				On the day of Diwali, prior to the arrival of the chief guests, judges, and other officials,
+				mounted
+				Diyas are lit up to showcase the intricate pictorial description. Based on the Illu theme
+				for a given
+				hall, it is decorated using backlit panels (handmade from chart and Diyas), ornate flower
+				patterns, and
+				symbolic Diya arrangem
+			  </p>
+			  <!-- <a href="{% url 'events' %}" class="main-btn">Visit Illu</a> -->
+			</div>
+			<!-- about content -->
+		  </div>
+		  <div class="col-lg-6">
+			<div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+			  <img src="{% static 'images/about/illu.jpg' %}" alt="about" class="landing-img" />
+			</div>
+			<!-- about image -->
+		  </div>
+		</div>
+		<!-- row -->
+	  </div>
+	  <!-- container -->
+	  <div class="about-shape-1">
+		<img src="{% static 'images/about/about-shape-1.svg' %}" alt="shape" />
+	  </div>
+	</div>
+	<!--====== ABOUT PART ENDS ======-->
+  
+	<!--====== ABOUT PART START ======-->
+	<div class="about-area pt-70">
+	  <div class="about-shape-2">
+		<img src="{% static 'images/about/about-shape-2.svg' %}" alt="shape" />
+	  </div>
+	  <div class="container">
+		<div class="row align-items-center">
+		  <div class="col-lg-6 order-lg-last">
+			<div class="about-content ms-lg-auto mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+			  <div class="section-title">
+				<div class="line"></div>
+				<h3 class="title">
+				  General Championship <span> </span>
+				</h3>
+			  </div>
+			  <!-- section title -->
+			  <p class="text">
+				The annual nerve-wracking competition between halls of residence for the general
+				championship.
+				Where students compete for the pride of their hall.
+  
+			  </p>
+			  <!-- <a href="{% url 'events' %}" class="main-btn">Visit GC</a> -->
+			</div>
+			<!-- about content -->
+		  </div>
+		  <div class="col-lg-6 order-lg-first">
+			<div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+			  <img src="{% static 'images/about/GC.jpg' %}" alt="about" class="landing-img" />
+			</div>
+			<!-- about image -->
+		  </div>
+		</div>
+		<!-- row -->
+	  </div>
+	  <!-- container -->
+	</div>
+	<!--====== ABOUT PART ENDS ======-->
+  
+	<!--====== ABOUT PART START ======-->
+	<div class="about-area pt-70">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-lg-6">
+			<div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+			  <div class="section-title">
+				<div class="line"></div>
+				<h3 class="title">
+				  <span>Annual Alumni Meet</span>
+				</h3>
+			  </div>
+			  <!-- section title -->
+			  <p class="text">
+				Annual meet where the former members of Azad hall visit there former home away from home.
+				Reminiscing their memories from past.
+			  </p>
+			  <!-- <a href="{% url 'events' %}" class="main-btn">View Alumini Meet</a> -->
+			</div>
+			<!-- about content -->
+		  </div>
+		  <div class="col-lg-6">
+			<div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+			  <img src="{% static 'images/about/ALUMINI.jpeg' %}" alt="about" class="landing-img" />
+			</div>
+			<!-- about image -->
+		  </div>
+		</div>
+		<!-- row -->
+	  </div>
+	  <!-- container -->
+	  <div class="about-shape-1">
+		<img src="{% static 'images/about/about-shape-1.svg' %}" alt="shape" />
+	  </div>
+	</div>
+	<!--====== ABOUT PART ENDS ======-->
+  </section>
+  
+  <!--====== VIDEO COUNTER PART START ======-->
+  <section id="facts" class="video-counter pt-70">
+	<div class="container">
+	  <div class="row">
+		<div class="col-lg-6 order-lg-last">
+		  <div class="counter-wrapper mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+			<div class="counter-content">
+			  <div class="section-title">
+				<div class="line"></div>
+				<h3 class="title">Khoj- The treasure hunt event</span></h3>
+			  </div>
+			  <!-- section title -->
+			  <p class="text">
+				KHOJ: Ultimate Treasure Hunt - The Largest and The most exciting event for Freshers,
+				organized by Az
+			  </p>
+			</div>
+			<!-- counter content -->
+			<div class="row no-gutters">
+			  <div class="col-4">
+				<div class="
+						single-counter
+						counter-color-1
+						d-flex
+						align-items-center
+						justify-content-center
+					  ">
+				  <div class="counter-items text-center">
+					<span style="color: white;">1954</span>
+  
+					<p class="text">Established</p>
+				  </div>
+				</div>
+				<!-- single counter -->
+			  </div>
+			  <div class="col-4">
+				<div class="
+						single-counter
+						counter-color-2
+						d-flex
+						align-items-center
+						justify-content-center
+					  ">
+				  <div class="counter-items text-center">
+					<span style="color: white;">69</span>
+					<p class="text">Years</p>
+				  </div>
+				</div>
+				<!-- single counter -->
+			  </div>
+			  <div class="col-4">
+				<div class="
+						single-counter
+						counter-color-3
+						d-flex
+						align-items-center
+						justify-content-center
+					  ">
+				  <div class="counter-items text-center">
+					<span style="color: white;">739</span>
+					<p class="text">Member</p>
+				  </div>
+				</div>
+				<!-- single counter -->
+			  </div>
+			</div>
+			<!-- row -->
+		  </div>
+		  <!-- counter wrapper -->
+		</div>
+		<div class="col-lg-6">
+		  <div class="video-content mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+			<!-- <img class="dots" src="{% static 'images/video/dots.svg' %}" alt="dots" /> -->
+			<div class="video-wrapper">
+			  <video style="height: 400px;width: 100%;object-fit: cover;" src="{% static 'video/khoj.mp4' %}" autoplay
+				muted loop></video>
+			  <!-- <div class="video-icon">
+				<a href="https://fb.watch/hx9HhSBnot/" style="display:hidden">
+				  <i class="lni lni-play"> </i>
+				</a>
+			  </div> -->
+			</div>
+			<!-- video wrapper -->
+		  </div>
+		  <!-- video content -->
+		</div>
+	  </div>
+	  <!-- row -->
+	</div>
+	<!-- container -->
+  </section>
+  <!--====== VIDEO COUNTER PART ENDS ======-->
+  
+  <!--====== FOOTER PART START ======-->
+  <!--====== FOOTER PART ENDS ======-->
+  
+  <!--====== BACK TOP TOP PART START ======-->
+  <!-- <a href="#" class="back-to-top"> <i class="lni lni-chevron-up"> </i> </a> -->
+  <!--====== BACK TOP TOP PART ENDS ======-->
+  <!--====== SERVICES PART START ======-->
+  <section id="features" class="services-area pt-120">
+	<div class="container">
+	  <div class="row justify-content-center">
+		<div class="col-lg-10">
+		  <div class="section-title text-center pb-40">
+			<div class="line m-auto"></div>
+			<h3 class="title">
+			  Wardens
+			  <span> </span>
+			</h3>
+		  </div>
+		  <!-- section title -->
+		</div>
+	  </div>
+	  <!-- row -->
+	  <div class="row justify-content-center cards">
+		<div class="col-lg-4 col-md-7 col-sm-8 card-item">
+		  <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+			<!-- <div class="services-icon">
+			  <img class="shape" src="{% static 'images/services/bibhu.jpeg' %}" alt="shape" />
+			  <img class="shape-1" src="{% static 'images/services/bibhu.jpeg' %}" alt="shape" />
+			  <i class="lni lni-baloon"> </i>
+			</div> -->
+			<div class="warden_img">
+			  <img class="card-img" src="{% static 'images/services/bibhu.jpeg' %}" />
+			</div>
+			<div class="services-content mt-30">
+			  <h4 class="services-title">
+				<a href="javascript:void(0)" style="font-family: 'Ubuntu', sans-serif;">Prof. B
+				  Sahoo<br><small><b>Asst.
+					  Warden</b></small>
+				</a>
+			  </h4>
+  
+			  <p class="text">
+				Associate Professor<br>
+				Dept. of Electronics &<br>
+				Electrical Communication Engineering<br>
+			  </p>
+			  <!-- <a class="more" href="javascript:void(0)">Learn More <i class="lni lni-chevron-right"> </i>
+			  </a> -->
+			</div>
+		  </div>
+		  <!-- single services -->
+		</div>
+		<div class="col-lg-4 col-md-7 col-sm-8 card-item">
+		  <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+			<!-- <div class="services-icon">
+			  <img class="shape" src="{% static 'images/services/nikhil.jpeg' %}" alt="shape" />
+			  <img class="shape-1" src="{% static 'images/services/nikhil.jpeg' %}" alt="shape" />
+			  <i class="lni lni-cog"> </i>
+			</div> -->
+			<div class="warden_img">
+			  <img class="card-img" src="{% static 'images/services/nikhil.jpeg' %}" />
+			</div>
+			<div class="services-content mt-30">
+			  <h4 class="services-title">
+				<a href="javascript:void(0)" style="font-family: 'Ubuntu', sans-serif;">Prof. N K
+				  Singha<br><small><b>Warden</b></small></a>
+			  </h4>
+			  <p class="text">
+				Professor<br>
+				Rubber Technology<br>
+  
+			  </p>
+			  <!-- <a class="more" href="javascript:void(0)">Learn More <i class="lni lni-chevron-right"> </i>
+			  </a> -->
+			</div>
+		  </div>
+		  <!-- single services -->
+		</div>
+		<div class="col-lg-4 col-md-7 col-sm-8 card-item">
+		  <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+			<div class="warden_img">
+			  <img class="card-img" src="{% static 'images/services/Hemakesh.jpeg' %}" />
+			</div>
+			<div class="services-content mt-30">
+			  <h4 class="services-title">
+				<a href="javascript:void(0)" style="font-family: 'Ubuntu', sans-serif;">Prof. H
+				  Mohapatra<br><small><b>Asst. Warden</b></small></a>
+			  </h4>
+			  <p class="text">
+				Assistant Professor Grade-I <br>Materials Science Centre
+			  </p>
+			  <!-- <a class="more" href="javascript:void(0)">Learn More <i class="lni lni-chevron-right"> </i>
+			  </a> -->
+			</div>
+		  </div>
+		  <!-- single services -->
+		</div>
+	  </div>
+	  <!-- row -->
+	</div>
+	<!-- container -->
+  </section>
+  <br>
+  <br>
+  <br>
+  <div class="section-title text-center pb-40">
+	<div class="line m-auto"></div>
+	<h3 class="title">
+	  Contact Us
+	  <span> </span>
+	</h3>
+  </div>
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+	<div class="container position-relative">
+  
+	  <div style="justify-content: center !important;" class="row gy-4 d-flex justify-content-end">
+  
+		<div class="col-lg-5">
+  
+		  <div class="info-item d-flex">
+			<i class="bi bi-geo-alt flex-shrink-0"></i>
+			<div>
+			  <h4>Location:</h4>
+			  <p>Colony Rd, IIT Kharagpur, Kharagpur, West Bengal 721302</p>
+			</div>
+		  </div><!-- End Info Item -->
+  
+		  <div class="info-item d-flex">
+			<i class="bi bi-envelope flex-shrink-0"></i>
+			<div>
+			  <h4>Email:</h4>
+			  <p>info@example.com</p>
+			</div>
+		  </div><!-- End Info Item -->
+  
+		  <div class="info-item d-flex">
+			<i class="bi bi-phone flex-shrink-0"></i>
+			<div>
+			  <h4>Call:</h4>
+			  <p>+91 32222 81110</p>
+			</div>
+		  </div><!-- End Info Item -->
+  
+		</div>
+  
+		<div class="col-lg-6">
+  
+		  <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+			<div class="row">
+			  <div class="col-md-6 form-group">
+				<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+			  </div>
+			  <div class="col-md-6 form-group mt-3 mt-md-0">
+				<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+			  </div>
+			</div>
+			<div class="form-group mt-3">
+			  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+			</div>
+			<div class="form-group mt-3">
+			  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+			</div>
+			<div class="my-3">
+			  <div class="loading">Loading</div>
+			  <div class="error-message"></div>
+			  <div class="sent-message">Your message has been sent. Thank you!</div>
+			</div>
+			<div class="text-center"><button type="submit"
+				style="background-color: #1F98D1 !important;border-radius: 5px;">Send Message</button></div>
+		  </form>
+  
+		</div><!-- End Contact Form -->
+  
+	  </div>
+  
+	</div>
+  </section><!--
