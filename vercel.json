@@ -16,7 +16,7 @@
     ],
     "routes": [
       {
-        "src": "/azad/static/(.*)",
+        "src": "/static/(.*)",
         "dest": "/static/$1"
       },
       {
