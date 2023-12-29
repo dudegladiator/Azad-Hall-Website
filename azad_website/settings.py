@@ -25,9 +25,9 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 SECRET_KEY = 'django-insecure-%*-!5@3%z+2br$s7pr_%g97dwaim7$r9ju&_#=xrmr*yam+q7r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['somya.pythonanywhere.com','127.0.0.1', 'localhost', '2321-203-110-242-34.ngrok-free.app', ".vercel.app"]
+ALLOWED_HOSTS = ['somya.pythonanywhere.com','127.0.0.1', 'localhost', '2321-203-110-242-34.ngrok-free.app', ".vercel.app", "azad-hall-website.vercel.app", ".now.sh"]
 
 
 # Application definition
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'azad_website.wsgi.application'
+WSGI_APPLICATION = 'azad_website.wsgi.app'
 
 
 # Database
@@ -87,8 +87,14 @@ WSGI_APPLICATION = 'azad_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL' : 'postgresql://postgres:bb35-DbcdAg6a44D443CgdbeD-d31ACD@viaduct.proxy.rlwy.net:27654/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'bb35-DbcdAg6a44D443CgdbeD-d31ACD',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '27654',
+        'CONN_MAX_AGE': 600,
     }
 }
 
@@ -140,14 +146,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'azad/static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'azad/assets')
+STATIC_URL = '/azad/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'azad_website'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'azad/static/media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -167,6 +172,6 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend'
 ]
-SITE_ID = 2
+SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
