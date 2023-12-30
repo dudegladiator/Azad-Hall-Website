@@ -148,7 +148,7 @@ USE_TZ = True
 
 # For local, is should be /static/
 # For production, it should be /azad/static/
-STATIC_URL = '/azad/static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'azad_website'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','static')
