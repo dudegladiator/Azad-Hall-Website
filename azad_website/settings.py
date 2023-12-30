@@ -87,14 +87,8 @@ WSGI_APPLICATION = 'azad_website.wsgi.app'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URL' : 'postgresql://postgres:bb35-DbcdAg6a44D443CgdbeD-d31ACD@viaduct.proxy.rlwy.net:27654/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'bb35-DbcdAg6a44D443CgdbeD-d31ACD',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '27654',
-        'CONN_MAX_AGE': 600,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
