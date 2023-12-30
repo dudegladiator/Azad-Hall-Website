@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-%*-!5@3%z+2br$s7pr_%g97dwaim7$r9ju&_#=xrmr*yam+q7r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['somya.pythonanywhere.com','127.0.0.1', 'localhost', '2321-203-110-242-34.ngrok-free.app', ".vercel.app", "azad-hall-website.vercel.app", ".now.sh"]
+ALLOWED_HOSTS = ['adminme.pythonanywhere.com/','somya.pythonanywhere.com','127.0.0.1', 'localhost', '2321-203-110-242-34.ngrok-free.app', ".vercel.app", "azad-hall-website.vercel.app", ".now.sh"]
 
 
 # Application definition
