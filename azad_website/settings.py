@@ -87,8 +87,11 @@ WSGI_APPLICATION = 'azad_website.wsgi.app'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'adminme$default',
+        'USER': 'adminme',
+        'PASSWORD': 'befaster45',
+        'HOST': 'adminme.mysql.pythonanywhere-services.com',
     }
 }
 
