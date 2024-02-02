@@ -21,13 +21,13 @@ To set up the Azad Hall website locally, follow these steps:
 
 3. **Change Django Setting file**
 
-4. Run Locally
+4. **Run Locally:**
    ```bash
    python azad_website/manage.py makemigrations
    python azad_website/manage.py migrate
    python azad_website/manage.py runserver
 
-5. Run Docker (Optional)
+5. **Run Docker (Optional):**
    ```bash
    docker build --tag azad .
    docker run -p 8000:8000 azad
