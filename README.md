@@ -66,6 +66,16 @@ To set up the Azad Hall website locally, follow these steps:
 
 - **Docker:** Docker containers are employed for easy deployment and management of the application.
 
+  ## Upcoming Features
+
+- [ ] **Blog System**
+   - Explore and Share Stories with Our Upcoming Blog System!
+
+- [ ] **Event (Upcoming Features)**
+   - [ ] New Event Update Notification: Receive instant notifications for upcoming events! Stay informed and never miss a moment with our event update notifications.
+   - [ ] Event Highlights: Introducing event highlights, showcasing memorable moments, participant achievements, and the vibrant energy that defines Azad Hall events.
+
+
 
 ## About Azad Hall
 
