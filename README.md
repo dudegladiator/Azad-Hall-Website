@@ -86,6 +86,20 @@ To set up the Azad Hall website locally, follow these steps:
    Here, we blend the legacy of our past with the energy of the present, creating an environment where every individual contributes to the collective brilliance of Azad Hall. Join us on a journey where every day is an opportunity to learn, grow, and make a lasting impact!
 
 
+## Team Members
+
+Meet the dedicated individuals working behind the scenes to make the Azad Hall website a success:
+
+- **[@dudegladiator](https://github.com/dudegladiator)**
+  - *Role:* Hosting and Database Management
+
+- **[@TeamMember1]**
+  - *Role:* Front-end and Back-end
+
+- **[@TeamMember2]**
+  - *Role:* Manager
+
+<!-- Add more team members as needed -->
 
 
 
