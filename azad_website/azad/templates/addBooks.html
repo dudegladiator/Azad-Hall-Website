@@ -1,0 +1,20 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Books</title>
+    <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
+
+</head>
+<body>
+    <form action="/importBooksFromExcel" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name='excel_file'>
+        <input type="submit">
+    </form>
+</body>
+</html>
