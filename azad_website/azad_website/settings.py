@@ -22,12 +22,12 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%*-!5@3%z+2br$s7pr_%g97dwaim7$r9ju&_#=xrmr*yam+q7r'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'azad-f6lqfpksrq-el.a.run.app']
+ALLOWED_HOSTS = ['*']
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
@@ -93,23 +93,15 @@ WSGI_APPLICATION = 'azad_website.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 # For Online Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': "/cloudsql/civil-epigram-410616:us-central1:azadhall",
-        'USER': 'azadhallop',
-        'PASSWORD': '\k>2Mo-F~Bcvjl\_',
-        'NAME': 'azadhall',
-    }
-}
+# Write for online database
 
 # For Local Database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+    }
+}
 
 
 
@@ -132,23 +124,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'SCOPE': ['profile', 'email'],
-        'APP': {
-            # Harsh gupta
-            'client_id': '259057549490-49q5ch0ao03td7fftalsmspcodu2mbju.apps.googleusercontent.com',
-            'secret': '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',
-            'key': '',  # Optional, you can leave this empty
-            # harsh vardhan 
-            # 'client_id': '849423050293-a80hoh8l9us2c17h974ojn5aqr5qprqj.apps.googleusercontent.com',
-            # 'secret': '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',
-            # 'key': '',  # Optional, you can leave this empty
-        },
-        'redirect_uris': ['https://azad-f6lqfpksrq-el.a.run.app/accounts/google/login/callback/'],  # Update with your HTTPS domain
-    }
-}
+# You need to provide your own Google OAuth2 credentials
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'SCOPE': [
+#             'profile',
+#             'email',
+#         ],
+#         'AUTH_PARAMS': {
+#             'access_type': 'online',
+#         }
+#     }
+# }
 
 
 # Internationalization
@@ -193,7 +180,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
-CSRF_TRUSTED_ORIGINS=["https://azad-f6lqfpksrq-el.a.run.app",]
+CSRF_TRUSTED_ORIGINS=["Website link",]
 
 
 SITE_ID = 2
