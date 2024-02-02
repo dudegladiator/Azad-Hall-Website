@@ -4,13 +4,6 @@
 
 This repository contains the source code for the Azad Hall website, a platform designed to facilitate various services and provide information to the residents of Azad Hall. The website is built using the Django framework and utilizes Nginx, Docker, Gunicorn, and SQL to ensure a robust and scalable web application.
 
-## Installation
-
-To set up the Azad Hall website locally, follow these steps:
-
-1. **Clone the repository:**
-
-
 
 
 
@@ -27,6 +20,10 @@ Residents can use the platform to request the issuance of books from the Azad Ha
 ### Library Book Inventory
 
 The website provides an updated list of all books available in the Azad Hall library, making it easy for residents to explore the collection.
+
+### Event
+
+Details about different Events
 
 ### About Azad Hall
 
