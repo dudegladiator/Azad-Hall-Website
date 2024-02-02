@@ -1,7 +1,8 @@
-db.sqlite3
-azad/migrations/0052_alter_achievements_date_alter_event_date_and_more.py
-azad/migrations/__pycache__/0052_alter_achievements_date_alter_event_date_and_more.cpython-38.pyc
-db.json
-azad_website/__pycache__/settings.cpython-38.pyc
-azad_website/__pycache__/settings.cpython-38.pyc
-azad_website/__pycache__/settings.cpython-38.pyc
+.venv
+./azad_website/db.json
+./azad_website/db.sqlite3
+./azad_website/Procfile
+.github
+.gitignore
+.pyvenv.cfg
+.README.md

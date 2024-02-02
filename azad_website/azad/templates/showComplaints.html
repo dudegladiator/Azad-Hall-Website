@@ -1,0 +1,174 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/showComplaints.css">
+    <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
+
+</head>
+<body>
+    <table id="pending_complaints">
+        <caption>
+          <h2>SUBMITTED COMPLAINTS</h2>
+          <div class="complain_navigation">
+            {% if pending_complaints.has_previous %}
+      <a href="?pending_page={{ pending_complaints.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span>
+      Page {{ pending_complaints.number }} of {{ pending_complaints.paginator.num_pages }}.
+    </span>
+    {% if pending_complaints.has_next %}
+      <a href="?pending_page={{ pending_complaints.next_page_number }}">Next</a>
+    {% endif %}
+          </div>
+          <a href="#ongoing_complaints">Go to Ongoing complaints</a>  |  <a href="#completed_complaints">Go to Completed complaints</a>
+        </caption>
+        
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Room number</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col" id="complain-head">Complain</th>
+            <th scope="col">Status</th>
+            <th scope="col" id="manager_review">Manager Review</th>
+            <th scope="col">Link</th>
+            <th scope="col">Set Status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for complain in pending_complaints %}
+        <form action="/updateStatus" method='post'>
+            {% csrf_token %}
+        <tr>
+            <td data-label="id"><input  id="id" name="id" type="text" readonly value={{complain.id}} style="width:4rem;"></input></td>
+            <td data-label="Created at">{{complain.created_at}}</td>
+            <td data-label="Name">{{complain.name}}</td>
+            <td data-label="Room Number">{{complain.room_no}}</td>
+            <td data-label="Contact">{{complain.contact_no}}</td>
+            <td data-label="complain" class="complain">{{complain.complain}} <a href="{% url 'fullComplain' complain.id %}">Read more</a></td>
+            <td data-label="Status">{{complain.status}}</td>
+            <td data-label="review"><textarea name="manager_review" placeholder="Enter review..."></textarea>
+            <td data-label="link"><a href="{% url 'fullComplain' complain.id %}">Complete details</a></td>
+            <td data-label="Set Status"><select id="set_status" name="set_status">
+              <option value="ongoing">In progress</option>
+              <option value="completed">Completed</option>
+              </select></td>
+            <td data-label="button"><button type="submit">Update</button></td>
+
+          </tr>
+        </form>
+        {% endfor %} 
+        </tbody>
+      </table>
+      
+
+      <table id="ongoing_complaints">
+        <caption><h2>COMPLAINTS IN PROGRESS</h2>
+          <div class="complain_navigation">
+            {% if ongoing_complaints.has_previous %}
+      <a href="?ongoing_page={{ ongoing_complaints.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span>
+      Page {{ ongoing_complaints.number }} of {{ ongoing_complaints.paginator.num_pages }}.
+    </span>
+    {% if ongoing_complaints.has_next %}
+      <a href="?ongoing_page={{ ongoing_complaints.next_page_number }}">Next</a>
+    {% endif %}
+          </div>
+          <a href="#completed_complaints">Go to Completed complaints</a>  |  <a href="#pending_complaints">Go to Submitted complaints</a></caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Room number</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col" id="complain-head">Complain</th>
+            <th scope="col">Status</th>
+            <th scope="col" id="manager_review">Manager review</th>
+            <th scope="col">Link</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for complain in ongoing_complaints %}
+        <form action="/updateStatus" method='post'>
+            {% csrf_token %}
+        <tr>
+            <td data-label="id"><input  id="id" name="id" type="text" readonly value={{complain.id}} style="width:4rem;"></input></td>
+            <td data-label="Created at">{{complain.created_at}}</td>
+            <td data-label="Name">{{complain.name}}</td>
+            <td data-label="Room Number">{{complain.room_no}}</td>
+            <td data-label="Contact">{{complain.contact_no}}</td>
+            <td data-label="complain" class="complain">{{complain.complain}} <a href="{% url 'fullComplain' complain.id %}">Read more</a></td>
+            <td data-label="Status">{{complain.status}}</td>
+            <td data-label="review"><textarea name="manager_review" placeholder="Enter review...">{{complain.manager_review}}</textarea></td>
+            <td data-label="link"><a href="{% url 'fullComplain' complain.id %}">Complete details</a></td>
+            <td data-label="button"><button type="submit">Complete</button></td>
+
+          </tr>
+        </form>
+        {% endfor %} 
+        </tbody>
+      </table>
+
+      <table id="completed_complaints">
+        <caption><h2>COMPLETED COMPLAINTS</h2>
+          <div class="complain_navigation">
+            {% if completed_complaints.has_previous %}
+      <a href="?completed_page={{ completed_complaints.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span>
+      Page {{ completed_complaints.number }} of {{ completed_complaints.paginator.num_pages }}.
+    </span>
+    {% if completed_complaints.has_next %}
+      <a href="?completed_page={{ completed_complaints.next_page_number }}">Next</a>
+    {% endif %}
+          </div>
+          <a href="#ongoing_complaints">Go to Ongoing complaints</a>  |  <a href="#pending_complaints">Go to Submitted complaints</a></caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Room number</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col" id="complain-head">Complain</th>
+            <th scope="col">Status</th>
+            <th scope="col">Completed on</th>
+            <th scope="col" id="manager_review">Manager review</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for complain in completed_complaints %}
+          <tr>
+            <td data-label="id"><input  id="id" name="id" type="text" readonly value={{complain.id}} style="width:4rem;"></input></td>
+            <td data-label="Created at">{{complain.created_at}}</td>
+            <td data-label="Name">{{complain.name}}</td>
+            <td data-label="Room Number">{{complain.room_no}}</td>
+            <td data-label="Contact">{{complain.contact_no}}</td>
+            <td data-label="complain">{{complain.complain}} <a href="{% url 'fullComplain' complain.id %}">Read more</a></td>
+            <td data-label="Status">{{complain.status}}</td>
+            <td data-label="Completed_on">{{complain.modified_at}}</td>
+            <td data-label="review">{{complain.manager_review}}</td>
+            <td data-label="link"><a href="{% url 'fullComplain' complain.id %}">Complete details</a></td>
+          </tr>
+        {% endfor %} 
+        </tbody>
+      </table>
+      <script src="../static/js/complain.js"></script>
+</body>
+</html>

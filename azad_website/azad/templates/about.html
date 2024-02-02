@@ -1,0 +1,2776 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" type="text/css" />
+    <meta name="referrer" content="origin"> 
+    <title>About | Azad Hall Of Residence</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons --> <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
+    <link href="{% static 'img/apple-touch-icon.webp'}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/about.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: white;
+            border-radius: 50px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: black;
+        }
+
+        .typed-cursor {
+            display: none;
+        }
+
+        .profile-card-3 {
+            position: relative;
+            font-family: 'Open Sans', Arial, sans-serif;
+            position: relative;
+            float: left;
+            overflow: hidden;
+            width: 100%;
+            border: none;
+        }
+
+        .profile-card-3 .background-block {
+            float: left;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .profile-card-3 .background-block .background {
+            width: 100%;
+            vertical-align: top;
+            -webkit-filter: blur(1px);
+            filter: brightness(0.5);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            object-position: center center;
+        }
+
+        .profile-card-3 .card-content {
+            width: 100%;
+            padding: 15px 25px;
+            padding-bottom: 0px;
+            color: #232323;
+            float: left;
+            background: #efefef;
+            border-radius: 0 0 5px 5px;
+            position: relative;
+            z-index: 9999;
+        }
+
+        .profile-card-3 .card-content::before {
+            content: '';
+            background: #efefef;
+            width: 120%;
+            height: 100%;
+            left: 0px;
+            bottom: 51px;
+            position: absolute;
+            z-index: -1;
+            transform: rotate(-13deg);
+        }
+
+        .profile-card-3 .profile {
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            right: 0px;
+            object-fit: cover;
+            width: 150px;
+            height: 150px;
+            opacity: 1;
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 1);
+            -webkit-transform: translate(-20%, 0px);
+            transform: translate(-20%, 0px);
+            z-index: 99999;
+        }
+
+        .profile-card-3 h2 {
+            margin: 0 0 5px;
+            font-weight: 600;
+            font-size: 25px;
+        }
+
+        .profile-card-3 h2 small {
+            display: block;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .profile-card-3 i {
+            display: inline-block;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            border: 1px solid white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: transform 0.5s;
+        }
+
+        .profile-card-3 .icon-block {
+            position: absolute;
+            top: 0;
+            left: 0;
+            float: left;
+            margin: 10px;
+        }
+
+        .profile-card-3 .icon-block a {
+            text-decoration: none;
+        }
+
+        .profile-card-3 i:hover {
+            background-color: #232323;
+            color: #fff;
+            text-decoration: none;
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        @media (min-width:768px) {
+            .col-md-12 col-sm-3 col-lg-4 {
+                width: 100% !important;
+            }
+        }
+
+        .profile-card-3 {
+ 
+            width: 100%;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <!--<img src="{% static 'img/illu_11.webp' %}" alt="" class="img-fluid rounded-circle">-->
+                <!-- <br>
+                <br> -->
+                <!-- <h1 class="text-light"><a href="/">Azad Hall Of Residence</a></h1> -->
+                <!-- <div class="social-links mt-3 text-center">
+                    
+                    <a href="https://m.facebook.com/100077702147892/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.instagram.com/azadian.iitkgp/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    
+                    <a href="https://www.linkedin.com/company/azad-hall-of-residence-iit-kharagpur/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@azadhallofresidence1579" class="youtube"><i class="bx bxl-youtube"></i></a>
+                </div> -->
+            </div>
+
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="/" class="nav-link scrollto"><i class="bx bx-arrow-back" style="font-size: 20px"></i>
+                            <span style="font-size: 16px">Back To Home</span></a></li>
+                    <li><a href="#hero" class="nav-link scrollto active"><i class="bx bxs-zap"
+                                style="font-size: 20px"></i>
+                            <span style="font-size: 16px">Welcome</span></a></li>
+                    <li><a href="#about" class="nav-link scrollto"><i class="bx bxs-buildings"
+                                style="font-size: 20px"></i>
+                            <span style="font-size: 16px">About</span></a>
+                    </li>
+                    <li><a href="#resume" class="nav-link scrollto"><i class="bx bxs-group" style="font-size: 20px"></i>
+                            <span style="font-size: 16px">Culture</span></a></li>
+                    <li><a href="#gc" class="nav-link scrollto"><i class="bx bxs-trophy" style="font-size: 20px"></i>
+                            <span style="font-size: 16px">GC Stats</span></a></li>
+                    <li><a href="#book_of_records" class="nav-link scrollto"><i class="bx bxs-medal"
+                                style="font-size: 20px"></i>
+                            <span style="font-size: 16px">Book of Records</span></a></li>
+                    <li><a href="#services" class="nav-link scrollto"><i class="bx bxs-store"
+                                style="font-size: 20px"></i>
+                            <span style="font-size: 16px">Services</span></a></li>
+                    <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bxs-spreadsheet"
+                                style="font-size: 20px"></i>
+                            <span style="font-size: 16px">HCMs</span></a></li>
+                    <li><a href="#captains" class="nav-link scrollto"><i class="bx bxs-basketball"
+                                style="font-size: 20px"></i>
+                            <span style="font-size: 16px">Hall Captains</span></a></li>
+                    <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bxs-bot"
+                                style="font-size: 20px"></i>
+                            <span style="font-size: 16px">Web Team</span></a></li>
+                    <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"
+                                style="font-size: 20px"></i>
+                            <span style="font-size: 16px">Contact</span></a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex flex-column">
+        <div class="hero-container" data-aos="fade-in">
+            <h1>About Us</h1>
+            <p style="font-size: 30px;">Azad <span class="typed"
+                    data-typed-items="Hall, Family, Culture, Legacy"></span></p>s
+        </div>
+        <div class="custom-shape-divider-bottom-1672571677">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z"
+                    class="shape-fill">
+                </path>
+            </svg>
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title" style="margin-top: -50px;">
+                    <h2>About</h2>
+                    <p><b>Azad Hall of Residence </b>is named after India's first education minister, Maulana Abul Kalam
+                        Azad.
+                        It is famous for having started the tradition of Illumination, or ILLU as today's KGPians know
+                        it. Azad Hall is always reputed for its stellar performances in Soc-Cult events, especially
+                        Dramatics and Choreography.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <img src="{% static 'img/MaulanaAzad.webp' %}" class="img-fluid" alt="loading" height="100%"
+                            width="100%">
+                    </div>
+                    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <h3>Details</h3>
+                        <p class="fst-italic">
+                            <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore
+                            magna aliqua.-->
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Founded:</strong> <span>3rd March
+                                            1954</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Motto:</strong>
+                                        <span>प्रणिपातेन परिप्रश्नेन सेवया</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Warden:</strong><span> Prof. Nikhil
+                                            Kumar Singha</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Assistant. Warden(s):</strong>Prof. Abir Chakravorty (Mess)<br />Prof. Mrinal Kanti Mandal (Maintenance)
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Hall President:</strong> <span>Mr. Saurabh Nagarkoti</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>SSM:</strong> <span>Mr. Yogender Arya</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Capacity:</strong>
+                                        <span>600+</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Sharing:</strong>
+                                        <span>Single, Double, Triple</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px;">
+                        There are a total of 424 rooms for the accommodation of the students of Azad Hall, with 260
+                        Single rooms,
+                        20 Double sharing rooms, 142 Triple sharing rooms and 2 Four sharing rooms. Also, the Hall
+                        provides
+                        2 Double-bedded AC guest rooms with television and attached bathrooms having geyser
+                        installed.
+                    </p>
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+
+
+
+        <!-- ======= Culture Section ======= -->
+        <section id="resume" class="resume">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Culture</h2>
+                    <p><b>Azad Hall of Residence is the only Hall in IIT KGP to have a Hall Anthem and an Oath of
+                            Fire.</b></p>
+                    <td>
+                        <ul>
+                            <li>
+                                <p class="fst-italic"> Hall Anthem is composed by 1982 alumnus Anup Verma
+                                    (Department of Electronics and Electrical Communication Engineering).</p>
+                            </li>
+                            <li>
+                                <p class="fst-italic">Oath of Fire is composed by 2020 alumnus Ashutosh Bhaskar
+                                    (Department of Geology and Geophysics).</p>
+                            </li>
+                        </ul>
+                    </td>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <h3 class="resume-title">Hall Anthem</h3>
+                        <div class="resume-item pb-0">
+                            <!-- <h4>Alex Smith</h4> -->
+                            <p><em>नया है आज सवेरा</em></p>
+
+                            <p><em>निरभ्र व्योम के हम आज़ाद हैं पंछी</em></p>
+
+                            <p><em>सीमाओं से रहित क्षितिज</em></p>
+
+                            <p><em>स्वप्निल है गंतव्य हमारा</em></p>
+
+                            <p><em>सर्वोत्तम आज़ाद हमारा</em></p>
+
+                            <p><em>एक नीर के हम वासी हैं</em></p>
+
+                            <p><em>कंधे से कंधा मिलाते</em></p>
+
+                            <p><em>हम आगे ही आगे बढ़ते
+                                    ही जाते</em></p>
+
+                            <p><em>एक डोर से हम बंधे हैं</em></p>
+
+                            <p><em>एक पथ पर संग चले हैं</em></p>
+
+                            <p><em>रुकने का नाम नहीं लेते हैं हम</em></p>
+
+                            <p><em>स्वर्णिम है यह भाव हमारा</em></p>
+
+                            <p><em>स्वप्निल है गंतव्य हमारा</em></p>
+
+                            <p><em>सर्वोत्तम आज़ाद हमारा</em></p>
+
+                            <p><em>सर्वोत्तम आज़ाद हमारा</em></p>
+                            <!-- <ul> 
+                                <li>Portland par 127,Orlando, FL</li>
+                                <li>(123) 456-7891</li>
+                                <li>alice.barkley@example.com</li>
+                            </ul> -->
+                        </div>
+
+                        <!-- <h3 class="resume-title">Education</h3>
+                        <div class="resume-item">
+                            <h4>Master of Fine Arts &amp; Graphic Design</h4>
+                            <h5>2015 - 2016</h5>
+                            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+                            <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero
+                                voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
+                            <h5>2010 - 2014</h5>
+                            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+                            <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel
+                                ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae
+                                consequatur neque etlon sader mart dila</p>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="resume-title">Oath of Fire</h3>
+                        <div class="resume-item pb-0">
+                            <!-- <h4>Alex Smith</h4> -->
+                            <p><em>जीवन की एक मशाल हो</em></p>
+
+                            <p><em>निर्भिक अपनी चाल हो</em></p>
+
+                            <p><em>यह ज्योति बुझने दे नहीं</em></p>
+
+                            <p><em>हो मेरी या तेरी सही</em></p>
+
+                            <p><em>कि हार मानेंगे नहीं</em></p>
+
+                            <p><em>और बैर पालेंगे नहीं</em></p>
+
+                            <p><em>लहू का हर कतरा मेरा</em></p>
+
+                            <p><em>आज़ाद के कण से बना</em></p>
+
+                            <p><em>ना हो अकेले तुम सुखी</em></p>
+
+                            <p><em>हम भी अकेले है दुःखी</em></p>
+
+                            <p><em>मिल सब बने ज्वालामुखी</em></p>
+
+                            <p><em>और हो हमारा एक नारा</em></p>
+
+                            <p><em>कि स्वप्निल है गंत्वय हमारा</em></p>
+
+                            <p><em>सर्वोत्तम आज़ाद हमारा।</em></p>
+                            <p><em>सर्वोत्तम आज़ाद हमारा।</em></p>
+                        </div>
+                        <!-- <div class="resume-item">
+                            <h4>Senior graphic design specialist</h4>
+                            <h5>2019 - Present</h5>
+                            <p><em>Experion, New York, NY </em></p>
+                            <ul>
+                                <li>Lead in the design, development, and implementation of the graphic, layout, and
+                                    production communication materials</li>
+                                <li>Delegate tasks to the 7 members of the design team and provide counsel on all
+                                    aspects of the project. </li>
+                                <li>Supervise the assessment of all graphic materials in order to ensure quality and
+                                    accuracy of the design</li>
+                                <li>Oversee the efficient use of production project budgets ranging from $2,000 -
+                                    $25,000</li>
+                            </ul>
+                        </div>
+                       <div class="resume-item">
+                            <h4>Graphic design specialist</h4>
+                            <h5>2017 - 2018</h5>
+                            <p><em>Stepping Stone Advertising, New York, NY</em></p>
+                            <ul>
+                                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations,
+                                    and advertisements).</li>
+                                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                                <li>Created 4+ design presentations and proposals a month for clients and account
+                                    managers</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Resume Section -->
+
+        <!-- ======= Stats Section ======= -->
+        <section id="gc" class="facts">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>GC Stats</h2>
+                    <p>Azad Hall is always reputed for its stellar performance in General Championships (GC).
+                        General Championships were scrapped due to COVID in the academic sessions 2019-20 and
+                        2020-21.
+
+                    </p>
+                </div>
+
+                <div class="row no-gutters">
+
+                    <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+                        <div class="count-box">
+                            <i class="bi-music-note-list"></i>
+                            <span>
+                                <h3><b>Social & Cultural</b></h3>
+                            </span>
+                            <p>2018-19 <strong>Bronze</strong></p>
+                            <p>2021-22 <strong>Silver</strong> </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="count-box">
+                            <i class="bi-bullseye"></i>
+                            <span>
+                                <h3><b>Sports & Games</b></h3>
+                            </span>
+                            <p>2015-16 <strong>Bronze</strong></p>
+                            <p>2016-17 <strong>Sliver</strong></p>
+                            <p>2017-18 <strong>Gold</strong></p>
+                            <p>2018-19 <strong>Gold</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="count-box">
+                            <i class="bi-robot"></i>
+                            <span>
+                                <h3><b>Technology</b></h3>
+                            </span><br>
+                            <p>2016-17 <strong>Gold</strong></p>
+                            <p>2017-18 <strong>Silver</strong></p>
+                        </div>
+                    </div>
+
+                    <!--  <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <div class="count-box">
+                            <i class="bi bi-people"></i>
+                            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
+                        </div>
+                    </div> -->
+
+                </div>
+
+            </div>
+        </section><!-- End Facts Section -->
+
+        <!-- ======= Skills Section ======= -->
+        <section id="book_of_records" class="skills section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Book of Records</h2>
+                    <p class="fst-italic">"Records are made to be broken".</p>
+                </div>
+
+                <!--    <div class="row skills-content">
+
+                    <div class="col-lg-6" data-aos="fade-up">
+
+                        <div class="progress">
+                            <span class="skill">HTML <i class="val">100%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill">CSS <i class="val">90%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill">JavaScript <i class="val">75%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="progress">
+                            <span class="skill">PHP <i class="val">80%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill">WordPress/CMS <i class="val">90%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill">Photoshop <i class="val">55%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                    </div> -->
+                <div>
+                    <ul>
+                        <li>
+                            <p>Azad Hall of Resicence holds the record of bagging the <strong>1st</strong> position for
+                                <strong>five</strong> consecutive years (from 2014-15 to 2018-19) in
+                                <strong>Choreography</strong>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Azad Hall of Residence bagged the <strong>1st</strong> position in <strong>Thermocol and
+                                    Clay Modelling</strong>
+                                for <strong>two</strong> consecutive years (2017-18 and 2018-19)</p>
+                        </li>
+                        <li>
+                            <p>Azad Hall of Residence secured record points in Sports and Games - General Championship
+                                2018-19.</p>
+                        </li>
+                        <li>
+                            <p>In 2021, the Weightlifting team created history by securing <strong>27</strong> points,
+                                the most by any team
+                                till date.</p>
+                        </li>
+                        <li>
+                            <p>Highest ever points attained by any hall in the history of GC Technology.</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            </div>
+        </section><!-- End Skills Section -->
+
+        <!-- ======= Culture Section ======= -->
+        <!-- <section id="resume" class="resume">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Culture</h2>
+                    <p><b>Azad Hall of Residence is the only hall in IIT KGP to have a Hall Anthem and an Oath of
+                            Fire.</b></p>
+                    <td>
+                        <ul>
+                            <li>
+                                <p class="fst-italic"> Hall Anthem is composed by 1982 alumnus Anup Verma Department
+                                    of Electronics and Electrical Engineering.</p>
+                            </li>
+                            <li>
+                                <p class="fst-italic">Oath of Fire is composed by 2020 alumnus Ashutosh Bhaskar
+                                    Department of Geology and Geophysics.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <h3 class="resume-title">Hall anthem</h3>
+                        <div class="resume-item pb-0">
+                            <h4>Alex Smith</h4>
+                            <p><em>नया है आज सवेरा</em></p>
+
+                            <p><em>निरभ्र व्योम के हम आज़ाद हैं पंछी</em></p>
+
+                            <p><em>सीमाओं से रहित क्षितिज</em></p>
+
+                            <p><em>स्वप्निल है गंतव्य हमारा</em></p>
+
+                            <p><em>सर्वोत्तम आज़ाद हमारा</em></p>
+
+                            <p><em>एक नीर के हम वासी हैं</em></p>
+
+                            <p><em>कंधे से कंधा मिलाते</em></p>
+
+                            <p><em>हम आगे ही आगे चलते ही जाते</em></p>
+
+                            <p><em>एक डोर से हम बंधे हैं</em></p>
+
+                            <p><em>एक पथ पर संग चले हैं</em></p>
+
+                            <p><em>रुकने का नाम नहीं लेते हैं हम</em></p>
+
+                            <p><em>स्वर्णिम है यह भाव हमारा</em></p>
+
+                            <p><em>स्वप्निल है गंतव्य हमारा</em></p>
+
+                            <p><em>सर्वोत्तम आज़ाद हमारा</em></p>
+
+                            <p><em>सर्वोत्तम आज़ाद हमारा</em></p>
+                             <ul> 
+                                <li>Portland par 127,Orlando, FL</li>
+                                <li>(123) 456-7891</li>
+                                <li>alice.barkley@example.com</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="resume-title">Education</h3>
+                        <div class="resume-item">
+                            <h4>Master of Fine Arts &amp; Graphic Design</h4>
+                            <h5>2015 - 2016</h5>
+                            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+                            <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero
+                                voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
+                            <h5>2010 - 2014</h5>
+                            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+                            <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel
+                                ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae
+                                consequatur neque etlon sader mart dila</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="resume-title">Oath of fire</h3>
+                        <div class="resume-item pb-0">
+                            <h4>Alex Smith</h4>
+                            <p><em>जीवन की एक मशाल हो</em></p>
+
+                            <p><em>निर्भिक अपनी चाल हो</em></p>
+
+                            <p><em>यह ज्योति भुझने दे नहीं</em></p>
+
+                            <p><em>हो मेरी या तेरी सही</em></p>
+
+                            <p><em>कि हार मानेंगे नहीं</em></p>
+
+                            <p><em>और बैर पालेंगे नहीं</em></p>
+
+                            <p><em>लहू का हर कतरा मेरा</em></p>
+
+                            <p><em>आज़ाद के कण से बना</em></p>
+
+                            <p><em>ना हो अकेले तुम सुखी</em></p>
+
+                            <p><em>हम भी अकेले है दुःखी</em></p>
+
+                            <p><em>मिल सब बने ज्वालामुखी</em></p>
+
+                            <p><em>और हो हमारा एक नारा</em></p>
+
+                            <p><em>कि स्वप्निल है गंत्वय हमारा</em></p>
+
+                            <p><em>सर्वोत्तम आज़ाद हमारा।</em></p>
+                        </div>
+                         <div class="resume-item">
+                            <h4>Senior graphic design specialist</h4>
+                            <h5>2019 - Present</h5>
+                            <p><em>Experion, New York, NY </em></p>
+                            <ul>
+                                <li>Lead in the design, development, and implementation of the graphic, layout, and
+                                    production communication materials</li>
+                                <li>Delegate tasks to the 7 members of the design team and provide counsel on all
+                                    aspects of the project. </li>
+                                <li>Supervise the assessment of all graphic materials in order to ensure quality and
+                                    accuracy of the design</li>
+                                <li>Oversee the efficient use of production project budgets ranging from $2,000 -
+                                    $25,000</li>
+                            </ul>
+                        </div>
+                       <div class="resume-item">
+                            <h4>Graphic design specialist</h4>
+                            <h5>2017 - 2018</h5>
+                            <p><em>Stepping Stone Advertising, New York, NY</em></p>
+                            <ul>
+                                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations,
+                                    and advertisements).</li>
+                                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                                <li>Created 4+ design presentations and proposals a month for clients and account
+                                    managers</li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+
+            </div> -->
+        </section><!-- End Resume Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <p>In Azad Hall There are canteen,xerox shop, Stationery Shop,
+                        Nescafe,Cycle repairing shop which helps Azadians a lot .
+                        All vendors provide service to us at very feasible rate .
+                        They have also another level of hall tempo & always stand with Azadians .
+                        We are thankful to them.
+
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="fa-solid fa-burger"></i></div>
+                        <h4 class="title">Night Canteen</a></h4>
+                        <p class="description">Azad Night Canteen, also known as Ravi Da's Canteen
+                            or simply Ravi Da, is the main canteen of Azad Hall of Residence. It usually opens in the
+                            evening around 9 pm and remains open till 3-4 am. Major employees of the canteen are Manoj,
+                            Praveen and Ajay, apart from the owner Ravi.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="fa-solid fa-shop"></i></div>
+                        <h4 class="title">SAM D</a></h4>
+                        <p class="description">
+                            Sam D refers to a general purpose shop located in Azad Hall of Residence.
+                            The shop is located at the mouth of corridor leading to B, C, D and E wings.
+                            The shop provides all general utility items like stationery, chocolates, chips,
+                            along with edible items like fruits, patty, and juice.
+                            The shop is named after its owner. </p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h4 class="title">CYCLE REPAIRING -ASHOK DA</a></h4>
+                        <p class="description">It is situated at the front cycle parking of Azad Hall.
+                            Here we inflate our cycle tyres and repair parts of the cycle.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="fa-solid fa-mug-saucer"></i></div>
+                        <h4 class="title">Nescafe</a></h4>
+                        <p class="description">Nescafe is situated near D Block's badminton court.
+                            It is the hunger saviour of boarders at any hour.
+                            It is open 24x7.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="fa-solid fa-ice-cream"></i></div>
+                        <h4 class="title"></a>Pradeep Da</h4>
+                        <p class="description">Located besides the mess,Pradeep Da serves delicious beverages
+                            which helps quench the thirst in the hot summer months.It is available from 9 AM to 3 AM</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="fa fa-print" aria-hidden="true"></i></div>
+                        <h4 class="title">Xerox</a></h4>
+                        <p class="description">Xerox Shop of Azad Hall is at the ground floor of C Block
+                            Open timings are 9 AM to 12 PM and 5 PM to 9PM.
+                            Here we print our notes and admit cards one day before examination.
+
+                        </p>
+                    </div>
+                </div>
+        </section><!-- End Services Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Hall Council Members <select name="year" id="hcm-year">
+                        <option value="2022-23">2022-2023</option>
+                        <option value="2023-24" selected>2023-2024</option>
+                      </select>
+                    </h2>
+                    <p>Hall Council members are selected each year by the warden of the hall to ensure smooth conduction
+                        of hall
+                        related activitiies within the hall. These activities include Hall maintenance, welfare
+                        activities, grand
+                        dinners, festival functions, alumni meets, etc. Hierarchically, the Hall President and Second
+                        Senate Member(4th years)
+                        work in coordination with the General Secretaries(3rd years) and the secretaries(2nd years) to
+                        ensure the smooth
+                        functioning of the hall.</p>
+                </div>
+
+                <!--<div class="row" data-aos="fade-up">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <ul id="portfolio-flters">
+                            <li data-filter="*" class="filter-active">2022-23</li>
+                            <li data-filter=".filter-app">2021-22</li>
+                            <li data-filter=".filter-card">2020-21</li>
+                            <li data-filter=".filter-web">2019-20</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-1.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-1.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-2.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-2.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-3.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-3.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-4.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-4.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-5.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-5.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-6.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-6.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-7.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-7.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-8.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-8.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-9.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-9.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-9.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-9.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-9.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-9.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'img/portfolio/portfolio-9.webp' %}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{% static 'img/portfolio/portfolio-9.webp' %}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>-->
+
+                <div class="hcmMembers" id="hcm2022-23" style="display: none;">
+                <div class="col-md-4" data-aos="fade-up" id="hcm"
+                    style="display: grid;width: 67%; grid-template-columns:repeat(2, 1fr); grid-gap:25px; margin: auto;margin-bottom: 25px;">
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/hp.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/hp.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Dhruv Rai<small><b style="font-size: large;">Hall President</b><br><br>Department of Industrial and Systems
+                                    Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/flanker42/" target="_blank"
+                                class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/dhruv-rai-flanker/" target="_blank" class="linkedin">
+                                <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+                    <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/ssm.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/ssm.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Tushar Khokhar<small><b style="font-size: large;">Second Senate Member</b><br><br>Department of Humanities and
+                                    Social Sciences</small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/tushar.khokhar" target="_blank"
+                                class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/tushar-khokhar-645a22194" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" id="hcm"
+                    style="display: grid;width: 100%; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(3,1fr); column-gap:25px; row-gap:25px;">
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/suvigya.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/suvigya.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Suvigya Saxena<small><b style="font-size: large;">General Secretary - Alumni Affairs </b><br><br><br>Department of
+                                    Industrial and Systems Engineering<br>  </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/suvigya.sxaena.1?mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/suvigyasaxena" target="_blank" class="linkedin"> <i
+                                    class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/divyanshu.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/divyanshu.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Divyanshu Gupta <small><b style="font-size: large;" >General Secretary - Social and Cultural </b><br><br><br><br>Department
+                                    of Biotechnology<br> </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/dvnshu?mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/divyanshu04gupta" target="_blank" class="linkedin"> <i
+                                    class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/lakshya.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/lakshya.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Lakshya Kr. Meena<small><b style="font-size: large;">Coordinator - Social and Cultural </b><br><br><br>Department of
+                                    Mechanical Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/lakshya.meena.37051?mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/lakshya-kumar-meena-105543222" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/somdarshan.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/somdarshan.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Somdarshan Atre<small><b style="font-size: large;">General Secretary - Sports and Games</b><br><br><br>Department of
+                                    Geology and Geophysics </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/somdarshan.atre?mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/somdarshan-atre-65727a176" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/mayank.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/mayank.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Mayank Singh <small><b style="font-size: large;">General Secretary - Technology </b><br><br><br>Department of Chemical
+                                    Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/profile.php?id=100005157690585&mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/mayank-singh-58b951213" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/kunal.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/kunal.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Kunal Sulaniya<small><b style="font-size: large;">General Secretary - Maintenance</b><br><br><br>Department of
+                                    Mechanical Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/profile.php?id=100069505996634&mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/kunal-sulaniya-913054231" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/pratham.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/pratham.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Pratham Agrawal<small><b style="font-size: large;">General Secretary - Mess and Library </b><br><br><br>Department of
+                                    Aerospace Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/pratham.agrawal.716?mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/pratham-agrawal-150a4a210" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/shailesh.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/shailesh.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Shailesh Singh<small><b style="font-size: large;">General Secretary - Students' Welfare </b><br><br><br>Department of
+                                    Civil <br>Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/shaileshskgp?mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/shailesh--singh" target="_blank" class="linkedin"> <i
+                                    class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->
+                </div>
+            </div>
+            <div class="hcmMembers" id="hcm2023-24" style="display: grid;">
+                <div class="col-md-4" data-aos="fade-up" id="hcm"
+                    style="display: grid;width: 67%; grid-template-columns:repeat(2, 1fr); grid-gap:25px; margin: auto;margin-bottom: 25px;">
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/hp2023.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/hp2023.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Saurabh Nagarkoti <small><b style="font-size: large;">Hall President</b><br><br>Department of Geology and
+                                            Geophysics</small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/saurabh.nagarkoti.1" target="_blank"
+                                class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/saurabh-nagarkoti/" target="_blank" class="linkedin">
+                                <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+                    <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img\hcm\ssm-2-2023.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img\hcm\ssm-2-2023.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Yogender Arya<small><b style="font-size: large;">Second Senate Member</b><br><br>Department of Agriculture and
+                                         Food Engineering</small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/yogendera1" target="_blank"
+                                class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/yogender-arya-3744941ba/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" id="hcm"
+                    style="display: grid;width: 100%; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(3,1fr); column-gap:25px; row-gap:25px;">
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/ankit.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/ankit.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Ankit Yadav<small><b style="font-size: large;">General Secretary - Sports and Games</b><br><br><br>Department
+                                            of Electrical Engineering</small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100016978573907"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/ankit-yadav-64a903228/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/Shresth.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/Shresth.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Shresth Agrawal <small><b style="font-size: large;">General Secretary - Social and Cultural </b><br><br><br>Department
+                                            of Chemical Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/shresth.agrawal.96"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/shresth-agrawal-b5935024a/" target="_blank" class="linkedin"> <i
+                                    class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/abhinav.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/abhinav.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Abhinav Srivastava<small><b style="font-size: large;">Coordinator - Social and Cultural</b><br><br><br>Department
+                                            of Mechanical Engineering</small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/divyanshu-sharma-308a86240/"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/divyanshu-sharma-308a86240/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/bhoumik.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/bhoumik.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Bhoumik Mhatre<small><b style="font-size: large;">General Secretary - Alumni Affairs </b><br><br><br>Department of
+                                Mining<br> Engineering</small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/bhoumik.mhatre.1"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/bhoumik-mhatre-5396b623a/" target="_blank" class="linkedin"> <i
+                                    class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/ashwini.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/ashwini.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Ashwini .K. Biswal<small><b style="font-size: large;">General Secretary - Technology </b><br><br><br>Department of Mechanical Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/profile.php?id=100074009486922"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/ashwini-kumar-biswal-a78b62226/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/chimyang.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/chimyang.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Manne Chimyang<small><b style="font-size: large;">General Secretary - Maintenance</b><br><br><br>Department of
+                                            Civil <br>Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/profile.php?id=100070149875931"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/manne-chimyang-996035254/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/pranjal.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/pranjal.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Pranjal Chouhan<small><b style="font-size: large;">General Secretary - Mess and Library </b><br><br><br>Department
+                                            of Metallurgical and Materials Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/pranjal.pranjalchouhan"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/pranjal-chouhan-9b359b189/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+
+                    
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="static\img\hcm\Somnath_mishra.webp" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="static\img\hcm\Somnath_mishra.webp" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Somnath Mishra<small><b style="font-size: large;">General Secretary - Mess and Library </b><br><br><br>Department
+                                            of Metallurgical and Materials Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100073668615779"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/somnath-mishra-3153b8225/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'img/hcm/aditya.webp' %}" alt="profile-sample1" class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'img/hcm/aditya.webp' %}" alt="profile-image" class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Aditya Sharma<small><b style="font-size: large;">General Secretary - Students' Welfare </b><br><br><br>Department of
+                                    Civil <br>Engineering </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100002888868638"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/aditya-sharma-356671233/" target="_blank" class="linkedin"> <i
+                                    class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+
+                    <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->
+                </div>
+            </div>
+            </div>
+            
+        </section><!-- End Portfolio Section -->
+
+        <section id="captains" class="portfolio section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Hall Captains  <select name="year" id="gccaptain-year">
+                        <option value="2022-23">2022-2023</option>
+                        <option value="2023-24" selected>2023-2024</option>
+                      </select> </h2>
+
+                    <p>To represent Azad Hall of Residence in the Gymkhana General
+                        Championships, every year the Hall Council Members appoint Captains of each event
+                        held in the General Championships. The Captains(4th/5th years) work closely with the
+                        vice-captains(3rd years) and secretaries(2nd years) throughout the event starting from
+                        selection of the event team to ensuring all activities of the event are conducted smoothly and
+                        timely.
+                        Captains bear the responsibility that best of the members of hall
+                        pertaining to the corresponding event
+                        participate in the event and perform their level best in the event.</p> <br><br>
+
+
+
+                    <div class="row captains" id="captains2022-23" style="display:none;">
+
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="box">
+                                <h3><strong>Sports</strong></h3>
+                                <table>
+                                    <tr>
+                                        <th>Sports</th>
+                                        <th>Captains</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hockey</td>
+                                        <td>Sagar Kumar</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Football</td>
+                                        <td>Utkarsh Gupta</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Cricket</td>
+                                        <td>Chandrakant Kumar</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Aquatics</td>
+                                        <td>Aditya Jerath</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Basketball</td>
+                                        <td>Ms Aditya</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Squash</td>
+                                        <td>Ratn Raj</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Badminton</td>
+                                        <td>Tanmay Nagpal</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Weightlifting</td>
+                                        <td>Aditya Tiwari</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Table Tennis</td>
+                                        <td> Ganesh Deepak</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Bridge</td>
+                                        <td>Deepak Somani</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Lawn Tennis</td>
+                                        <td> Priyanjit Podder</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Athletics</td>
+                                        <td>Prashil Meshram</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Chess</td>
+                                        <td> Gaurav Madkaikar</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Volyeball</td>
+                                        <td> Prashanjeet</td>
+
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                            <div class="box featured">
+                                <h3><strong>Technology</strong></h3>
+                                <table>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Captains</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Opensoft</td>
+                                        <td>Yash Soni</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>Data Analytics</small></td>
+                                        <td>
+                                            <p style="font-size: 17px;">Arya, Mr.Siddharth
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Case Study</td>
+                                        <td>Nevil Chauhan</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>Product Designing</small></td>
+                                        <td>
+                                            <p style="font-size: 10px;">--</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Chem Quest</td>
+                                        <td>--</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Tech Quiz</td>
+                                        <td>--</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Biz Quiz</td>
+                                        <td>Amiesh Jha</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Maths Olympiad</td>
+                                        <td>Sai Vamshi</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hardware Modelling</td>
+                                        <td>
+                                            Ojasva Kamal,Mustafa Khan
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Ad Design</td>
+                                        <td>
+                                            Parth Jaiswal, Adarsh Agrawal
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                            <div class="box">
+                                <h3><STRONG>Social & Cultural</STRONG></h3>
+                                <table>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Captains</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Dramatics</td>
+                                        <td>
+                                            <p style="font-size: 10px;">Arnav Bhutda,Atharva Shinde</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style="font-size: 14px;">Short film making</p>
+                                        </td>
+                                        <td>
+                                            <p style="font-size: 11px;">Mr.Amandeep, Mr.Parth Jaiswal</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hindi Elocution</td>
+                                        <td>Yash Saini</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Choreography</td>
+                                        <td>
+                                            <p style="font-size: 9px;">Shivam Pratap Singh,Vivek Anand </p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>English Elocution</td>
+                                        <td>Atharva Shinde</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Debate</td>
+                                        <td>
+                                            <p style="font-size: 12px;">Debaditya Mukhopadhyay</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>What's The good word</small></td>
+                                        <td><small>Vatsal Venkatkrishna</small></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Eastern Vocals</td>
+                                        <td>Jaswanth Gopa</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Western Vocals</td>
+                                        <td> Dewang Gogte</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>Eastern Instrumentals</small></td>
+                                        <td><small>Arya Uttamchandani</small></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>Western Instrumentals</small></td>
+                                        <td> Smarak Pradhan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Groups</td>
+                                        <td>
+                                            <p style="font-size: 9px;">Mr.Smarak Pradhan, Mr.Jaswanth Gopa</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>General Quiz</td>
+                                        <td>
+                                            <p style="font-size: 10px;">Mr.Animesh Jha,Varun Balakrishna</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style="font-size: 10px;">Thermocol & Clay Modelling</p>
+                                        </td>
+                                        <td> Abhishek Kumar</td>
+
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                        <!--2023-24 Hall Captains -->
+                    <div class="row captains" id="captains2023-24">
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="box">
+                                <h3><strong>Sports</strong></h3>
+                                <table>
+                                    <tr>
+                                        <th>Sports</th>
+                                        <th>Captains</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hockey</td>
+                                        <td>Sumran SIngh</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Football</td>
+                                        <td>Bilal Razak</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Cricket</td>
+                                        <td>Yogendra Arya</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Aquatics</td>
+                                        <td>Sparsh Burman</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Basketball</td>
+                                        <td>Jay Choudhary</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Squash</td>
+                                        <td>Rajiv Harlalkar</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Badminton</td>
+                                        <td>Shubham Kumar</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Weightlifting</td>
+                                        <td>Abhinandan</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Table Tennis</td>
+                                        <td> Aaitr Zaki</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Bridge</td>
+                                        <td>Mohammed Arsalan</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Lawn Tennis</td>
+                                        <td> Priyanjit Podder</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Athletics</td>
+                                        <td>Ravi Tripathi</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Chess</td>
+                                        <td> Irfan Haadhi</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Volyeball</td>
+                                        <td> Somdarshan Atre</td>
+
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                            <div class="box featured">
+                                <h3><strong>Technology</strong></h3>
+                                <table>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Captains</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Opensoft</td>
+                                        <td>Ashwani Kamal,Rajiv,Rishi</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>Data Analytics</small></td>
+                                        <td>
+                                            <p style="font-size: 17px;">Harsh Khandelwal, Anurakt
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Case Study</td>
+                                        <td>Salman Khan,Utkarsh Dwivedi</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>Product Designing</small></td>
+                                        <td>
+                                            <p style="font-size: 10px;">Aditya Uppal</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Chem Quest</td>
+                                        <td>--</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Tech Quiz</td>
+                                        <td>Salman, Shreyon</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Biz Quiz</td>
+                                        <td>Salman , Shreyon</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Maths Olympiad</td>
+                                        <td>Prerit Agarwal,Vishal Ravipati</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hardware Modelling</td>
+                                        <td>
+                                            <p style="font-size: 10px;">Lokesh,Prakhar,Anirudh Bajaj,Abhishek Tiwari
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Ad Design</td>
+                                        <td>
+                                            <p style="font-size: 10px;">---</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                            <div class="box">
+                                <h3><STRONG>Social & Cultural</STRONG></h3>
+                                <table>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Captains</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Dramatics</td>
+                                        <td>
+                                            <p style="font-size: 10px;">Harsh,Shubham,Aditya</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style="font-size: 14px;">Short film making</p>
+                                        </td>
+                                        <td>
+                                            <p style="font-size: 11px;">Himanshu, Mukil</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hindi Elocution</td>
+                                        <td>Pranay and Sumran</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Choreography</td>
+                                        <td>
+                                            <p style="font-size: 9px;">Adesh, Lakshay, Pratham</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>English Elocution</td>
+                                        <td>Ashwani and Shroyon</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Debate</td>
+                                        <td>
+                                            <p style="font-size: 12px;">Shroyon</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>What's The good word</small></td>
+                                        <td><small>Vibhu and Soumyabrata</small></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Eastern Vocals</td>
+                                        <td>Spandan</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Western Vocals</td>
+                                        <td> Spandan</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>Eastern Instrumentals</small></td>
+                                        <td><small>Kalyan</small></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><small>Western Instrumentals</small></td>
+                                        <td> Kalyan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Groups</td>
+                                        <td>
+                                            <p style="font-size: 9px;">Kalyan,Spandan,Divyanshu</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>General Quiz</td>
+                                        <td>
+                                            <p style="font-size: 10px;">Salman</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style="font-size: 10px;">Thermocol & Clay Modelling</p>
+                                        </td>
+                                        <td> Rishab and Soumya Ranjan Sahoo</td>
+
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+        </section>
+        </div>
+        </section>
+
+        <!-- ======= Testimonials Section ======= -->
+        <section id="testimonials" class="testimonials section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Web Team <select name="year" id="web-year">
+                        <option value="2022-23">2022-2023</option>
+                        <option value="2023-24" selected>2023-2024</option>
+                      </select></h2>
+                    <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+                </div>
+
+                <div class="webMembers" id="web2022-23" style="display: none;">
+                <div class="col-md-4" data-aos="fade-up" id="hcm"
+                    style="display: grid;width: 33%; grid-template-columns:repeat(1, 1fr) !important; grid-gap:25px; margin: auto;margin-bottom: 25px;">
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/nishakar.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/nishakar.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Nishakar Kumar <small><b  style="font-size: large;">Lead Developer</b><br><br>Department
+                                    of Electrical Engineering</small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/nishakar.kumar.984" target="_blank"
+                                class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/nishakar-kumar-7016451ba/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" id="hcm"
+                    style="display: grid;width: 100%; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(3,1fr); column-gap:25px; row-gap:25px;">
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/aditya1.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/aditya1.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Aditya N. Sahoo<small><br><b style="font-size: large;">Developer</b><br><br><p style="font-size:13px;"><br>Department Of Mechanical Engineering</p>
+                                </small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100075469157629"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/aditya-narayan-sahoo-aa772722b/" target="_blank"
+                                class="linkedin">
+                                <i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/ashwini.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/ashwini.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Ashwini K. Biswal<small><br><b  style="font-size: large;">Developer</b><br><br><p style="font-size:13px;"><br>Department Of Mechanical Engineering</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/profile.php?id=100074009486922&mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/ashwini-kumar-biswal-a78b62226" target="_blank"
+                                class="linkedin">
+                                <i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Hariom<small><br><b  style="font-size: large;">Developer</b><br><br><p style="font-size:13px;"><br>Department Of Mechanical Engineering</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a href="http://facebook.com/hariom.raj.12532" target="_blank"
+                                class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/mwlite/in/kgpian" target="_blank" class="linkedin"> <i
+                                    class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/ojas.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/ojas.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Ojas Modak<small><br><b  style="font-size: large;">Developer</b><br><br><p style="font-size:13px;">Department Of Industrial & Systems Engineering</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/profile.php?id=100075299778518&mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/ojas-modak-9b890a237" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/raunak.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/raunak.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Raunak Raj<small><br><b  style="font-size: large;">Developer</b><br><br><p style="font-size:13px;">Department Of <br>Mathematics</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100074308419553"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/raunak-raj-03319b227" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/shrish.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/shrish.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Shrish Tripathi<small><br><b  style="font-size: large;">Developer</b><br><br><p style="font-size:13px;">Department Of <br>Mathematics</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/profile.php?id=100075425263403&mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/shrish-tripathi-3808471aa" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/Smarak.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/Smarak.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Smarak Kanjilal<small><b style="font-size: large;">Developer</b><br><br><p style="font-size:13px;"><br>Department Of Computer Science & Engineering</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/Smarak.Kanjilal?mibextid=ZbWKwL"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/smarak-kanjilal-105474222" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/somya.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/somya.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Somya<small><b  style="font-size: large;">Developer</b><br><br><p style="font-size:13px;"><br>Department Of Computer Science & Engineering</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100074586707397"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                href="https://www.linkedin.com/in/somya-kumar-584a55222/" target="_blank"
+                                class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                    </div>
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/ash.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/ash.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2><br>Ashutosh Tiwari<small><b  style="font-size: large;">Management</b><br><br><p style="font-size:13px;"><br>Department Of Geology and <br>Geophysics</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/profile.php?id=100075431893143"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/ashutosh-tiwari-758957226/" target="_blank"
+                                class="linkedin">
+                                <i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                
+                </div>
+                    <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->
+                </div>
+
+                <div class="webMembers" id="web2023-24" >
+                    <div class="col-md-4" data-aos="fade-up" id="hcm"
+                        style="display: grid;width: 33%; grid-template-columns:repeat(1, 1fr) !important; grid-gap:25px; margin: auto;margin-bottom: 25px;">
+                        <div class="card profile-card-3">
+                            <div class="background-block">
+                                <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-sample1"
+                                    class="background" />
+                            </div>
+                            <div class="profile-thumb-block">
+                                <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-image"
+                                    class="profile" />
+                            </div>
+                            <div class="card-content">
+                                <h2>Hariom<small><b  style="font-size: large;">Lead Developer</b><br><br><p style="font-size:13px;">Department Of Mechanical Engineering</p></small></h3>
+                            </div>
+                            <div class="icon-block"><a href="http://facebook.com/hariom.raj.12532" target="_blank"
+                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                    href="https://www.linkedin.com/in/kgpian/" target="_blank" class="linkedin"> <i
+                                        class="bx bxl-linkedin"></i></a></div>
+    
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" id="hcm"
+                        style="display: grid;width: 100%; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(3,1fr); column-gap:25px; row-gap:25px;">
+    
+                        <div class="card profile-card-3">
+                            <div class="background-block">
+                                <img src="{% static 'assets/img/testimonials/harshvardhan.webp' %}" alt="profile-sample1"
+                                    class="background" />
+                            </div>
+                            <div class="profile-thumb-block">
+                                <img src="{% static 'assets/img/testimonials/harshvardhan.webp' %}" alt="profile-image"
+                                    class="profile" />
+                            </div>
+                            <div class="card-content">
+                                <h2>Harsh Vardhan<small><b  style="font-size: large;">Developer</b><br><br><p style="font-size:13px;">Department Of <br> Mathematics</p>
+                                    </small></h3>
+                            </div>
+                            <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100086304926374"
+                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="https://www.linkedin.com/in/harsh-vardhan-gupta-51446224b/" target="_blank"
+                                    class="linkedin">
+                                    <i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                        
+                    <div class="card profile-card-3">
+                        <div class="background-block">
+                            <img src="{% static 'assets/img/testimonials/harshGupta.webp' %}" alt="profile-sample1"
+                                class="background" />
+                        </div>
+                        <div class="profile-thumb-block">
+                            <img src="{% static 'assets/img/testimonials/harshGupta.webp' %}" alt="profile-image"
+                                class="profile" />
+                        </div>
+                        <div class="card-content">
+                            <h2>Harsh Gupta<small><b  style="font-size: large;">Developer</b><br><br><p style="font-size:13px;">Department Of Industrial and Systems Engineering</p></small></h3>
+                        </div>
+                        <div class="icon-block"><a
+                                href="https://www.facebook.com/harsh90731"
+                                target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/harsh90731/" target="_blank"
+                                class="linkedin">
+                                <i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+    
+
+                        <div class="card profile-card-3">
+                            <div class="background-block">
+                                <img src="{% static 'assets/img/testimonials/dhatrik.webp' %}" alt="profile-sample1"
+                                    class="background" />
+                            </div>
+                            <div class="profile-thumb-block">
+                                <img src="{% static 'assets/img/testimonials/dhatrik.webp' %}" alt="profile-image"
+                                    class="profile" />
+                            </div>
+                            <div class="card-content">
+                                <h2>Dhatrik Kumar<small><b style="font-size: large;">Developer</b><br><br><p style="font-size:13px;">Department Of Mining<br> Engineering</p></small></h3>
+                            </div>
+                            <div class="icon-block"><a
+                                    href="https://www.facebook.com/dhatrikkumar.09"
+                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                    href="https://www.linkedin.com/in/dhatrik-kumar-9ab249256/" target="_blank"
+                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                        </div>
+    
+    
+                        <div class="card profile-card-3">
+                            <div class="background-block">
+                                <img src="{% static 'assets\img\testimonials\meet1355.webp' %}" alt="profile-sample1"
+                                    class="background" />
+                            </div>
+                            <div class="profile-thumb-block">
+                                <img src="{% static 'assets\img\testimonials\meet1355.webp' %}" alt="profile-image"
+                                    class="profile" />
+                            </div>
+                            <div class="card-content">
+                                <h2>Meet Raju Meshram<small><b style="font-size: large;">Developer and Manager</b><br><br><p style="font-size:13px;">Department Of Aerospace <br> Engineering</p></small></h3>
+                            </div>
+                            <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100087764894345"
+                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                    href="https://www.linkedin.com/in/meet-meshram-2a6423260/" target="_blank"
+                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                        </div>
+    
+    
+                        <div class="card profile-card-3">
+                            <div class="background-block">
+                                <img src="{% static 'assets/img/testimonials/madhav.webp' %}" alt="profile-sample1"
+                                    class="background" />
+                            </div>
+                            <div class="profile-thumb-block">
+                                <img src="{% static 'assets/img/testimonials/madhav.webp' %}" alt="profile-image"
+                                    class="profile" />
+                            </div>
+                            <div class="card-content">
+                                <h2>Madhav Samdhani<small><b style="font-size: large;">Developer</b><br><br><p style="font-size:13px;">Department Of Agricultural and Food Engineering</p></small></h3>
+                            </div>
+                            <div class="icon-block"><a
+                                    href="https://www.facebook.com/profile.php?id=100086694198133"
+                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                    href="https://www.linkedin.com/in/madhav-samdani-889505257/" target="_blank"
+                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                        </div>
+    
+    
+                    
+                        </div>
+                    
+                        <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->
+                    </div>
+                </div>
+
+                <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->
+            </div>
+
+            <!-- <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+
+                        {% for member in team %}
+                        <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
+                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
+                                    legam anim culpa.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{{member.image.url}}" class="testimonial-img" alt="">
+                                <h3>{{member.name}}</h3>
+                                <h4>{{member.title}}</h4>
+                                <a href="{{member.fb.url}}" target="_blank" class="facebook"><i
+                                        class="bx bxl-facebook"></i></a>
+
+
+                                <a href="{{member.li.url}}" target="_blank" class="linkedin"><i
+                                        class="bx bxl-linkedin"></i></a>
+
+                            </div>
+                        </div>End testimonial item -->
+            <!-- {% endfor %}
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
+                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
+                                    legam anim culpa.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/nishakar.webp' %}" class="testimonial-img" alt="">
+                                <h3>Nishakar Kumar</h3>
+                                <h4>Development Head</h4>
+                                <a href="https://www.facebook.com/nishakar.kumar.984"><i class="bx bxl-facebook"></i></a>
+                               
+                                
+                                <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADL_EbEBlEpCWPi8xSC47S9svAefl5b3X6E&keywords=nishakar%20kumar&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=519de247-98a7-4d30-82b5-d2e677779838&sid=A5f" class="facebook" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                
+                            </div>
+                        </div>End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
+                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
+                                    risus at semper.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/aditya1.webp' %}" class="testimonial-img"
+                                    alt="">
+
+                                <h3>Aditya Narayan Sahoo</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="https://www.facebook.com/profile.php?id=100075469157629" target="_blank"
+                                    class="facebook"><i class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/in/aditya-narayan-sahoo-aa772722b/" target="_blank"
+                                    class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+
+
+
+
+                            </div>
+                        </div>End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
+                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
+                                    legam anim culpa.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/ashwini.webp' %}" class="testimonial-img"
+                                    alt="">
+                                <h3>Ashwini Kumar Biswal</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="https://www.facebook.com/profile.php?id=100074009486922&mibextid=ZbWKwL"
+                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/in/ashwini-kumar-biswal-a78b62226" target="_blank"
+                                    class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+                            </div>
+                        </div>End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
+                                    veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
+                                    minim.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p> 
+                                <img src="{% static 'assets/img/testimonials/hariom1.webp' %}" class="testimonial-img" alt="">
+                                <h3>Hariom</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="http://facebook.com/hariom.raj.12532" target="_blank" class="facebook"><i
+                                        class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/mwlite/in/kgpian" target="_blank" class="linkedin"><i
+                                        class="bx bxl-linkedin"></i></a>
+
+
+                            </div>
+                        </div>End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
+                                    fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
+                                    dolore labore illum veniam.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/ojas.webp' %}" class="testimonial-img" alt="">
+                                <h3>Ojas Modak</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="https://www.facebook.com/profile.php?id=100075299778518&mibextid=ZbWKwL"
+                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/in/ojas-modak-9b890a237" target="_blank"
+                                    class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+                            </div>
+                        </div>End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                                    culpa fore nisi cillum quid.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/pranav.webp' %}" class="testimonial-img"
+                                    alt="">
+                                <h3>Pranav Sarma</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="https://m.facebook.com/100077702147892/" target="_blank" class="facebook"><i
+                                        class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/company/azad-hall-of-residence-iit-kharagpur/"
+                                    target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+                            </div>
+                        </div>End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                                    culpa fore nisi cillum quid.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/shrish.webp' %}" class="testimonial-img"
+                                    alt="">
+                                <h3>Shrish Tripathi</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="https://www.facebook.com/profile.php?id=100075425263403&mibextid=ZbWKwL"
+                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/in/shrish-tripathi-3808471aa" target="_blank"
+                                    class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+                            </div>
+                        </div>End testimonial item -->
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                                    culpa fore nisi cillum quid.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/somya.webp' %}" class="testimonial-img"
+                                    alt="">
+                                <h3>Soumya</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="https://www.facebook.com/profile.php?id=100074586707397" target="_blank"
+                                    class="facebook"><i class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/in/somya-kumar-584a55222/" target="_blank"
+                                    class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+                            </div>
+                        </div>End testimonial item -->
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                                    culpa fore nisi cillum quid.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/raunak.webp' %}" class="testimonial-img"
+                                    alt="">
+                                <h3>Raunak Raj</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="https://m.facebook.com/100077702147892/" target="_blank" class="facebook"><i
+                                        class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/in/raunak-raj-03319b227" target="_blank"
+                                    class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+                            </div>
+                        </div>End testimonial item -->
+            <!-- <div class="swiper-slide">
+                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                                    culpa fore nisi cillum quid.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{% static 'assets/img/testimonials/Smarak.webp' %}" class="testimonial-img"
+                                    alt="">
+                                <h3>Smarak Kanjilal</h3>
+                                <h4><b>Developer</b><br></h4>
+                                <a href="https://www.facebook.com/Smarak.Kanjilal?mibextid=ZbWKwL" target="_blank"
+                                    class="facebook"><i class="bx bxl-facebook"></i></a>
+
+
+                                <a href="https://www.linkedin.com/in/smarak-kanjilal-105474222" target="_blank"
+                                    class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+                            </div>
+                        </div>End testimonial item -->
+
+            </div>
+            <div class="swiper-pagination"></div>
+            </div>
+
+            </div>
+        </section><!-- End Testimonials Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Azad Hall of Residence is one of the three halls in the PAN loop.
+                        It is the farthest from the institute main building and is the closest
+                        to the Tech Market and B.C Roy Hospital among all UG Halls.</p>
+                </div>
+
+                <div class="row" data-aos="fade-in">
+
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>Colony Rd, IIT Kharagpur, Kharagpur, West Bengal 721302
+                                </p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>azad.iitkgp1954@gmail.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p> +91 32222 81110</p>
+                            </div>
+
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1046.2793030145333!2d87.29788460794228!3d22.31850432767396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d43f925332425%3A0xc2e4806c3515453c!2sAzad%20Hall%2C%20Colony%20Rd%2C%20IIT%20Kharagpur%2C%20Kharagpur%2C%20West%20Bengal%20721302!5e0!3m2!1sen!2sin!4v1671480113232!5m2!1sen!2sin"
+                                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form action="https://formsubmit.io/send/harsh247gupta@gmail.com" name="Contact_Us_form_about_page" method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name" name="Name">Name</label>
+                                    {{form.name}}
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="email" name="Email">Email</label>
+                                    {{form.email}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" name="Subject">Subject</label>
+                                {{form.subject}}
+                            </div>
+                            <div class="form-group">
+                                <label for="name" name="Message">Message</label>
+                                {{form.msg}}
+                            </div>
+                            <div class="my-3">
+                                
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="social-links mt-3 text-center">
+
+            <a href="https://m.facebook.com/100077702147892/" target="_blank" class="facebook"><i
+                    class="bx bxl-facebook" style="font-size: 25px;margin: 0 5px;"></i></a>
+            <a href="https://www.instagram.com/azadian.iitkgp/" target="_blank" class="instagram"><i
+                    class="bx bxl-instagram" style="font-size: 25px;margin: 0 5px;"></i></a>
+
+            <a href="https://www.linkedin.com/company/azad-hall-of-residence-iit-kharagpur/" target="_blank"
+                class="linkedin"><i class="bx bxl-linkedin" style="font-size: 25px;margin: 0 5px;"></i></a>
+            <a href="https://www.youtube.com/@azadhallofresidence1579" target="blank" class="youtube"><i
+                    class="bx bxl-youtube" style="font-size: 25px;margin: 0 5px;"></i></a>
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+            <!-- Designed by <a href="https://bootstrapmade.com/"></a> -->
+        </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>AZAD Hall Of Residence</span></strong>
+            </div>
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/typed.js/typed.min.js' %}"></script>
+    <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw4nv4g4qUo8F7Tc3wy6lE75UTV1yCUyrqbihuFrhouB2pX9_NACKtWn_srnVQ0pfV6/exec'
+        const form = document.forms['Contact_Us_form_about_page']
+        const cors = require('cors');
+        app.use(cors());
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thank you! your form is submitted successfully." ))
+            .then(() => {  window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/about.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+.venv
+./azad_website/db.json
+./azad_website/db.sqlite3
+.Procfile
+.github
+.gitignore
+.pyvenv.cfg
+.README.md
+.azad_website/azad_website/__pycache__
+.azad_website/azad/__pycache__
