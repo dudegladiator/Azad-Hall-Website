@@ -36,23 +36,23 @@ To set up the Azad Hall website locally, follow these steps:
 
 ### Complaints
 
-Residents can submit complaints related to mess services and maintenance through the website. The system ensures efficient handling and resolution of reported issues.
+   Residents can submit complaints related to mess services and maintenance through the website. The system ensures efficient handling and resolution of reported issues.
 
 ### Library Book Issuance
 
-Residents can use the platform to request the issuance of books from the Azad Hall library. The website keeps track of book availability and facilitates the borrowing process.
+   Residents can use the platform to request the issuance of books from the Azad Hall library. The website keeps track of book availability and facilitates the borrowing process.
 
 ### Library Book Inventory
 
-The website provides an updated list of all books available in the Azad Hall library, making it easy for residents to explore the collection.
+   The website provides an updated list of all books available in the Azad Hall library, making it easy for residents to explore the collection.
 
 ### Event
 
-Details about different Events
+   Discover the Heartbeat of Azad Hall through Vibrant Events!
 
-### About Azad Hall
+   Stay tuned for a diverse range of events that bring our community together. From cultural extravaganzas to tech hackathons, we celebrate the spirit of unity and collaboration. Join us in creating memories that last a lifetime!
 
-This section provides general information about Azad Hall, including its history, facilities, and any other relevant details.
+
 
 ## Technologies Used
 
@@ -65,6 +65,15 @@ This section provides general information about Azad Hall, including its history
 - **Gunicorn:** Gunicorn serves as the WSGI server to run the Django application in production.
 
 - **Docker:** Docker containers are employed for easy deployment and management of the application.
+
+
+## About Azad Hall
+
+   Welcome to Azad Hall - Where Traditions Meet Innovation!
+
+   Nestled in the heart of our vibrant campus, Azad Hall is more than just a residence; it's a tapestry of stories, a hub of creativity, and a home where lifelong friendships are forged. Explore our history, embrace our facilities, and become part of a community that thrives on diversity and excellence.
+
+   Here, we blend the legacy of our past with the energy of the present, creating an environment where every individual contributes to the collective brilliance of Azad Hall. Join us on a journey where every day is an opportunity to learn, grow, and make a lasting impact!
 
 
 
