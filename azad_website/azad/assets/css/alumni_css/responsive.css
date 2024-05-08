@@ -1,0 +1,885 @@
+@charset "utf-8";
+
+/**
+*
+* -----------------------------------------------------------------------------
+*
+* Template : Evenio - Events & Conference HTML Template
+* Author : reacthemes
+* Author URI : http://www.reactheme.com/
+*
+* -----------------------------------------------------------------------------
+*
+**/
+
+@media only screen and (min-width: 1300px) {
+    .container {
+        max-width: 1200px;
+        width: 100%;
+    }
+    .container.custom-for-sl {
+        max-width: 1230px;
+    }
+}
+/* container control end */
+
+@media only screen and (min-width: 1300px) {
+    .container {
+        max-width: 1200px;
+        width: 100%;
+    }   
+ 
+}
+
+@media only screen and (max-width: 1366px) { 
+    .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li {
+        margin-right: 15px;
+    }
+    .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a {
+        font-size: 14px;
+    }
+    .full-width-header .rs-header .expand-btn-inner ul .btn-quote .quote-button {
+        font-size: 13px;
+        padding: 8px 18px;
+    }
+    .rs-pricing.main-home.pricing-plan-style3 .price-responsive{
+        padding-bottom: 120px;
+    } 
+    .rs-events-schedule.our-event .event-item .event-wrap .content-info .title {
+        font-size: 20px;
+    }  
+}
+@media only screen and (max-width: 1199px) {
+    .lg-pl-pr-15,
+    .lg-col-padding > [class*="col-"] {
+        padding-right: 15px !important; 
+        padding-left: 15px !important;
+    }
+    .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.mega-menu {
+        min-width: 900px;
+    }
+    
+    .full-width-header .rs-header.rs-header-style2 .toolbar-sl-share {
+        display: none;
+    }
+    .full-width-header .rs-header .topbar-area.style1 .topbar-contact li {
+        margin-right: 3px;
+        padding-right: 7px;
+    } 
+    .rs-videos.about-video.home5-about-video {
+        margin: unset;
+    }   
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .rs-services.style1 .services-item .services-wrap {
+        padding: 50px 35px 40px 35px;
+    }
+    .rs-addon-services.style1 .all-services-section .services-item .services-wrap .services-part .services-content .title {
+        font-size: 15px;
+    }
+    .rs-addon-services.style1 .all-services-section .services-item .services-wrap {
+        padding: 58px 35px 28px 35px;
+    }
+    .rs-newsletter.style1 .newsletter-wrap .content-wrap .newsletter-title {
+        font-size: 28px;
+    }
+    .rs-services.style3 .services-item .services-content .services-text .title {
+        font-size: 18px;
+    }
+    .rs-services.style3 .services-item {
+        padding: 40px 30px 50px 30px;
+    }
+    .pl-115 {
+        padding-left: 93px !important;
+    }
+    .rs-videos.about-video {
+        margin: unset;
+    }
+    .rs-pricing.main-home.pricing-plan-style3 .pricing-img,
+    .rs-about.style2 .left-side,
+    .rs-about.style2 .right-side{
+        display: none;
+    }
+    .rs-team.style8 {
+        padding: 150px 0px 120px 0px;
+    }
+    .rs-pricing.main-home.pricing-plan-style3 .price-responsive{
+        width: 100%;
+        padding-bottom: 120px;
+    }
+    .pl-70 {
+        padding-left: 0px !important;
+    }
+    .rs-events-schedule.our-event .event-item .event-wrap .content-info .event-specs li {
+        margin-right: 6px;
+    }
+    .readon.btn-text.register {
+        padding: 8px 23px 7px 23px;
+        font-size: 14px;
+    }
+    .readon.btn-text.learn-more {
+        padding: 7px 15px 7px;
+        font-size: 14px;
+    }
+    .rs-inner-blog .widget-area .recent-posts .recent-post-widget .post-desc a {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .rs-inner-blog .widget-area .recent-posts {
+        padding: 40px 20px;
+    }
+    .rs-our-sponsor.sponsor-home-style5 .all-grid-sponsors.silver-sponsors {
+        padding: 0 160px;
+    }
+    .rs-events-schedule.our-event .event-item .event-wrap {
+        padding: 17px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .nav-menu .rs-mega-menu > a:after, 
+    .nav-menu > .menu-item-has-children > a:after {
+        content: "\f107";
+        font-family: FontAwesome;
+        float: right;
+        margin: 2px 0 0 5px;
+        display: none;
+    }
+    .full-width-header .right_menu_togle{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .sticky{ 
+        background: #fff !important;
+        position: fixed !important;
+        top: 0px;
+        z-index: 999;
+        margin: 0 auto !important;
+        padding: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-name: sticky-animation;
+        animation-name: sticky-animation;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    .right_menu_togle.mobile-navbar-menu{
+        display: none;
+    }
+    .nav-menu ul {
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .hidden-md {
+        display: none !important;
+    }
+    .home-blue .swiper-container .swiper-slide .height-ctrl {
+        height: auto;
+        display: block;
+    }
+    .order-first,
+    .order-last {
+        order: unset;
+    }
+    .order-last {
+        order: unset !important;
+    }
+   
+    .md-pl-15{
+        padding-left: 15px;
+    }
+    .md-left{
+        text-align: left !important;
+    }   
+    .d-flex{
+        display: block !important;
+    }
+    .md-text-center{
+        text-align: center !important;
+    }
+    .full-width-header .rs-header.header-style3 .expand-btn-inner ul .humburger,
+    .full-width-header .rs-header .expand-btn-inner ul .humburger,
+    .full-width-header .rs-header .menu-area .rs-menu-area {
+        display: block;
+    }
+    .full-width-header .mobile-menu {
+        display: block;
+        height: 65px;
+        line-height: 65px;
+    }
+    .rs-about.style2 .left-side,
+    .rs-about.style2 .right-side,
+    .rs-services.style2 .title-inner,
+    .rs-banner.banner-home-style2 .animation-style,
+    .rs-about.style1 .rs-animation .animate,
+    .rs-team.style2 .team-animate .team-icons,
+    .rs-services.style3 .rs-animation .animate-icons,
+    .rs-contact .contact-animation .animate,
+    .rs-blog .blog-animation .blog-animate,
+    .rs-team.style8 .team-line .line-animate,
+    .rs-banner.banner-home-style4 .content-wrap .title-inner,
+    .rs-events-schedule.rs-events-schedule4 .team-line .line-animate,
+    .rs-testimonial.style2 .testi-main .testi-animate,
+    .rs-banner.banner-home-style5 .animation-style .spiner,
+    .rs-pricing.style2 .price-animation .price-animate,
+    .full-width-header .rs-header.header-style3 #rs_click__id,
+    .full-width-header .rs-header .expand-btn-inner ul .btn-quote .quote-button {
+        display: none;
+    }
+    .full-width-header .rs-header .menu-area .logo-area img {
+        max-height: 25px;
+    }
+    .rs-addon-services.style1 .all-services-section .services-item {
+        width: 50%;
+    }
+    .rs-events-schedule.rs-events-schedule2 .events-schedule-tabs .eventday-list li {
+        width: 100%;
+        margin: 0 0;
+        padding-bottom: 30px;
+    }
+    .rs-events-schedule.rs-events-schedule2 .events-schedule-contents .events-items .event-author .speak-image-btm {
+        justify-content: left;
+        margin-top: 20px;
+    }
+    .rs-events-schedule.rs-events-schedule2 .events-schedule-contents .events-items .event-author {
+        display: block;
+    }
+    .rs-events-schedule.rs-events-schedule2 .events-schedule-contents .events-items .event-shedule-info h3 {
+        font-size: 17px;
+        line-height: 1.1;
+    }
+    .rs-blog.blog-main-home .blog-item .blog-content {
+        padding: 20px 30px 30px;
+    }
+    .rs-blog.blog-main-home .blog-item .blog-content .blog-title {
+        font-size: 18px;
+    }
+    .rs-services.style3 .services-item .services-content .services-text .title {
+        font-size: 20px;
+        line-height: 1.1;
+    }
+    .rs-services.style3 .services-item {
+        padding: 40px 40px 40px 40px;
+    }
+    .rs-events-schedule.rs-events-schedule3 .events-schedule-contents .events-items .col-lg-3 {
+        padding-right: 11px;
+        max-width: 100%;
+        flex: unset;
+        text-align: left !important;
+    }
+    .rs-events-schedule.rs-events-schedule3 .events-schedule-contents .events-items .col-lg-9 {
+        padding-left: 38px;
+        max-width: 100%;
+        flex: unset;
+    }
+    .rs-events-schedule.rs-events-schedule3 .events-schedule-contents .events-items .event-shedule-info {
+        display: block;
+    }
+    .rs-events-schedule.rs-events-schedule3 .events-schedule-contents .events-items .event-shedule-info .rs-topic-content {
+        padding-right: 0px;
+        padding-left: 0;
+    }
+    .rs-events-schedule.rs-events-schedule3 .events-schedule-contents .events-items .event-shedule-info .all-seack {
+        justify-content: left;
+    }
+    .rs-events-schedule.rs-events-schedule3 .events-schedule-tabs .eventday-list li {
+        width: 100%;
+        margin: 15px 0px 0px;
+    }
+    .rs-videos.about-video {
+        margin: unset;
+    }
+    .rs-team.style8 {
+        padding: 120px 0px 80px 0px;
+    }
+    .rs-pricing.main-home.pricing-plan-style3 .price-responsive {
+        padding-bottom: 0px;
+    }
+    .rs-pricing.main-home.pricing-plan-style3 .pricing-img {
+        margin: 0px 0px 70px 0px;
+    }
+    .bg17 {
+        padding: 110px 0px 80px 0px;
+    }
+    .rs-events-schedule.rs-events-schedule4 .events-schedule-tabs .eventday-list li {
+        width: 100%;
+        margin: 0 0px 30px;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .year {
+        font-size: 70px;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .music {
+        font-size: 130px;
+        line-height: 1.2;
+    }
+    .rs-videos.about-video {
+        padding: 220px 0px 220px 0px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap {
+        padding: 180px 0 180px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap .title {
+        font-size: 70px;
+        margin-bottom: 38px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap .small-title {
+        font-size: 48px;
+        margin: 0px 0px 28px 0px;
+    }
+    .rs-events-schedule.our-event .event-item .event-wrap .content-info .title {
+        font-size: 19px;
+        line-height: 26px;
+    }
+    .rs-inner-blog .blog-item .blog-content {
+        padding: 20px 10px 20px;
+    }
+    .rs-inner-blog .blog-item .blog-content .blog-title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .rs-testimonial.style2 .testi-main {
+        padding: 80px 30px 60px;
+    }
+    .rs-testimonial.style2 .testi-main .testi-item .desc {
+        font-size: 25px;
+        padding: 0px 30px 30px 0px;
+    }
+    .rs-testimonial.style2 .testi-main .testi-item .quote-img img {
+        width: 90px;
+    }
+    .rs-testimonial.style2 .testi-main .testi-item .testi-information .testi-name {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .rs-testimonial.style2 .testi-main .testi-item .testi-information .testi-title {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap {
+        padding: 230px 0 290px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .banner-bottom li .rs-videos .animate-border .popup-border {
+        left: 73%;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .title {
+        font-size: 70px;
+        line-height: 70px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .title-small {
+        font-size: 35px;
+        line-height: 44px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .sub-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    .rs-services.style1.home-services-style3 .services-wrap .services-text .title {
+        font-size: 19px;
+    }
+    .rs-events-schedule.our-event .event-item .event-wrap {
+        padding: 20px;
+    }
+    .readon.regt.learn {
+        padding: 7px 13px;
+        font-size: 14px;
+    }
+    .rs-our-sponsor.sponsor-home-style5 .all-grid-sponsors .grid-item {
+        width: 50%;
+        padding: 10px 33px 10px 33px;
+    }
+    .rs-our-sponsor.sponsor-home-style5 .all-grid-sponsors.gold-sponsors .grid-item {
+        width: 50%;
+        padding: 20px 40px 20px 40px;
+    }
+    .rs-our-sponsor.sponsor-home-style5 .all-grid-sponsors.silver-sponsors .grid-item {
+        width: 50%;
+        padding: 20px 30px 20px 30px;
+    }
+    .rs-our-sponsor.sponsor-home-style5 .all-grid-sponsors.silver-sponsors {
+        padding: 0 80px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .hidden-sm {
+        display: none !important;
+    }
+    .sec-title .title.title2.title3.title4,
+    .sec-title2 .title,
+    .sec-title .title.title3,
+    .sec-title .title {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .rs-our-sponsor.sponsor-home-style5 .all-grid-sponsors.silver-sponsors {
+        padding: 0 30px;
+    }
+    .rs-our-sponsor.sponsor-home-style5 .all-grid-sponsors.gold-sponsors {
+        padding: 0 20px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .title {
+        font-size: 58px;
+        line-height: 58px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .banner-bottom li .rs-videos .animate-border .popup-border {
+        left: 78%;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .event_counter2 .coming-soon-part2 .coming-soon-text .time_circles div span {
+        font-size: 50px !important;
+        max-width: 90px;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .event_counter2 .coming-soon-part2 .coming-soon-text .time_circles div h4 {
+        font-size: 14px !important;
+        margin-top: 12px;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .music {
+        font-size: 110px;
+        line-height: 1.2;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .year {
+        font-size: 55px;
+    }
+    .rs-videos.about-video {
+        padding: 190px 0px 190px 0px;
+    }
+    .rs-banner.banner-home-style4 .content-wrap {
+        padding: 202px 0 180px;
+    }
+    .rs-pricing.main-home.pricing-plan-style3 .price-list-item .price-list .price-grid-item .price-list-price {
+        border-left: unset;
+    }
+    .rs-banner.banner-home-style2 .content-wrap .small-title {
+        font-size: 40px;
+    }
+    .rs-banner.banner-home-style2 .content-wrap .title {
+        font-size: 90px;
+    }
+    .rs-banner.banner-home-style2 .content-wrap {
+        padding: 280px 0 220px;
+    }  
+    .rs-banner.main-home .content-wrap .prelements-heading .title-inner .title {
+        font-size: 70px;
+        margin: 0px 0px 70px 0px;
+    }
+    .rs-banner.main-home .content-wrap .conference-title {
+        font-size: 40px;
+        margin: 0px 0px 65px 0px;
+    }
+    .rs-banner.main-home .content-wrap {
+        padding: 220px 0 250px;
+    }
+    .rs-services.style1 .services-item .services-wrap .services-icon img {
+        height: 60px;
+        width: 60px;
+    }   
+    .rs-services.style2 .services-item .services-text .title,
+    .rs-services.style1 .services-item .services-wrap .services-text .title {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    .rs-timecoun-ceremony .coming-soon-part .coming-soon-text .time_circles div span {
+        font-size: 55px !important;
+        max-width: 95px;
+    }
+    .rs-timecoun-ceremony .coming-soon-part .coming-soon-text .time_circles div h4 {
+        font-size: 15px !important;
+        margin-top: 10px;
+    }
+    .rs-pricing.main-home .price-list-item .price-list .price-grid-item .price-list-price {
+        padding-left: 0px;
+        border-left: unset;
+    }
+    .rs-pricing.main-home .price-list-item .price-list .price-grid-item .btn-part {
+        margin-left: 0px;
+        padding-left: 0px;
+        border-left: unset;
+        border-color: unset;
+    }
+    .rs-pricing.main-home .price-list-item .price-list .price-grid-item .price-list-text {
+        margin-bottom: 10px;
+    }
+    .rs-pricing.main-home .price-list-item .price-list .price-grid-item {
+        display: block;
+        padding: 25px 30px 25px 30px;
+    }
+    .rs-pricing.main-home .price-list-item .price-list .price-grid-item .price-list-text .price-list-header .price-list-title {
+        font-size: 18px;
+    }
+    .sec-title .desc-small br,
+    .sec-title .desc-big br,
+    .sec-title .desc br{
+        display: none;
+    }
+    .rs-blog.blog-main-home .blog-item .blog-content .blog-title {
+        font-size: 16px;
+    }
+    .rs-contact.home-style1 .contact-map iframe {
+        height: 400px;
+    }
+    .rs-services.style2 .services-item .services-text {
+        padding: 20px 20px 30px 20px;
+    }
+    .rs-newsletter.style1 .newsletter-wrap .content-wrap .newsletter-title {
+        font-size: 28px;
+    }
+    .rs-newsletter.style1 .newsletter-wrap .content-wrap .icon-img img {
+        max-width: 50px;
+        margin-right: 15px;
+    }
+    .rs-newsletter.style1 .newsletter-wrap {
+        padding: 65px 20px;
+    }
+    .rs-services.style3 .services-item {
+        margin: unset;
+    }
+    .rs-events-schedule.rs-events-schedule3 .events-schedule-contents .events-items .event-shedule-info h3 {
+        font-size: 16px;
+    }
+    .rs-events-schedule.rs-events-schedule3 .events-schedule-contents .events-items .event-author {
+        padding: 30px 0;
+    }
+    .rs-pricing.style2 .rs-price-table {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    .rs-counter.about-style .counter-list .counter-text .title {
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .rs-counter.about-style.home-style2 .counter-list .counter-text .rs-count {
+        font-size: 35px;
+    }
+    .rs-counter.about-style.home-style2 .counter-list .counter-icon {
+        width: 75px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap {
+        padding: 160px 0 160px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap .title {
+        font-size: 60px;
+        margin-bottom: 28px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap .small-title {
+        font-size: 40px;
+        margin: 0px 0px 18px 0px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap .sub-title {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .rs-breadcrumbs .breadcrumbs-inner .page-title .watermark {
+        font-size: 60px;
+    }
+    .rs-breadcrumbs .breadcrumbs-inner .page-title {
+        font-size: 30px;
+    }
+    .rs-breadcrumbs .breadcrumbs-inner {
+        padding: 230px 0 130px;
+    }
+    .rs-footer.style1 .footer-bottom .copy-right-menu li a {
+        font-size: 14px;
+    }
+    .rs-team-Single .rs_single_event_item .schedule__single li .event-shedule-info .rs__topic {
+        padding: 35px;
+    }
+    .rs-team-Single .rs_single_event_item .schedule__single li .event-shedule-info .rs__date .times::before {
+        font-size: 26px;
+    }
+    .rs-team-Single .rs_single_event_item .schedule__single li .event-shedule-info .rs__date span {
+        font-size: 16px;
+    }
+    .rs-team-Single .rs_single_event_item .schedule__single li .event-shedule-info .rs__date span.room-no {
+        font-size: 15px;
+    }
+    .rs-team-Single .title-content .title {
+        font-size: 20px;
+    }
+    .rs-team-Single .btm-info-team .con-info .title {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .rs-team-Single .rs_single_event_item .schedule__single li .event-shedule-info {
+        display: block;
+    }
+    .rs-team-Single .btm-info-team {
+        padding: 30px;
+    }
+    .rs-privacy-policy .privacy-wrap .privacy-content {
+        padding: 40px 30px 50px 30px;
+    }
+    .rs-privacy-policy .privacy-wrap .privacy-content.measures {
+        padding: 40px 30px 30px 30px;
+    }
+    .rs-faq .faq-content .accordion .card .card-header .card-link {
+        font-size: 16px;
+    }
+    .rs-events-schedule.our-event .event-item .event-wrap .event-img img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .sec-title .title br{
+        display: none;
+    }
+    .rs-banner.main-home .content-wrap .underline-text {
+        font-size: 22px;
+    }
+    .rs-addon-services.style1 .all-services-section .services-item {
+        width: 100%;
+    }
+    .rs-contact.home-style1 .contact-widget {
+        padding: 30px 30px 30px 30px;
+    }
+    .rs-newsletter.style1 .newsletter-wrap .content-wrap .newsletter-title {
+        font-size: 24px;
+    }
+    .rs-events-schedule.rs-events-schedule4 .events-schedule-tabs .events-shedule-subitmes .schedule-3 tr td {
+        padding: 20px 18px;
+        font-size: 13px;
+    }
+    .bg20 {
+       background-position: top center;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .banner-bottom li .rs-videos .animate-border .popup-border {
+        left: 84%;
+    }
+}
+@media only screen and (max-width: 480px){
+    .rs-our-sponsor.style1.home3-sponsor-style .logo-item .grid-figure,
+    .rs-partner.sponsors-style2 .grid-figure,
+    .rs-partner.sponsors-style3 .grid-figure,
+    .rs-partner.sponsors-style .grid-figure {
+        padding: 40px 40px 40px 40px;
+    }
+    .rs-newsletter.style1.newsletter-home6-style .newsletter-wrap .newsletter-form .paper-plane {
+        right: 13px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .title {
+        font-size: 38px;
+        line-height: 38px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .sub-title {
+        font-size: 18px;
+        margin-bottom: 23px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .title-small {
+        font-size: 29px;
+        line-height: 35px;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .banner-bottom li .rs-videos .animate-border .popup-border {
+        display: none;
+    }
+    .rs-banner.banner-home-style3 .content-wrap .banner-bottom {
+        position: unset;
+        left: unset;
+    }
+    .rs-banner.banner-home-style3 .content-wrap {
+        padding: 200px 0 250px;
+    }
+    .rs-events-schedule.our-event .event-item .event-wrap .content-info .event-specs li {
+        margin-right: 4px;
+    }
+    .rs-testimonial.style2 .testi-main .testi-item .quote-img img {
+        width: 60px;
+    }
+    .rs-testimonial.style2 .testi-main .testi-item .desc {
+        font-size: 20px;
+        padding: 0px 10px 30px 0px;
+    }
+    .rs-events-schedule.our-event .event-item .event-wrap {
+        padding: 15px;
+    }
+    .rs-events-schedule.our-event .event-item .event-wrap .content-info .title {
+        font-size: 17px;
+        line-height: 24px;
+    }
+    .rs-inner-blog .blog-item .blog-content .blog-title {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .rs-privacy-policy .privacy-wrap .privacy-content .check-list li {
+        font-size: 14px;
+    }
+    .rs-faq .faq-content .accordion .card .card-body {
+        padding: 20px 20px 40px 20px !important;
+        font-size: 14px;
+    }
+    .rs-faq .faq-content .accordion .card .card-header .card-link {
+        padding: 20px 15px 0 15px;
+        font-size: 14px;
+      
+    }
+    .rs-contact.home-style1.faq-home-style .contact-widget {
+        padding: 63px 25px 42px 25px;
+    }
+    .rs-privacy-policy .privacy-wrap .privacy-content.measures {
+        padding: 30px 20px 20px 20px;
+    }
+    .rs-privacy-policy .privacy-wrap .privacy-content {
+        padding: 30px 20px 40px 20px;
+    }
+    .rs-team-Single .btm-info-team {
+        padding: 20px;
+    }
+    .rs-team-Single .rs_single_event_item .schedule__single li .event-shedule-info .rs__topic {
+        padding: 25px;
+    }
+    .rs-team-Single .rs_single_event_item .schedule__single li .event-shedule-info .rs__topic h4 {
+        font-size: 16px;
+    }
+    .rs-breadcrumbs .breadcrumbs-inner {
+        padding: 200px 0 100px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap .description p br{
+        display: none;
+    }
+    .rs-banner.banner-home-style5 .content-wrap .title {
+        font-size: 44px;
+        margin-bottom: 15px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap .small-title {
+        font-size: 30px;
+    }
+    .rs-banner.banner-home-style5 .content-wrap {
+        padding: 140px 0 140px;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .event_counter2 .coming-soon-part2 {
+        margin: 40px 0px 0px 0px;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .music {
+        font-size: 70px;
+        line-height: 1.2;
+    }
+    .rs-banner.banner-home-style4 .content-wrap .year {
+        font-size: 40px;
+    }
+    .rs-banner.banner-home-style4 .content-wrap {
+        padding: 172px 0 150px;
+    }
+    .rs-videos.about-video {
+        padding: 160px 0px 160px 0px;
+    }
+    .rs-pricing.style2 .rs-price-table .rs-pricing-table-body .pricing-table-features-list li .feature-text {
+        font-size: 13px;
+    }
+    .rs-pricing.style2 .rs-price-table {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .rs-services.style3 .services-item {
+        padding: 40px 30px 40px 30px;
+    }
+    .rs-banner.banner-home-style2 .content-wrap .title {
+        font-size: 53px;
+        letter-spacing: 6px;
+    }
+    .rs-banner.banner-home-style2 .content-wrap .small-title {
+        font-size: 23px;
+    }
+    .rs-banner.banner-home-style2 .content-wrap .sub-title {
+        font-size: 12px;
+        letter-spacing: 0;
+        margin: 0px 0px 40px 0px;
+    }
+    .rs-banner.banner-home-style2 .content-wrap {
+        padding: 240px 0 180px;
+    }
+    .rs-newsletter.style1 .newsletter-wrap .newsletter-form input[type="email"] {
+        padding-right: 84px;
+        padding-left: 7px;
+    }
+    .rs-newsletter.style1 .newsletter-wrap {
+        padding: 65px 20px;
+    }
+    .rs-contact.home-style1 .contact-map iframe {
+        height: 325px;
+    }
+    .rs-contact.home-style1 .contact-widget {
+        padding: 30px 20px 30px 20px;
+    }
+    .rs-our-sponsor.style1 .logo-item .grid-figure {
+        padding: 40px 40px 40px 40px;
+    }
+    .rs-events-schedule.rs-events-schedule2 .events-schedule-contents .events-items .event-author {
+        padding: 30px 20px 30px;
+    }
+    .rs-banner.main-home .content-wrap .icon-wrap img {
+        height: 60px;
+    }
+    .rs-banner.main-home .content-wrap .conference-title {
+        font-size: 28px;
+        margin: 0px 0px 60px 0px;
+    }
+    .rs-banner.main-home .content-wrap .prelements-heading .title-inner .title {
+        font-size: 37px;
+        letter-spacing: 2px;
+        margin: 0px 0px 63px 0px;
+    }
+    .rs-banner.main-home .content-wrap {
+        padding: 190px 0 220px;
+    }
+    .rs-banner.main-home .content-wrap .underline-text {
+        font-size: 14px;
+        margin-top:4px !important;
+        margin: 0px 0px 76px 0px;
+        line-height: 15px;
+    }
+    .readon.btn-text {
+        padding: 12px 23px 13px 20px;
+    }
+    .rs-services.style1 .services-item .services-wrap {
+        padding: 50px 30px 40px 30px;
+    }
+    .rs-timecoun-ceremony .banner-counter5 .coming-soon-part {
+        max-width: 500px;
+    }
+    .rs-timecoun-ceremony .coming-soon-part .coming-soon-text .time_circles div span {
+        font-size: 35px !important;
+    }
+    .rs-timecoun-ceremony .coming-soon-part .coming-soon-text .time_circles div h4 {
+        font-size: 14px !important;
+        margin-top: 8px;
+    }
+    .rs-contact.home-style3 .map-canvas .address-main .address-box {
+        padding: 35px 30px 50px 48px;
+    }
+}
+.rs-team.style1 .team-item .team-inner-wrap .images-wrap .team-content {
+    background-image: linear-gradient(180deg, #030E8F 0%, #2B39DE87 100%);
+}
+.rs-services.style5 .services-slider .services-item {
+    background-image: linear-gradient(310deg, #FA0368B5 16%, #2129B9EB 100%);
+}
+.rs-services.style5 .services-slider.blue-slide .services-item {
+    background-image: linear-gradient(310deg, #1B03AF5E 0%, #1B03AF 100%);
+}
+.rs-services.style5 .services-slider.pink-slide .services-item {
+    background-image: linear-gradient(250deg, #CC8B08CC 0%, #FA0368D4 100%);
+} 
+.rs-services.style5 .services-slider.purple-slide .services-item {
+    background-image: linear-gradient(220deg, #7E00C796 0%, #7E00C7 100%);
+}
+.rs-timecoun-ceremony .banner-counter5 .coming-soon-part .time_circles div + div span:before{
+    display: none;
+}
+.rs-timecoun-ceremony .banner-counter5 .coming-soon-part .time_circles div + div span:after{
+    display: none;
+}
+.nonebr{
+    display: block;
+  }

@@ -1,0 +1,11 @@
+/*!
+  Ionicons, v4.0.0-19
+  Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
+  https://twitter.com/benjsperry  https://twitter.com/ionicframework
+  MIT License: https://github.com/driftyco/ionicons
+
+  Android-style icons originally built by Google’s
+  Material Design Icons: https://github.com/google/material-design-icons
+  used under CC BY http://creativecommons.org/licenses/by/4.0/
+  Modified icons to fit ionicon’s grid from original.
+*/@font-face{font-family:"Ionicons";src:url("../fonts/ionicons/fonts/ionicons.eot@v=4.0.0-19");src:url("../fonts/ionicons/fonts/ionicons.eot@v=4.0.0-19") format("embedded-opentype"),url("../fonts/ionicons/fonts/ionicons.woff2@v=4.0.0-19") format("woff2"),url("../fonts/ionicons/fonts/ionicons.woff@v=4.0.0-19") format("woff"),url("../fonts/ionicons/fonts/ionicons.ttf@v=4.0.0-19") format("truetype"),url("../fonts/ionicons/fonts/ionicons.svg@v=4.0.0-19") format("svg");font-weight:normal;font-style:normal}.ionicons,.ion-ios-arrow-forward:before,.ion-ios-play:before,.ion-md-arrow-back:before,.ion-md-arrow-forward:before{display:inline-block;font-family:"Ionicons";speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;text-rendering:auto;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.ion-ios-arrow-forward:before{content:"\f3d1"}.ion-ios-play:before{content:"\f488"}.ion-md-arrow-back:before{content:"\f27d"}.ion-md-arrow-forward:before{content:"\f287"}
