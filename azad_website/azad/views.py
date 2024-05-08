@@ -20,17 +20,6 @@ from datetime import datetime
 allowedEmails=["harsh247gupta@gmail.com", "harsh90731@gmail.com", "rajumeshram767@gmail.com", "hariomk628@gmail.com", "sg06959.sgsg@gmail.com", "somnathmishra1802@gmail.com"]
 allowedEmailsLibrary=["harsh247gupta@gmail.com", "harsh90731@gmail.com", "rajumeshram767@gmail.com", "hariomk628@gmail.com", "sg06959.sgsg@gmail.com", "pranjalchouhan2014@gmail.com", "somnathmishra1802@gmail.com"]
 
-#code to import excel entries into azad_boarders model
-# def import_from_excel(request):
-#     if request.method == 'POST':
-#         excel_file = request.FILES['excel_file']
-#         wb = load_workbook(excel_file)
-#         ws = wb.active
-
-#         for row in ws.iter_rows(values_only=True):
-#             roll_no, name, email, number = row
-#             azad_boarders.objects.create(name=name, roll_no=roll_no, emails=email, contact=number, books=0)
-#         return render(request, 'index.html')
     
 def import_from_excel(request):
     if request.method == 'POST':
@@ -69,16 +58,6 @@ def importBooksFromExcel(request):
 
         return render(request, 'index.html')    
     
-# def importBooksFromExcel(request):
-#     if request.method == 'POST':
-#         excel_file = request.FILES['excel_file']
-#         wb = load_workbook(excel_file)
-#         ws = wb.active
-#         for row in ws.iter_rows(values_only=True):
-#             # print(row)
-#             book.objects.create(title=row[0], author=row[1], department=row[2], shelf=row[3], quantity=row[4], available=row[4])
-
-#         return render(request, 'index.html')
 
 def alumni(request):
     return render(request, 'alumni.html')

@@ -6,3 +6,4 @@
 .gitignore
 .pyvenv.cfg
 .README.md
+.env
