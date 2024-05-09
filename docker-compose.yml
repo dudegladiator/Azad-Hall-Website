@@ -5,7 +5,7 @@ services:
     volumes:
       - static:/static  
     env_file:
-      - .env
+      - ./env
     build:
       context: .
     ports:
