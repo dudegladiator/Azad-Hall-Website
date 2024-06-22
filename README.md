@@ -91,7 +91,7 @@ To set up the Azad Hall website locally, follow these steps:
 Meet the dedicated individuals working behind the scenes to make the Azad Hall website a success:
 
 - **[Harsh Gupta](https://github.com/dudegladiator)**
-  - *Role:* Hosting and Database Management
+  - *Role:* Hosting, Back-end and Database
 
 - **[Harsh Vardhan Gupta](https://github.com/harshvg247)**
   - *Role:* Front-end and Back-end
