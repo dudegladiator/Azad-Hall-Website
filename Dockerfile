@@ -7,6 +7,7 @@ RUN apk --no-cache add build-base libffi-dev openssl-dev
 RUN pip install -r requirements.txt
 
 COPY ./azad_website /app
+COPY .env /app
 
 WORKDIR /app
 

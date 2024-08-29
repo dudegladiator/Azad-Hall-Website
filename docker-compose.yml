@@ -2,14 +2,15 @@ version: '3.7'
 
 services:
   django_gunicorn:
+    container_name: azad_django
     volumes:
       - static:/static  
     env_file:
-      - ./env
+      - ./.env
     build:
       context: .
     ports:
-      - "8000:8000"
+      - "9000:9000"
   nginx:
     build: ./nginx
     volumes:

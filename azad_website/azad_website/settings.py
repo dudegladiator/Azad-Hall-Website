@@ -89,13 +89,13 @@ WSGI_APPLICATION = 'azad_website.wsgi.application'
 DATABASES = {}
 if (os.getenv('DATABASE') == 'cloud'):
     DATABASES = {
-        #GCP cloud SQL
         'default': {
             'ENGINE': os.getenv('ENGINE'),
             'HOST': os.getenv('HOST'),
             'USER': os.getenv('USER'),
             'PASSWORD': os.getenv('PASSWORD'),
             'NAME': os.getenv('NAME'),
+            'PORT': os.getenv('PORT'),
         }
     }
 else:

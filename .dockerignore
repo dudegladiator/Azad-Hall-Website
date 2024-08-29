@@ -1,4 +1,4 @@
-.venv
+venv
 ./azad_website/db.json
 ./azad_website/db.sqlite3
 .Procfile
