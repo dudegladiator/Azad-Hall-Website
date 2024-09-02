@@ -21,7 +21,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'azadian.org', 'azadian.live']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'azadian.org', 'azadian.live', '*']
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
@@ -185,7 +185,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
-CSRF_TRUSTED_ORIGINS=["https://azad-f6lqfpksrq-uc.a.run.app", "https://azadian.org", 'https://www.azadian.org', "https://azadian.live", 'https://www.azadian.live']
+CSRF_TRUSTED_ORIGINS=["https://azad-f6lqfpksrq-uc.a.run.app", "https://azadian.org", 'https://www.azadian.org', "https://azadian.live", 'https://www.azadian.live', '*']
 
 
 SITE_ID = 2
