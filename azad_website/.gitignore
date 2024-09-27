@@ -1,0 +1,4 @@
+azad/__pycache__
+azad_website/__pycache__
+azad/migrations/
+db.sqlite3
