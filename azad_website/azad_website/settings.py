@@ -88,11 +88,11 @@ DATABASES = {}
 if (os.getenv('DATABASE') == 'cloud'):
     DATABASES = {
         'default': {
-            'ENGINE': os.getenv('ENGINE'),
-            'HOST': os.getenv('HOST'),
-            'USER': os.getenv('USER'),
-            'PASSWORD': os.getenv('PASSWORD'),
-            'NAME': os.getenv('NAME'),
+            'ENGINE': os.getenv('DB_ENGINE'),
+            'HOST': os.getenv('DB_HOST'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'NAME': os.getenv('DB_NAME'),
             'PORT': os.getenv('DB_PORT'),
         }
     }
@@ -183,7 +183,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
-CSRF_TRUSTED_ORIGINS=["https://azad-hall-website.onrender.com", "https://azadian.org", 'https://www.azadian.org', "https://azadian.live", 'https://www.azadian.live', '*']
+CSRF_TRUSTED_ORIGINS=["https://azad-hall-website.onrender.com", "https://azadian.org", 'https://www.azadian.org', "https://azadian.live", 'https://www.azadian.live']
 
 
 SITE_ID = 2
