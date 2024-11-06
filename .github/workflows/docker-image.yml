@@ -101,9 +101,9 @@ jobs:
 
     - name: Run Django tests
       run: |
-        docker run --env-file .env ${{ env.IMAGE_NAME }}:${{ github.sha }} python manage.py test
+        docker run --env-file .env --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} python manage.py test -v 2
 
     - name: Run linting
       run: |
-        docker run ${{ env.IMAGE_NAME }}:${{ github.sha }} pip install flake8
-        docker run ${{ env.IMAGE_NAME }}:${{ github.sha }} flake8 .
+        docker run --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} pip install flake8
+        docker run --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} flake8 .
