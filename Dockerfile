@@ -7,7 +7,6 @@ RUN apk --no-cache add build-base libffi-dev openssl-dev mariadb-dev
 RUN pip install -r requirements.txt
 
 COPY ./azad_website /app
-COPY ./.env /app/.env
 
 # Create default .env file if not exists
 RUN echo '#!/bin/sh\n\
@@ -17,10 +16,9 @@ if [ ! -f /app/.env ]; then\n\
 EOL\n\
 else\n\
     echo ".env file exists, using existing file"\n\
-    cp /.env /app/.env\n\
-fi' > /create_env.sh
+fi' > /app/create_env.sh
 
-RUN chmod +x /create_env.sh
+RUN chmod +x /app/create_env.sh
 
 WORKDIR /app
 
