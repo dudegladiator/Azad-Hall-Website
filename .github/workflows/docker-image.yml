@@ -19,14 +19,14 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
-    # Create .env file safely
+    # Create .env file safely and verify it exists
     - name: Create .env file
       run: |
         cat << 'EOF' > .env
         # Django Secret
         SECRET_KEY="${{ secrets.SECRET_KEY }}"
         # Postgres
-        DATABASE=local
+        DATABASE="${{ secrets.DATABASE }}"
         DB_ENGINE=django.db.backends.postgresql_psycopg2
         DB_HOST=${{ secrets.DB_HOST }}
         DB_USER=${{ secrets.DB_USER }}
@@ -37,6 +37,10 @@ jobs:
         CLIENT_ID=${{ secrets.CLIENT_ID }}
         SECRET=${{ secrets.GOOGLE_SECRET }}
         EOF
+        
+        # Verify .env file was created
+        ls -la .env
+        echo "ENV file created successfully"
 
     - name: Build Docker image
       uses: docker/build-push-action@v4
@@ -46,8 +50,12 @@ jobs:
         outputs: type=docker,dest=/tmp/docker-image.tar
         cache-from: type=gha
         cache-to: type=gha,mode=max
-        secrets: |
-          "env_file=.env"
+
+    # Verify artifacts before upload
+    - name: Verify artifacts
+      run: |
+        ls -la /tmp/docker-image.tar
+        ls -la .env
 
     - name: Upload Docker image as artifact
       uses: actions/upload-artifact@v3
@@ -55,14 +63,15 @@ jobs:
         name: docker-image
         path: /tmp/docker-image.tar
         retention-days: 1
+        if-no-files-found: error
 
-    # Also upload the .env file as artifact for other jobs
-    - name: Upload env file
+    - name: Upload env file as artifact
       uses: actions/upload-artifact@v3
       with:
         name: env-file
         path: .env
         retention-days: 1
+        if-no-files-found: error
 
   test:
     needs: build
@@ -71,20 +80,27 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Download Docker image
+    # Download and verify artifacts
+    - name: Download artifacts
       uses: actions/download-artifact@v3
       with:
-        name: docker-image
-        path: /tmp
+        path: /tmp/artifacts
 
-    - name: Download env file
-      uses: actions/download-artifact@v3
-      with:
-        name: env-file
-        path: .
+    - name: Verify downloaded artifacts
+      run: |
+        ls -la /tmp/artifacts
+        ls -la /tmp/artifacts/docker-image
+        ls -la /tmp/artifacts/env-file
 
     - name: Load Docker image
-      run: docker load --input /tmp/docker-image.tar
+      run: |
+        docker load --input /tmp/artifacts/docker-image/docker-image.tar
+        docker images
+
+    - name: Copy env file to working directory
+      run: |
+        cp /tmp/artifacts/env-file/.env .
+        ls -la .env
 
     - name: Run Django tests
       run: |
@@ -94,30 +110,3 @@ jobs:
       run: |
         docker run ${{ env.IMAGE_NAME }}:${{ github.sha }} pip install flake8
         docker run ${{ env.IMAGE_NAME }}:${{ github.sha }} flake8 .
-
-#   deploy:
-#     needs: test
-#     runs-on: ubuntu-latest
-#     if: github.ref == 'refs/heads/main'
-    
-#     steps:
-#     - name: Download Docker image
-#       uses: actions/download-artifact@v3
-#       with:
-#         name: docker-image
-#         path: /tmp
-
-#     - name: Download env file
-#       uses: actions/download-artifact@v3
-#       with:
-#         name: env-file
-#         path: .
-
-#     - name: Load Docker image
-#       run: docker load --input /tmp/docker-image.tar
-
-#     # Add your deployment steps here
-#     - name: Deploy
-#       run: |
-#         echo "Deploying with environment variables..."
-#         # Add your deployment commands here using the .env file
