@@ -27,4 +27,6 @@ COPY ./entrypoint.sh /
 # Modify entrypoint.sh to run create_env.sh first
 RUN sed -i '1i/create_env.sh' /entrypoint.sh
 
+EXPOSE 10000
+
 ENTRYPOINT ["sh", "/entrypoint.sh"]

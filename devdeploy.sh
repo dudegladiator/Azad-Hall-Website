@@ -20,7 +20,7 @@ check_command "Building Docker image"
 
 # Run the Docker container
 echo "Running Docker container..."
-docker run -d --name azad_django -p 9000:9000 azad_django
+docker run -d --name azad_django -p 10000:10000 azad_django
 check_command "Running Docker container"
 
 # Wait for the container to start
@@ -30,7 +30,7 @@ sleep 5
 # Check if the container is running
 if [ "$(docker inspect -f '{{.State.Running}}' azad_django)" = "true" ]; then
     echo "Container is running successfully."
-    echo "You can access the website at http://localhost:9000"
+    echo "You can access the website at http://localhost:10000"
     echo "To view logs, use: docker logs azad_django"
     echo "To stop the container, use: docker stop azad_django"
 else
