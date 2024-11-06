@@ -95,7 +95,7 @@ if (os.getenv('DATABASE') == 'cloud'):
             'USER': os.getenv('USER'),
             'PASSWORD': os.getenv('PASSWORD'),
             'NAME': os.getenv('NAME'),
-            'PORT': os.getenv('PORT'),
+            'PORT': os.getenv('DB_PORT'),
         }
     }
 else:
