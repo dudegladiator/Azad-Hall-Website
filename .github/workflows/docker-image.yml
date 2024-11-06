@@ -1,10 +1,10 @@
-name: Docker CI/CD
+name: Azad Hall Website CI/CD
 
 on:
   pull_request:
-    branches: [ main, dev ]
+    branches: [ main, dev]
   push:
-    branches: [ main, dev ]
+    branches: [ main, dev]
 
 env:
   IMAGE_NAME: azad-hall-website
@@ -19,6 +19,11 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
+    # Create .env file from secret
+    - name: Create .env file
+      run: |
+        echo "${{ secrets.ENV_FILE }}" > .env
+
     - name: Build Docker image
       uses: docker/build-push-action@v4
       with:
@@ -27,6 +32,8 @@ jobs:
         outputs: type=docker,dest=/tmp/docker-image.tar
         cache-from: type=gha
         cache-to: type=gha,mode=max
+        secrets: |
+          "env_file=.env"
 
     - name: Upload Docker image as artifact
       uses: actions/upload-artifact@v3
@@ -35,66 +42,49 @@ jobs:
         path: /tmp/docker-image.tar
         retention-days: 1
 
-#   test:
-#     needs: build
-#     runs-on: ubuntu-latest
+    # Also upload the .env file as artifact for other jobs
+    - name: Upload env file
+      uses: actions/upload-artifact@v3
+      with:
+        name: env-file
+        path: .env
+        retention-days: 1
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
     
-#     steps:
-#     - uses: actions/checkout@v3
+    steps:
+    - uses: actions/checkout@v3
 
-#     - name: Download Docker image
-#       uses: actions/download-artifact@v3
-#       with:
-#         name: docker-image
-#         path: /tmp
+    - name: Download Docker image
+      uses: actions/download-artifact@v3
+      with:
+        name: docker-image
+        path: /tmp
 
-#     - name: Load Docker image
-#       run: docker load --input /tmp/docker-image.tar
+    - name: Download env file
+      uses: actions/download-artifact@v3
+      with:
+        name: env-file
+        path: .
 
-#     - name: Create test environment
-#       run: |
-#         cat > .env.test << EOL
-#         EOL
+    - name: Load Docker image
+      run: docker load --input /tmp/docker-image.tar
 
-#     - name: Run Django tests
-#       run: |
-#         docker run --env-file .env.test ${{ env.IMAGE_NAME }}:${{ github.sha }} python manage.py test
+    - name: Run Django tests
+      run: |
+        docker run --env-file .env ${{ env.IMAGE_NAME }}:${{ github.sha }} python manage.py test
 
-#     - name: Run linting
-#       run: |
-#         docker run ${{ env.IMAGE_NAME }}:${{ github.sha }} pip install flake8
-#         docker run ${{ env.IMAGE_NAME }}:${{ github.sha }} flake8 .
+    - name: Run linting
+      run: |
+        docker run ${{ env.IMAGE_NAME }}:${{ github.sha }} pip install flake8
+        docker run ${{ env.IMAGE_NAME }}:${{ github.sha }} flake8 .
 
-#   security-scan:
-#     needs: build
-#     runs-on: ubuntu-latest
-    
-#     steps:
-#     - uses: actions/checkout@v3
-
-#     - name: Download Docker image
-#       uses: actions/download-artifact@v3
-#       with:
-#         name: docker-image
-#         path: /tmp
-
-#     - name: Load Docker image
-#       run: docker load --input /tmp/docker-image.tar
-
-#     - name: Run Trivy vulnerability scanner
-#       uses: aquasecurity/trivy-action@master
-#       with:
-#         image-ref: ${{ env.IMAGE_NAME }}:${{ github.sha }}
-#         format: 'table'
-#         exit-code: '1'
-#         ignore-unfixed: true
-#         severity: 'CRITICAL,HIGH'
-
-#   deploy-staging:
-#     needs: [test, security-scan]
+#   deploy:
+#     needs: test
 #     runs-on: ubuntu-latest
 #     if: github.ref == 'refs/heads/main'
-#     environment: staging
     
 #     steps:
 #     - name: Download Docker image
@@ -102,34 +92,18 @@ jobs:
 #       with:
 #         name: docker-image
 #         path: /tmp
+
+#     - name: Download env file
+#       uses: actions/download-artifact@v3
+#       with:
+#         name: env-file
+#         path: .
 
 #     - name: Load Docker image
 #       run: docker load --input /tmp/docker-image.tar
 
 #     # Add your deployment steps here
-#     - name: Deploy to staging
+#     - name: Deploy
 #       run: |
-#         echo "Deploying to staging..."
-#         # Add your deployment commands here
-
-#   deploy-production:
-#     needs: deploy-staging
-#     runs-on: ubuntu-latest
-#     if: github.ref == 'refs/heads/main'
-#     environment: production
-    
-#     steps:
-#     - name: Download Docker image
-#       uses: actions/download-artifact@v3
-#       with:
-#         name: docker-image
-#         path: /tmp
-
-#     - name: Load Docker image
-#       run: docker load --input /tmp/docker-image.tar
-
-#     # Add your deployment steps here
-#     - name: Deploy to production
-#       run: |
-#         echo "Deploying to production..."
-#         # Add your deployment commands here
+#         echo "Deploying with environment variables..."
+#         # Add your deployment commands here using the .env file
