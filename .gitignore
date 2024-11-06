@@ -9,3 +9,4 @@ venv
 .env
 pyvenv.cfg
 *.pyc
+__pycache__/
