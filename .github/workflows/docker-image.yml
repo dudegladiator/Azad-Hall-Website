@@ -103,8 +103,8 @@ jobs:
       run: |
         docker run --env-file .env --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} python manage.py test -v 2
 
-    - name: Run linting
-      run: |
-        docker run --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} sh -c "
-          pip install flake8 &&
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    - name: Install linting tools
+      run: docker run --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} pip install flake8
+  
+    - name: Run flake8
+      run: docker run --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
