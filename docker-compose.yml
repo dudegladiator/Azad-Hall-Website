@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   django_gunicorn:
     container_name: azad_django
