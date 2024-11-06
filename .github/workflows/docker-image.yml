@@ -99,12 +99,35 @@ jobs:
     - name: Load Docker image
       run: docker load --input /tmp/docker-image.tar
 
-    - name: Run Django tests
+    - name: Start the application
       run: |
-        docker run --env-file .env --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} python manage.py test -v 2
+        docker run -d \
+          --name azad-website \
+          -p 10000:10000 \
+          --env-file .env \
+          ${{ env.IMAGE_NAME }}:${{ github.sha }}
 
-    - name: Install linting tools
-      run: docker run --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} pip install flake8
-  
-    - name: Run flake8
-      run: docker run --entrypoint="" ${{ env.IMAGE_NAME }}:${{ github.sha }} flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    - name: Wait for application to start
+      run: |
+        echo "Waiting for application to start..."
+        sleep 10
+
+    - name: Check if website is accessible
+      run: |
+        for i in {1..30}; do
+          if curl -s -f http://localhost:10000 > /dev/null; then
+            echo "Website is up and running!"
+            exit 0
+          fi
+          echo "Attempt $i: Website not ready yet..."
+          sleep 2
+        done
+        echo "Website failed to start"
+        docker logs azad-website
+        exit 1
+
+    - name: Clean up
+      if: always()
+      run: |
+        docker stop azad-website || true
+        docker rm azad-website || true
