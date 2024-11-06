@@ -8,3 +8,4 @@ venv
 .README.md
 .azad_website/azad_website/__pycache__
 .azad_website/azad/__pycache__
+*.pyc

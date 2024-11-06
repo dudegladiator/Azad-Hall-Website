@@ -16,12 +16,12 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'azadian.org', 'azadian.live', '*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'azadian.org', 'azadian.live', 'azad-hall-website.onrender.com', '*']
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    "django_createsuperuserwithpassword",
-    "debug_toolbar"
+    "django_createsuperuserwithpassword"
 ]
 
 SOCIALACCOUNT_LOGIN_ON_GET=True
@@ -58,8 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware"
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'azad_website.urls'
@@ -138,7 +136,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'secret': os.getenv('SECRET'),
             'key': '',  # Optional, you can leave this empty
         },
-        'redirect_uris': ['https://azad-f6lqfpksrq-el.a.run.app/accounts/google/login/callback/'],  # Update with your HTTPS domain
+        'redirect_uris': ['https://azadian.org/accounts/google/login/callback/'],  # Update with your HTTPS domain
     }
 }
 
@@ -185,7 +183,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
-CSRF_TRUSTED_ORIGINS=["https://azad-f6lqfpksrq-uc.a.run.app", "https://azadian.org", 'https://www.azadian.org', "https://azadian.live", 'https://www.azadian.live', '*']
+CSRF_TRUSTED_ORIGINS=["https://azad-hall-website.onrender.com", "https://azadian.org", 'https://www.azadian.org', "https://azadian.live", 'https://www.azadian.live', '*']
 
 
 SITE_ID = 2

@@ -8,10 +8,29 @@ check_command() {
     fi
 }
 
-# Stop any running container with the same name
-echo "Stopping any existing azad_django container..."
-docker stop azad_django 2>/dev/null || true
-docker rm azad_django 2>/dev/null || true
+# Stop specific Docker containers
+echo "Stopping Docker containers..."
+docker stop azad_django
+
+# Remove specific Docker containers
+echo "Removing Docker containers..."
+docker rm azad_django
+
+# Remove associated Docker images
+echo "Removing Docker images..."
+docker rmi -f azad_django
+
+# Remove unused Docker volumes
+echo "Removing unused Docker volumes..."
+docker volume prune -f
+
+# Remove unused Docker networks
+echo "Removing unused Docker networks..."
+docker network prune -f
+
+# Prune unused Docker resources
+echo "Pruning unused Docker resources..."
+docker system prune -a -f --volumes
 
 # Build the Docker image
 echo "Building Docker image..."
