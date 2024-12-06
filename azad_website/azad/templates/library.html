@@ -42,21 +42,24 @@
       font-size: 20px;
       margin: 1rem;
     }
-    .search_button{
-  width: 5rem;
-  height: 2.5rem;
-  transform: translate(-14px,0);
-  border: .1rem solid black;
-  border-radius: 0 5px 5px 0;
-  border-left: none;
-  background: linear-gradient(135deg, #040B14, #0C5479);
-  font-size: 1rem;
-  margin-left: 0.3em;
-  padding :0;
- }
- .search_button:hover{
-   opacity: 0.9;
- }
+
+    .search_button {
+      width: 5rem;
+      height: 2.5rem;
+      transform: translate(-14px, 0);
+      border: .1rem solid black;
+      border-radius: 0 5px 5px 0;
+      border-left: none;
+      background: linear-gradient(135deg, #040B14, #0C5479);
+      font-size: 1rem;
+      margin-left: 0.3em;
+      padding: 0;
+    }
+
+    .search_button:hover {
+      opacity: 0.9;
+    }
+
     /* Header Styles */
     .site-header {
       background: linear-gradient(135deg, #040B14, #0C5479);
@@ -213,149 +216,151 @@
 
 
     #complain-head {
-  width: 20% !important;
-}
+      width: 20% !important;
+    }
 
-#manager_review, .manager_review {
-  width: 15% !important;
-}
+    #manager_review,
+    .manager_review {
+      width: 15% !important;
+    }
 
-#id {
-  width: 2%;
-  background-color: transparent;
-  border: none;
-  text-align: center;
+    #id {
+      width: 2%;
+      background-color: transparent;
+      border: none;
+      text-align: center;
 
-}
+    }
 
-textarea {
-  padding: .2rem;
-}
-
-
-table {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  table-layout: fixed;
-  font-size: .85rem;
-  font-family: "Raleway", sans-serif;
-}
-
-table caption {
-  font-size: 1.2rem;
-  margin: .3em 0 .45em;
-  text-decoration: underline;
-
-}
-
-table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  padding: .35em;
-}
-
-tr:nth-child(even) {
-  background-color: #ebebeb;
-}
+    textarea {
+      padding: .2rem;
+    }
 
 
-table th,
-table td {
-  padding: .625em;
-  text-align: center;
+    table {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
+      font-size: .85rem;
+      font-family: "Raleway", sans-serif;
+    }
 
-}
+    table caption {
+      font-size: 1.2rem;
+      margin: .3em 0 .45em;
+      text-decoration: underline;
+
+    }
+
+    table tr {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: .35em;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ebebeb;
+    }
+
+
+    table th,
+    table td {
+      padding: .625em;
+      text-align: center;
+
+    }
 
 
 
-table th {
-  font-size: .85em;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
+    table th {
+      font-size: .85em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
 
-input {
-  /* all: unset; */
-  width: 20px;
+    input {
+      /* all: unset; */
+      width: 20px;
 
-}
-.complain_navigation{
-  /* width: 100%; */
-  text-align: center;
-  padding: .5rem;
-  font-size: 1.2rem;
-  text-decoration: unset;
-}
+    }
+
+    .complain_navigation {
+      /* width: 100%; */
+      text-align: center;
+      padding: .5rem;
+      font-size: 1.2rem;
+      text-decoration: unset;
+    }
 
 
-@media screen and (max-width: 800px) {
-  table {
-    border: 0;
-    font-size: .9rem;
-  }
+    @media screen and (max-width: 800px) {
+      table {
+        border: 0;
+        font-size: .9rem;
+      }
 
-  table caption {
-    font-size: 1.3em;
-  }
+      table caption {
+        font-size: 1.3em;
+      }
 
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
+      table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
 
-  table tr {
-    border: 2px solid #646464;
-    display: block;
-    margin-bottom: 1.2em;
-  }
+      table tr {
+        border: 2px solid #646464;
+        display: block;
+        margin-bottom: 1.2em;
+      }
 
-  td:nth-child(even) {
-  background-color: #ebebeb;
-  /* background-color: #cecece; */
-  }
-  td:nth-child(odd){
-    background-color: #d2d1d1;
+      td:nth-child(even) {
+        background-color: #ebebeb;
+        /* background-color: #cecece; */
+      }
 
-  }
-  
+      td:nth-child(odd) {
+        background-color: #d2d1d1;
 
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: 1em;
-    text-align: right;
-  }
+      }
 
-  table td::before {
-    /*
+
+      table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 1em;
+        text-align: right;
+      }
+
+      table td::before {
+        /*
       * aria-label has no advantage, it won't be read inside a table
       content: attr(aria-label);
       */
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
 
-  table td:last-child {
-    border-bottom: 0;
-  }
-}
+      table td:last-child {
+        border-bottom: 0;
+      }
+    }
 
 
-table a {
-  text-decoration: none;
-}
-
+    table a {
+      text-decoration: none;
+    }
   </style>
   <header class="site-header">
     <div class="wrapper site-header__wrapper">
@@ -397,7 +402,7 @@ table a {
     <h1 class="Meet"
       style="margin:20px auto 0px auto;font: Raleway sans-serif;font-size:3rem;color:#173B63;font-weight:bold;text-align:center">
       HALL LIBRARY</h1>
-    <a href="/previousBookRequests" style="">Previous Book Requests</a>
+
   </div>
   {% comment %} alert message {% endcomment %}
   {% comment %} sending message as parameter {% endcomment %}
@@ -430,7 +435,7 @@ table a {
   <div style="display:flex;justify-content:center;">
 
     <div class="startups">
-      <div class="search-container row">
+      <div class="search-container ">
         <form action="/search" method="post">
           {% csrf_token %}
           {% if searchedString %}
@@ -441,22 +446,11 @@ table a {
           <button class="search_button" type="submit">Search</button>
         </form>
       </div>
-      <div class="complain_navigation">
-        {% if books.has_previous %}
-        <a href="?books_page={{ books.previous_page_number }}">Previous</a>
-        {% endif %}
-        <span>
-          {% if books.number %}
-          Page {{ books.number }} of {{ books.paginator.num_pages }}.
-          {% endif %}
-        </span>
-        {% if books.has_next %}
-        <a href="?books_page={{ books.next_page_number }}">Next</a>
-        {% endif %}
-      </div>
+
       <div class="table" style="padding:.5rem;">
 
         <style>
+      
           table {
             width: 100%;
             border-collapse: collapse;
@@ -484,25 +478,26 @@ table a {
             color: #555;
             font-size: 1rem;
           }
-          
-       /* Style for even rows */
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
 
-/* Hover style for rows excluding thead */
-tbody tr:hover {
-  background-color: #f1f1f1;
-}
+          /* Style for even rows */
+          tr:nth-child(even) {
+            background-color: #f9f9f9;
+          }
 
-/* Explicitly maintain the thead's background color */
-thead tr:hover {
-  background-color: inherit; /* Keeps the original background */
-}
+          /* Hover style for rows excluding thead */
+          tbody tr:hover {
+            background-color: #f1f1f1;
+          }
+
+          /* Explicitly maintain the thead's background color */
+          thead tr:hover {
+            background-color: inherit;
+            /* Keeps the original background */
+          }
 
 
           button {
-            background-color: #516e8c;
+            background-color: #149DDD;
             color: white;
             padding: 0.5rem 1rem;
             border: none;
@@ -552,7 +547,21 @@ thead tr:hover {
                 <td style="padding:.8rem;" data-label="Author">{{book.author}}</td>
                 <td style="padding:.8rem;" data-label="Department">{{book.department}}</td>
                 <td style="padding:.8rem;" data-label="complain">{{book.quantity}}</td>
-                <td style="padding:.8rem;" data-label="Status">{{book.available}}</td>
+                {% if book.available != 0 %}
+                <td style="padding:.8rem;" data-label="Status"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                    viewBox="0 -960 960 960" width="24px" fill="#008000">
+                    <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                  </svg></td>
+
+                {% else %}
+                <td style="padding:.8rem;" data-label="Status"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                    viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                    <path
+                      d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                  </svg></td>
+
+                {% endif %}
+
                 {% if book.available == 0 %}
                 <td style="padding:.8rem;" data-label="Completed_on"><button type="submit" disabled>Check out</button>
                 </td>
@@ -616,7 +625,8 @@ thead tr:hover {
   <script id="_NEXT_DATA_" type="application/json"
     crossorigin="">{"props":{"pageProps":{}},"page":"/startups","query":{},"buildId":"QIyg21zuO9oYxiHmIOV0Z","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script>
   <script type="text/javascript" src="{% static 'assets1/js/alert.js' %}"></script>
+
+
 </body>
 
 </html>
-
