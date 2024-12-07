@@ -336,16 +336,20 @@ section{
 }
 
 .sponsors .box-container{
-    padding: 10px;
+    padding: 0px;
+    flex-wrap: wrap;
+    display: flex;
     margin: 15px;
+    width: 100%;
     margin-top:0px;
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap:2.5rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .sponsors .box-container .box{
-    margin:40px 5px;
+    margin: 20px 0px;
     border-radius: .5rem;
     height: 10rem;
     cursor: pointer;
