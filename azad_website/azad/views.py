@@ -15,7 +15,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator, Page
 from django.views.decorators.csrf import csrf_protect
 from datetime import datetime
-from imagekitio import ImageKit
+
 
 
 allowedEmails=["harsh247gupta@gmail.com", "harsh90731@gmail.com", "rajumeshram767@gmail.com", "hariomk628@gmail.com", "sg06959.sgsg@gmail.com", "somnathmishra1802@gmail.com"]
