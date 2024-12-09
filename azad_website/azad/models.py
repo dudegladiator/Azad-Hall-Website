@@ -23,7 +23,8 @@ class complaints(models.Model):
     created_at=models.CharField(max_length=200)
     modified_at=models.CharField(max_length=200)
     manager_review=models.CharField(max_length=500, null=True)
-    image_link = models.URLField(null=True)
+    image_link = models.URLField(blank=True, null=True)
+    imagekit_file_id = models.CharField(max_length=200, null=True, blank=True)
 
 class book(models.Model):
     title = models.CharField(max_length=1000, null=True)
