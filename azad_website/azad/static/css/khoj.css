@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @font-face {
     font-family: "Samarkan Normal";
     src: url("../fonts/samarn.eot") format("eot"),
@@ -10,11 +11,11 @@
 }
 
 :root{
-    --main-color: red;
+    --main-color: #149ddd;
 }
 
 *{
-    font-family: 'Patrick Hand', cursive;
+    font-family: "Open Sans", sans-serif;
     margin:0; padding:0;
     box-sizing: border-box;
     outline: none; border:none;
@@ -54,16 +55,16 @@ section{
 .heading{
     text-align: center;
     padding-bottom: 2rem;
-    color:#1f1f1f;
+    color:#173b6c;
     text-transform: uppercase;
     font-size: 4rem;
-    font-family:'Samarkan Normal';
+    font-family:"Open Sans", sans-serif;
 }
 
 .heading span{
     color:var(--main-color);
     text-transform: uppercase;
-    font-family:'Samarkan Normal';
+    font-family:"Open Sans", sans-serif;
 }
 
 .btn{
@@ -72,7 +73,7 @@ section{
     font-size: 1.7rem;
     border-radius: .5rem;
     background: #d4d4d4;
-    color: #1f1f1f;
+    color: #173b6c;
     cursor: pointer;
     font-weight: 800;
 }
@@ -85,34 +86,35 @@ section{
 
 .btn:hover{
     background:var(--main-color);
-    color: #1f1f1f;
+    color: #173b6c;
 }
 
 .header{
     position: fixed;
     top:0; left: 0; right: 0;
     z-index: 10000;
-    background: #1f1f1f;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding:2rem 9%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header .logo{
     margin-left: 10rem;
     font-weight: bolder;
-    color: #d4d4d4;
-    font-size: 2rem;
+    color: #173b6c;
+    font-size: 3rem;
     position: fixed;
-    font-family:'Samarkan Normal';
+    font-family:"Open Sans", sans-serif;
 }
 
 .header .logo span{
     color:var(--main-color);
     text-transform: none;
     font-size: 3rem;
-    font-family:'Samarkan Normal';
+    font-family:"Open Sans", sans-serif;
 }
 
 .header #logo{
@@ -146,13 +148,13 @@ section{
 
 .header .navbar a{
     font-size: 2rem;
-    color: #d4d4d4;
+    color: #000;
     margin-left: 2rem;
     padding: 0px;
 }
 
 .header .navbar a:hover{
-    color:var(--main-color);
+    box-shadow: inset 0px 0px 0px 20px rgba(120, 120, 120, 0.3), 0px 0px 2px 10px rgba(120, 120, 120, 0.3)
 }
 
 #menu-bars{
@@ -170,18 +172,18 @@ section{
 }
 
 .home .content h1{
-    font-family:'Samarkan Normal';
+    font-family:"Open Sans", sans-serif;
     color: var(--main-color);
     font-size: 7.5rem;
 }
 
 .home .content h1 sub{
-    font-family: 'Samarkan Normal';
+    font-family: "Open Sans", sans-serif;
 }
 
 .home .content h3{
-    font-family:'Samarkan Normal';
-    color:#1f1f1f;
+    font-family:"Open Sans", sans-serif;
+    color:#173b6c;
     font-size: 4.5rem;
     text-transform: uppercase;
     margin-left: 300px;
@@ -224,12 +226,12 @@ section{
 .about .row .content h3{
     align-self: center;
     font-size: 3.5rem;
-    color:#1f1f1f;
+    color:#173b6c;
 }
 
 .about .row .content h4 {
     font-size: 2.5rem;
-    color: #1f1f1f;
+    color: #173b6c;
 }
 
 .about .row .content h4 span{
@@ -256,7 +258,7 @@ section{
 .events .content h3 {
     text-align: center;
     font-size: 2rem;
-    color: #1f1f1f;
+    color: #173b6c;
 }
 
 .events .brochure{
@@ -270,7 +272,7 @@ section{
 }
 
 .events .brochure .btn:hover{
-    color: #1f1f1f;
+    color: #173b6c;
 }
 
 .gallery .box-container{
@@ -281,7 +283,7 @@ section{
 
 .gallery .box-container .box{
     position: relative;
-    /* border:1rem solid #1f1f1f; */
+    /* border:1rem solid #173b6c; */
     border-radius: .5rem;
     height: 25rem;
     cursor: pointer;
@@ -336,28 +338,50 @@ section{
 }
 
 .sponsors .box-container{
-    padding: 0px;
+    /*border: 1px solid #173b6c;*/
     flex-wrap: wrap;
     display: flex;
     margin: 15px;
     width: 100%;
     margin-top:0px;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap:2.5rem;
+    
     align-items: center;
     justify-content: center;
 }
 
 .sponsors .box-container .box{
-    margin: 20px 0px;
+    margin: 0px 0px;
     border-radius: .5rem;
-    height: 10rem;
+    height: 150px;
     cursor: pointer;
 }
+
+.sponsors .box-container .box img {
+    height: 100%;
+    width: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .sponsors .box-container .box {
+        max-width: 100%;
+        height: fit-content;
+        max-height: 150px;
+    }
+    
+    .sponsors .box-container .box img {
+        max-width: 100%;
+        max-height: 150px;
+        height: auto;
+    }
+    
+}
+
 
 .sponsors .box-container .box:hover{
     transform: scale(1.03);
 }
+
 
 .contact .box-container{
     display: grid;
@@ -371,9 +395,9 @@ section{
 }
 
 .contact .box-container .box h3 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 2rem;
-    color: var(--main-color);
+    color: #1f1f1f;
 }
 
 .contact .box-container .box ul li {
@@ -381,7 +405,7 @@ section{
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 3rem;
-    color: #1f1f1f;
+    color: #777;
 }
 
 .contact .box-container .box:hover {
@@ -395,7 +419,7 @@ section{
 .contact a{
     font-size: 2rem;
     padding:1rem 0;
-    color:#1f1f1f;
+    color:#173b6c;
     align-items: center;
     align-content: center;
 }
@@ -415,7 +439,7 @@ section{
 .footer a i{
     padding: 0rem 5rem;
     font-size: 5rem;
-    color:var(--main-color);
+    color:#444;
 }
 
 .footer .center div{
@@ -460,7 +484,7 @@ section{
         position: absolute;
         top:100%; left:0; right:0;
         border-top: .1rem solid #707070;
-        background: #1f1f1f;
+        background: #173b6c;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
 
@@ -474,7 +498,7 @@ section{
 
     .header .navbar a{
         display: flex;
-        background:#1f1f1f;
+        background:#173b6c;
         border-radius: .5rem;
         padding:1.3rem;
         margin:1.3rem;
