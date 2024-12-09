@@ -329,12 +329,21 @@
                         <span>About</span>
                     </a>
                 </li>
+                {%if user.is_authenticated%}
                 <li onclick="window.open(`{% url 'custom_logout' %}`, '_self')" i>
                     <a class="Online" href="{% url 'about' %}">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span>Log out</span>
                     </a>
                 </li>
+                {%else%}
+                <li>
+                    <a class="Online" href="{% url 'login' %}">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Log in</span>
+                    </a>
+                </li>
+                {% endif %}                
             </ul>
         </div>
         <!--end off-screen-navigation-->
@@ -717,11 +726,10 @@
                                     <div class="col-lg-6">
                                         <ul>
                                             <li><i class="bi bi-chevron-right"></i> <strong>Hall President:</strong>
-                                                <span>Mr
-                                                    . Saurabh Nagarkoti</span>
+                                                <span>Mr.
+                                                     Ambuj Sharma</span>
                                             </li>
-                                            <li><i class="bi bi-chevron-right"></i> <strong>SSM:</strong> <span> Mr. Yogender
-                                                    Arya</span>
+                                            <li><i class="bi bi-chevron-right"></i> <strong>SSM:</strong> <span> Mr. Kartik Jain</span>
                                             </li>
                                             <li><i class="bi bi-chevron-right"></i> <strong>Capacity:</strong>
                                                 <span>600+</span>
