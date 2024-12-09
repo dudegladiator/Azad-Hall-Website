@@ -15,6 +15,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator, Page
 from django.views.decorators.csrf import csrf_protect
 from datetime import datetime
+from imagekitio import ImageKit
 
 
 allowedEmails=["harsh247gupta@gmail.com", "harsh90731@gmail.com", "rajumeshram767@gmail.com", "hariomk628@gmail.com", "sg06959.sgsg@gmail.com", "somnathmishra1802@gmail.com"]
@@ -102,8 +103,13 @@ def index(request):
 
 @csrf_protect
 def complain(request):
-    if request.user.is_authenticated:
+    if request.method == 'GET':
         return render(request, 'complain.html')
+
+    elif request.method == 'POST':
+        return HttpResponse("Complaint Submitted Successfully")
+
+    else: return HttpResponse(status=405)
 
 @csrf_protect
 def submit_form(request):
@@ -114,6 +120,7 @@ def submit_form(request):
         contact_no  = request.POST.get('contact_no')
         # image = request.FILES.get('image')
         image_link = request.POST.get('image')
+        upload_image = request.POST.get('file')
         boarder = azad_boarders.objects.get(emails = request.user.email)
         name=boarder.name
         email= boarder.emails
@@ -195,6 +202,26 @@ def complain_status(request):
         print(complains)
         params={"complains":complains}
         return render(request, "complain_status.html", params)
+
+def submit_complain(request):
+    if request.method == 'POST':
+        form = ComplaintForm(request.POST, request.FILES)
+        if form.is_valid():
+            complaint = form.save(commit=False)
+            if request.FILES.get('upload_image'):
+                upload_image = request.FILES['upload_image']
+                response = imagekit.upload(
+                    file=upload_image,
+                    file_name=upload_image.name
+                )
+                complaint.image_link = response['response']['url']
+                complaint.imagekit_file_id = response['response']['fileId']
+            complaint.save()
+            return redirect('complaint_status')
+    else:
+        form = ComplaintForm()
+    
+    return render(request, 'complaint_form.html', {'form': form})   
 
 def noticeboard(request):
     noticeboard = Notice.objects.all()
