@@ -97,12 +97,12 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:2rem 9%;
+    padding-top:0px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header .logo{
-    margin-left: 10rem;
+    margin-left: 70px;
     font-weight: bolder;
     color: #173b6c;
     font-size: 3rem;
@@ -149,12 +149,12 @@ section{
 .header .navbar a{
     font-size: 2rem;
     color: #000;
-    margin-left: 2rem;
-    padding: 0px;
+    margin-left: 0rem;
+    padding: 1rem;
 }
 
 .header .navbar a:hover{
-    box-shadow: inset 0px 0px 0px 20px rgba(120, 120, 120, 0.3), 0px 0px 2px 10px rgba(120, 120, 120, 0.3)
+    background-color: rgba(0,0,0, 0.05);
 }
 
 #menu-bars{
@@ -362,7 +362,7 @@ section{
     width: auto;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
     .sponsors .box-container .box {
         max-width: 100%;
         height: fit-content;
