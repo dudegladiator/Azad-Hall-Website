@@ -35,12 +35,13 @@
 
     <title>Home | Azad Hall Of Residence</title>
 
-       <style>
+    <style>
         ::-webkit-scrollbar {
             width: 5px;
         }
-        .para{
-            margin:0 10% 0 10%;
+
+        .para {
+            margin: 0 10% 0 10%;
         }
 
         ::-webkit-scrollbar-thumb {
@@ -55,22 +56,26 @@
         .typed-cursor {
             display: none;
         }
-        p{
+
+        p {
             text-align: center;
         }
 
-  #hcm2023-24{
-    width: 50%;
-  }
-  a.Online{
-    width: 150px;
+        #hcm2023-24 {
+            width: 50%;
+        }
 
-  }
+        a.Online {
+            width: 150px;
+
+        }
+
         .card.profile-card-3 {
             position: relative;
             display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Adjust as needed */
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* Adjust as needed */
             align-items: center;
             font-family: 'Open Sans', Arial, sans-serif;
             position: relative;
@@ -81,7 +86,7 @@
         }
 
         .profile-card-3 .background-block {
-            
+
             width: 100%;
             height: 200px;
             overflow: hidden;
@@ -107,12 +112,14 @@
             position: relative;
             z-index: 9999;
         }
-        @media screen and (max-width:500px){
-            .logo{
+
+        @media screen and (max-width:500px) {
+            .logo {
                 display: none;
 
             }
         }
+
         .profile-card-3 .card-content::before {
             content: '';
             background: #efefef;
@@ -174,10 +181,12 @@
             float: left;
             margin: 10px;
         }
-  a.Oneline{
-    width: 100%;
-    margin: 20px;
-  }
+
+        a.Oneline {
+            width: 100%;
+            margin: 20px;
+        }
+
         .profile-card-3 .icon-block a {
             text-decoration: none;
         }
@@ -195,23 +204,31 @@
             .col-md-12 col-sm-3 col-lg-4 {
                 width: 80% !important;
             }
+
             .off-screen-navigation.ul.li.a {
-    padding: 8px 30px;
-}
+                padding: 8px 30px;
+            }
 
-            .card.profile-card-3{
+            .card.profile-card-3 {
                 width: 100%;
-                
-                
+
+
 
             }
-            .para{
-                margin:0 5% 0 5%;
+
+            .para {
+                margin: 0 5% 0 5%;
             }
-            .hcm2023-24{
-                display: grid;width: 100%; grid-template-columns:repeat(1, 1fr)!important; grid-gap:25px; margin: auto;margin-bottom: 25px;
+
+            .hcm2023-24 {
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr) !important;
+                grid-gap: 25px;
+                margin: auto;
+                margin-bottom: 25px;
             }
-        
+
         }
 
         table {
@@ -285,14 +302,14 @@
             <div class="fog"></div>
         </div>
     </div>
-    
+
     <div class="page-wrapper">
 
         <div class="loading-overlay"></div>
 
         <div class="off-screen-navigation">
             <ul class="nav">
-                
+
                 <li onclick="window.open(`{% url 'khoj' %}`, '_self')">
                     <a class="Online" target="blank" href="{% url 'khoj' %}">
                         <i class="fas fa-map-marked-alt"></i>
@@ -324,7 +341,7 @@
                     </a>
                 </li> -->
                 <li onclick="window.open(`{% url 'about' %}`, '_self')" i>
-                    <a class="Online"  href="{% url 'about' %}">
+                    <a class="Online" href="{% url 'about' %}">
                         <i class="fas fa-info-circle"></i>
                         <span>About</span>
                     </a>
@@ -343,17 +360,29 @@
         <nav class="navigation">
             {% comment %} sending message as parameter {% endcomment %}
             {% if message %}
-            <div id="alert"><div class="inner">
-                <div>{{ message }}</div>
-                <div id="icon"><svg id="close-alert"xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div>
-            </div></div>
+            <div id="alert">
+                <div class="inner">
+                    <div>{{ message }}</div>
+                    <div id="icon"><svg id="close-alert" xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                        </svg></div>
+                </div>
+            </div>
             {% elif messages %}
             {% comment %} using in-built message feature {% endcomment %}
             {% for message in messages %}
-            <div id="alert"><div class="inner">
-                <div>{{ message }}</div>
-                <div id="icon"><svg id="close-alert"xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div>
-            </div></div>
+            <div id="alert">
+                <div class="inner">
+                    <div>{{ message }}</div>
+                    <div id="icon"><svg id="close-alert" xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                        </svg></div>
+                </div>
+            </div>
             {% endfor %}
             {% endif %}
 
@@ -402,20 +431,30 @@
                                 started the tradition of Illumination, or ILLU as today's KGPians know it. Azad Hall is
                                 always reputed for its stellar
                                 performances in Soc-Cult events, especially Dramatics and Choreography.</p>
-                            <a style="margin-bottom: 3px;" href="{% url 'khoj' %}" target="blank" class="btn btn-default next">Khoj</a>
-                            <!-- <a style="margin-bottom: 3px;" href="{% url 'achievements' %}" class="btn btn-default next">Achievements</a> -->
-                            <a style="margin-bottom: 3px;" href="{% url 'about' %}" target="blank" class="btn btn-default next">About</a>
-                            <a style="margin-bottom: 3px;" href="{% url 'alumni' %}" target="blank" class="btn btn-default next">Alumni</a>
+                            <a style="margin-bottom: 3px;" href="{% url 'khoj' %}" target="blank"
+                                class="btn btn-default">Khoj</a>
+                            <!-- <a style="margin-bottom: 3px;" href="{% url 'achievements' %}" class="btn btn-default">Achievements</a> -->
+                            <a style="margin-bottom: 3px;" href="{% url 'about' %}" target="blank"
+                                class="btn btn-default">About</a>
+                            <a style="margin-bottom: 3px;" href="{% url 'alumni' %}" target="blank"
+                                class="btn btn-default">Alumni</a>
                             {% if user.is_authenticated %}
-                            <a style="margin-bottom: 3px;" href="{% url 'library' %}" target="blank" class="btn btn-default next">Library</a>
-                            <a style="margin-bottom: 3px;" href="{% url 'complain' %}" target="blank" class="btn btn-default next">Complain</a>
-                            {% comment %} <a style="margin-bottom: 3px;" href="{% url 'custom_logout' %}" class="btn btn-default next">Logout</a> {% endcomment %}
-                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;">  Welcome {{ name }}</p>
-                            
+                            <a style="margin-bottom: 3px;" href="{% url 'library' %}" target="blank"
+                                class="btn btn-default">Library</a>
+                            <a style="margin-bottom: 3px;" href="{% url 'complain' %}" target="blank"
+                                class="btn btn-default">Complain</a>
+                            {% comment %} <a style="margin-bottom: 3px;" href="{% url 'custom_logout' %}"
+                                class="btn btn-default">Logout</a> {% endcomment %}
+                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;"> Welcome {{ name }}
+                            </p>
+
                             {% else %}
-                            <a style="margin-bottom: 3px;" href="{% provider_login_url 'google' %}" class="btn btn-default next">Login</a>
-                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;">Login with your registered personal mail ID to access Mess/Maintenanace complain</p>
+                            <a style="margin-bottom: 3px;" href="{% provider_login_url 'google' %}"
+                                class="btn btn-default">Login</a>
+                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;">Login with your
+                                registered personal mail ID to access Mess/Maintenanace complain</p>
                             {% endif %}
+                            <a href="hello">Hello</a>
                         </div>
                     </div>
                     <div class="image" data-background="https://ik.imagekit.io/qsg4eodx8/About%20page/azad.webp?updatedAt=1730982165801"></div>
@@ -427,7 +466,11 @@
                     <div class="description">
                         <h2 style="color: white;font-size: 30px;font-weight: 500;" class="animate">We are AZADians!</h2>
                         <dl class="animate">
-                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">As Azadians, not giving up is an important trait that lets us achieve our goals and overcome obstacles in life. We offer a listening ear, a shoulder to cry on, and words of encouragement, and stand together united always.</p>
+                            <p
+                                style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">
+                                As Azadians, not giving up is an important trait that lets us achieve our goals and
+                                overcome obstacles in life. We offer a listening ear, a shoulder to cry on, and words of
+                                encouragement, and stand together united always.</p>
                         </dl>
                     </div>
                     <!--end description-->
@@ -440,8 +483,12 @@
                     <div class="description">
                         <h2 style="color: white;font-size: 30px;font-weight: 500;" class="animate">Creative Minds</h2>
                         <dl class="animate">
-                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">We believe that creativity is essential for personal growth, innovation, and progress in society. Creativity enables individuals to think outside the box, find new and innovative solutions to problems, and approach
-                            challenges from a different perspective.</p>
+                            <p
+                                style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">
+                                We believe that creativity is essential for personal growth, innovation, and progress in
+                                society. Creativity enables individuals to think outside the box, find new and
+                                innovative solutions to problems, and approach
+                                challenges from a different perspective.</p>
                         </dl>
                     </div>
                     <!--end description-->
@@ -454,8 +501,12 @@
                     <div class="description">
                         <h2 style="color: white;font-size: 30px;font-weight: 500;" class="animate">Friendship</h2>
                         <dl class="animate">
-                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">Azadians provide emotional support to each other in times of need, such as during a difficult situation or when facing a
-                            challenge. They offer a listening ear, a shoulder to cry on, and words of encouragement, which can help reduce stress and improve mental health.</p>
+                            <p
+                                style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">
+                                Azadians provide emotional support to each other in times of need, such as during a
+                                difficult situation or when facing a
+                                challenge. They offer a listening ear, a shoulder to cry on, and words of encouragement,
+                                which can help reduce stress and improve mental health.</p>
                         </dl>
                     </div>
                     <!--end description-->
@@ -466,9 +517,14 @@
 
                 <div class="slide" id="4">
                     <div class="description">
-                        <h2 style="color: white;font-size: 30px;font-weight: 500;" class="animate">Social & Cultural</h2>
+                        <h2 style="color: white;font-size: 30px;font-weight: 500;" class="animate">Social & Cultural
+                        </h2>
                         <dl class="animate">
-                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">Social and Cultural events are an essential part of our identity. These ensure that people can connect and celebrate the traditions, beliefs, and customs, creating a sense of belonging, pride, and unity.</p>
+                            <p
+                                style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">
+                                Social and Cultural events are an essential part of our identity. These ensure that
+                                people can connect and celebrate the traditions, beliefs, and customs, creating a sense
+                                of belonging, pride, and unity.</p>
                         </dl>
                     </div>
                     <!--end description-->
@@ -479,9 +535,15 @@
 
                 <div class="slide" id="5">
                     <div class="description">
-                        <h2 style="color: white;font-size: 30px;font-weight: 500;" class="animate">Consistency & Perseverance</h2>
+                        <h2 style="color: white;font-size: 30px;font-weight: 500;" class="animate">Consistency &
+                            Perseverance</h2>
                         <dl class="animate">
-                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">We believe in hard work being the foundation of success, and it is often the determining factor that sets successful people apart from those who are not. We understand that success is not a one-time event but rather the result of a consistent effort over time.</p>
+                            <p
+                                style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">
+                                We believe in hard work being the foundation of success, and it is often the determining
+                                factor that sets successful people apart from those who are not. We understand that
+                                success is not a one-time event but rather the result of a consistent effort over time.
+                            </p>
                         </dl>
                     </div>
                     <!--end description-->
@@ -493,7 +555,11 @@
                     <div class="description">
                         <h2 style="color: white;font-size: 30px;font-weight: 500;" class="animate">Alumni Network</h2>
                         <dl class="animate">
-                            <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">The strong alumni network fosters a sense of community and pride among Azadians. Networking helps use expand our professional network and stay up-to-date on industry news and trends.</p>
+                            <p
+                                style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;max-width: 600px;width:90%;">
+                                The strong alumni network fosters a sense of community and pride among Azadians.
+                                Networking helps use expand our professional network and stay up-to-date on industry
+                                news and trends.</p>
                         </dl>
                     </div>
                     <!--end description-->
@@ -649,7 +715,7 @@
             <!--end page-wrapper-->
         </div>
         <!--end outer-wrapper-->
-        
+
         <div class="off-screen-content">
             <div class="scrollbar-inner">
 
@@ -710,7 +776,8 @@
                                                     Nikhil
                                                     Kumar Singha</span></li>
                                             <li><i class="bi bi-chevron-right"></i> <strong>Assistant.
-                                                    Warden(s):</strong>Prof. Abir Chakravorty (Mess)<br />Prof. Mrinal Kanti Mandal (Maintenance)
+                                                    Warden(s):</strong>Prof. Abir Chakravorty (Mess)<br />Prof. Mrinal
+                                                Kanti Mandal (Maintenance)
                                             </li>
                                         </ul>
                                     </div>
@@ -720,7 +787,8 @@
                                                 <span>Mr
                                                     . Saurabh Nagarkoti</span>
                                             </li>
-                                            <li><i class="bi bi-chevron-right"></i> <strong>SSM:</strong> <span> Mr. Yogender
+                                            <li><i class="bi bi-chevron-right"></i> <strong>SSM:</strong> <span> Mr.
+                                                    Yogender
                                                     Arya</span>
                                             </li>
                                             <li><i class="bi bi-chevron-right"></i> <strong>Capacity:</strong>
@@ -751,9 +819,9 @@
                     <div class="container">
                         <div class="section-title">
                             <h2>Hall Council Members <select name="year" id="hcm-year">
-                                <option value="2022-23">2022-2023</option>
-                                <option value="2023-24" selected>2023-2024</option>
-                              </select></h2>
+                                    <option value="2022-23">2022-2023</option>
+                                    <option value="2023-24" selected>2023-2024</option>
+                                </select></h2>
                             <p>Hall Council members are selected each year by the warden of the hall to ensure smooth
                                 conduction
                                 of hall
@@ -768,798 +836,830 @@
                                 functioning of the hall.</p>
                         </div>
                         <div class="col-md-4 hcmMembers hcm2022-23" data-aos="fade-up" id="hcm2022-23"
-                        style="display: none;width: 100%; grid-template-columns:repeat(2, 1fr); grid-gap:25px; margin: auto;margin-bottom: 25px;">
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/hp.webp' %}" alt="profile-sample1" class="background" />
+                            style="display: none;width: 100%; grid-template-columns:repeat(2, 1fr); grid-gap:25px; margin: auto;margin-bottom: 25px;">
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/hp.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/hp.webp' %}" alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Dhruv Rai<small><b style="font-size: medium;">Hall
+                                                President</b><br><br>Department of Industrial and
+                                            Systems
+                                            Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/flanker42/" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/dhruv-rai-flanker/" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/hp.webp' %}" alt="profile-image" class="profile" />
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/ssm.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/ssm.webp' %}" alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Tushar Khokhar<small><b style="font-size: medium;">Second Senate
+                                                Member</b><br><br>Department of Humanities
+                                            and
+                                            Social Sciences</small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/tushar.khokhar"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/tushar-khokhar-645a22194" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a>
+                                </div>
                             </div>
-                            <div class="card-content">
-                                <h2>Dhruv Rai<small><b style="font-size: medium;">Hall President</b><br><br>Department of Industrial and
-                                        Systems
-                                        Engineering </small></h3>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/suvigya.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/suvigya.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Suvigya Saxena<small><b style="font-size: medium;">General Secretary - Alumni
+                                                Affairs
+                                            </b><br><br>Department of
+                                            Industrial and Systems Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/suvigya.sxaena.1?mibextid=ZbWKwL" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/suvigyasaxena" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/flanker42/" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/dhruv-rai-flanker/" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/ssm.webp' %}" alt="profile-sample1"
-                                    class="background" />
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/divyanshu.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/divyanshu.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Divyanshu Gupta <small><b style="font-size: medium;">General Secretary - Social
+                                                and Cultural
+                                            </b><br><br>Department
+                                            of Biotechnology </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/dvnshu?mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/divyanshu04gupta" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a>
+                                </div>
                             </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/ssm.webp' %}" alt="profile-image" class="profile" />
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/lakshya.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/lakshya.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Lakshya Kr. Meena<small><b style="font-size: medium;">Coordinator - Social and
+                                                Cultural
+                                            </b><br><br>Department
+                                            of
+                                            Mechanical Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/lakshya.meena.37051?mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/lakshya-kumar-meena-105543222" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="card-content">
-                                <h2>Tushar Khokhar<small><b style="font-size: medium;">Second Senate Member</b><br><br>Department of Humanities
-                                        and
-                                        Social Sciences</small></h3>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/somdarshan.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/somdarshan.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Somdarshan Atre<small><b style="font-size: medium;">General Secretary - Sports
+                                                and
+                                                Games</b><br><br>Department
+                                            of
+                                            Geology and Geophysics </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/somdarshan.atre?mibextid=ZbWKwL" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/somdarshan-atre-65727a176" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/tushar.khokhar"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.linkedin.com/in/tushar-khokhar-645a22194" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/mayank.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/mayank.webp' %}" alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Mayank Singh <small><b style="font-size: medium;">General Secretary - Technology
+                                            </b><br><br>Department of
+                                            Chemical
+                                            Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100005157690585&mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/mayank-singh-58b951213" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/suvigya.webp' %}" alt="profile-sample1"
-                                    class="background" />
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/kunal.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/kunal.webp' %}" alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Kunal Sulaniya<small><b style="font-size: medium;">General Secretary -
+                                                Maintenance</b><br><br>Department of
+                                            Mechanical Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100069505996634&mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/kunal-sulaniya-913054231" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/suvigya.webp' %}" alt="profile-image" class="profile" />
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/pratham.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/pratham.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Pratham Agrawal<small><b style="font-size: medium;">General Secretary - Mess and
+                                                Library
+                                            </b><br><br>Department
+                                            of
+                                            Aerospace Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/pratham.agrawal.716?mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/pratham-agrawal-150a4a210" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="card-content">
-                                <h2>Suvigya Saxena<small><b style="font-size: medium;">General Secretary - Alumni Affairs
-                                        </b><br><br>Department of
-                                        Industrial and Systems Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/suvigya.sxaena.1?mibextid=ZbWKwL" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/suvigyasaxena" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/divyanshu.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/divyanshu.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Divyanshu Gupta <small><b style="font-size: medium;">General Secretary - Social and Cultural
-                                        </b><br><br>Department
-                                        of Biotechnology </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/dvnshu?mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.linkedin.com/in/divyanshu04gupta" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/lakshya.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/lakshya.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Lakshya Kr. Meena<small><b style="font-size: medium;">Coordinator - Social and Cultural
-                                        </b><br><br>Department
-                                        of
-                                        Mechanical Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/lakshya.meena.37051?mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/lakshya-kumar-meena-105543222" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/somdarshan.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/somdarshan.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Somdarshan Atre<small><b style="font-size: medium;">General Secretary - Sports and
-                                            Games</b><br><br>Department
-                                        of
-                                        Geology and Geophysics </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/somdarshan.atre?mibextid=ZbWKwL" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/somdarshan-atre-65727a176" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/mayank.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/mayank.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Mayank Singh <small><b style="font-size: medium;">General Secretary - Technology </b><br><br>Department of
-                                        Chemical
-                                        Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100005157690585&mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/mayank-singh-58b951213" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/kunal.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/kunal.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Kunal Sulaniya<small><b style="font-size: medium;">General Secretary - Maintenance</b><br><br>Department of
-                                        Mechanical Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100069505996634&mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/kunal-sulaniya-913054231" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/pratham.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/pratham.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Pratham Agrawal<small><b style="font-size: medium;">General Secretary - Mess and Library
-                                        </b><br><br>Department
-                                        of
-                                        Aerospace Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/pratham.agrawal.716?mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/pratham-agrawal-150a4a210" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/shailesh.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/shailesh.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Shailesh Singh<small><b style="font-size: medium;">General Secretary - Students' Welfare
-                                        </b><br><br>Department
-                                        of
-                                        Civil Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/shaileshskgp?mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/shailesh--singh" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 hcmMembers hcm2023-24" data-aos="fade-up" id="hcm2023-24"
-                        style="display: grid;width: 100%; grid-template-columns:repeat(2, 1fr); grid-gap:25px; margin: auto;margin-bottom: 25px;">
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/hp2023.webp' %}" alt="profile-sample1" class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/hp2023.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Saurabh Nagarkoti <small><b style="font-size: medium;">Hall President</b><br><br>Department of Geology and
-                                        Geophysics </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/saurabh.nagarkoti.1" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/saurabh-nagarkoti/" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img\hcm\ssm-2-2023.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img\hcm\ssm-2-2023.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Yogender Arya<small><b style="font-size: medium;">Second Senate Member</b><br><br>Department of Agriculture and
-                                     Food Engineering</small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/yogendera1"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.linkedin.com/in/yogender-arya-3744941ba/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/shailesh.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/shailesh.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Shailesh Singh<small><b style="font-size: medium;">General Secretary - Students'
+                                                Welfare
+                                            </b><br><br>Department
+                                            of
+                                            Civil Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/shaileshskgp?mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/shailesh--singh" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
                             </div>
                         </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/ankit.webp' %}" alt="profile-sample1"
-                                    class="background" />
+                        <div class="col-md-4 hcmMembers hcm2023-24" data-aos="fade-up" id="hcm2023-24"
+                            style="display: grid;width: 100%; grid-template-columns:repeat(2, 1fr); grid-gap:25px; margin: auto;margin-bottom: 25px;">
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/hp2023.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/hp2023.webp' %}" alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Saurabh Nagarkoti <small><b style="font-size: medium;">Hall
+                                                President</b><br><br>Department of Geology and
+                                            Geophysics </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/saurabh.nagarkoti.1"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/saurabh-nagarkoti/" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img\hcm\ssm-2-2023.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img\hcm\ssm-2-2023.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Yogender Arya<small><b style="font-size: medium;">Second Senate
+                                                Member</b><br><br>Department of Agriculture and
+                                            Food Engineering</small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/yogendera1" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/yogender-arya-3744941ba/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a>
+                                </div>
                             </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/ankit.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Ankit Yadav<small><b style="font-size: medium;">General Secretary - Sports and
-                                            Games</b><br><br>Department
-                                        of Electrical Engineering</small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100016978573907" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/ankit-yadav-64a903228/" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/Shresth.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/Shresth.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Shresth Agrawal <small><b style="font-size: medium;">General Secretary - Social and Cultural
-                                        </b><br><br>Department
-                                        of Chemical Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/shresth.agrawal.96"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.linkedin.com/in/shresth-agrawal-b5935024a/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/abhinav.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/abhinav.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Abhinav Srivastava<small><b style="font-size: medium;">Coordinator- Social and Cultural
-                                        </b><br><br>Department
-                                        of
-                                        Mechanical Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/divyanshu-sharma-308a86240/"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/divyanshu-sharma-308a86240/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/bhoumik.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/bhoumik.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Bhoumik Mhatre<small><b style="font-size: medium;">General Secretary - Alumni Affairs
-                                        </b><br><br>Department of
-                                        Mining Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/bhoumik.mhatre.1" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/bhoumik-mhatre-5396b623a/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/ashwini.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/ashwini.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Ashwini Kumar Biswal<small><b style="font-size: medium;">General Secretary - Technology </b><br><br>Department of
-                                        Mechanical
-                                        Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100074009486922"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/ashwini-kumar-biswal-a78b62226/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/chimyang.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/chimyang.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Manne Chimyang<small><b style="font-size: medium;">General Secretary - Maintenance</b><br><br>Department of
-                                        Civil Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100070149875931"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/manne-chimyang-996035254/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/pranjal.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/pranjal.webp' %}" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Pranjal Chouhan<small><b style="font-size: medium;">General Secretary - Mess and Library
-                                        </b><br><br>Department
-                                        of
-                                        Metallurgical and Materials Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/pranjal.pranjalchouhan"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/pranjal-chouhan-9b359b189/" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="static\img\hcm\Somnath_mishra.webp" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="static\img\hcm\Somnath_mishra.webp" alt="profile-image" class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Somnath Mishra<small><b style="font-size: medium;">General Secretary - Mess and Library
-                                        </b><br><br>Department
-                                        of
-                                        Metallurgical and Materials Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100073668615779"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/somnath-mishra-3153b8225/" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/hcm/aditya.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'img/hcm/aditya.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Aditya Sharma<small><b style="font-size: medium;">General Secretary - Students' Welfare
-                                        </b><br><br>Department
-                                        of
-                                        Civil Engineering </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100002888868638"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/aditya-sharma-356671233/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="testimonials" class="testimonials section-bg">
-                <div class="container">
-
-                    <div class="section-title">
-                        <h2>Web Team<select name="year" id="web-year">
-                            <option value="2022-23">2022-2023</option>
-                            <option value="2023-24" selected>2023-2024</option>
-                          </select></h2>
-                        <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
-                    </div>
-                    <div class="col-md-4 webMembers" data-aos="fade-up" id="web2022-23"
-                        style="display: none;width: 100%; grid-template-columns:repeat(1, 1fr) !important; grid-gap:25px; margin: auto; margin-bottom: 25px;">
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'img/azad.webp' %}" alt="profile-sample1" class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/nishakar.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Nishakar Kumar<small><b>Lead Developer</b><br><br>Department
-                                        of Electrical Engineering</small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/nishakar.kumar.984"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/nishakar-kumar-7016451ba/" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/aditya1.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/aditya1.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Aditya N. Sahoo<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Mechanical Engineering</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100075469157629" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.linkedin.com/in/aditya-narayan-sahoo-aa772722b/"
-                                    target="_blank" class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/ashwini.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/ashwini.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Ashwini K. Biswal<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Mechanical Engineering</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100074009486922&mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.linkedin.com/in/ashwini-kumar-biswal-a78b62226" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Hariom<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Mechanical Engineering</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="http://facebook.com/hariom.raj.12532" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/mwlite/in/kgpian" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/ojas.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/ojas.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Ojas Modak<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Industrial & Systems Engineering
-                                        </p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100075299778518&mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/ojas-modak-9b890a237" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/raunak.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/raunak.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Raunak Raj<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Mathematics</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100074308419553" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/raunak-raj-03319b227" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/shrish.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/shrish.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Shrish Tripathi<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Mathematics</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100075425263403&mibextid=ZbWKwL"
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/shrish-tripathi-3808471aa" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/Smarak.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/Smarak.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Smarak Kanjilal<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Computer Science & Engineering</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/Smarak.Kanjilal?mibextid=ZbWKwL" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/smarak-kanjilal-105474222" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/somya.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/somya.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Somya<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Computer Science & Engineering</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100074586707397" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/somya-kumar-584a55222/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/ash.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/ash.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Ashutosh Tiwari<small><b>Management</b><br><br>
-                                        <p style="font-size:13px;">Department Of Geology and Geophysics</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a
-                                    href="https://www.facebook.com/profile.php?id=100075431893143" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.linkedin.com/in/ashutosh-tiwari-758957226/" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 webMembers" data-aos="fade-up" id="web2023-24"
-                        style="display:grid;width: 100%; grid-template-columns:repeat(1, 1fr) !important; grid-gap:25px; margin: auto; margin-bottom: 25px;">
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-sample1" class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Hariom<small><b>Lead Developer</b><br><br>Department
-                                        of Mechanical Engineering</small></h3>
-                            </div>
-                            <div class="icon-block"><a href="http://facebook.com/hariom.raj.12532" 
-                                    target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/kgpian/" target="_blank"
-                                    class="linkedin">
-                                    <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-
-
-                    <div class="col-md-4" data-aos="fade-up" id="hcm"
-                        style="display: grid;width: 100%;grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(3,1fr); column-gap:25px; row-gap:25px;">
-
-                        
-                    </div>
-                
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/harshvardhan.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/harshvardhan.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Harsh Vardhan Gupta<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Mathematics</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100086304926374" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/harsh-vardhan-gupta-51446224b/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/harshGupta.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/harshGupta.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Harsh Gupta<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Industrial and Systems Engineering</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/harsh90731" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/harsh90731/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
-
-
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/dhatrik.webp' %}" alt="profile-sample1"
-                                    class="background" />
-                            </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/dhatrik.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Dhatrik Kumar <small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Mining Engineering</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/dhatrikkumar.09" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/dhatrik-kumar-9ab249256/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
 
                             <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets\img\testimonials\meet1355.webp' %}" alt="profile-sample1"
-                                    class="background" />
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/ankit.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/ankit.webp' %}" alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Ankit Yadav<small><b style="font-size: medium;">General Secretary - Sports and
+                                                Games</b><br><br>Department
+                                            of Electrical Engineering</small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100016978573907" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/ankit-yadav-64a903228/" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets\img\testimonials\meet1355.webp' %}" alt="profile-image"
-                                    class="profile" />
-                            </div>
-                            <div class="card-content">
-                                <h2>Meet Raju Meshram <small><b>Developer And Manager</b><br><br>
-                                        <p style="font-size:13px;">Department Of Aerospace Engineering</p>
-                                    </small></h3>
-                            </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100087764894345" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/meet-meshram-2a6423260/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
-                        </div>
 
-                        <div class="card profile-card-3">
-                            <div class="background-block">
-                                <img src="{% static 'assets/img/testimonials/madhav.webp' %}" alt="profile-sample1"
-                                    class="background" />
+
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/Shresth.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/Shresth.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Shresth Agrawal <small><b style="font-size: medium;">General Secretary - Social
+                                                and Cultural
+                                            </b><br><br>Department
+                                            of Chemical Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/shresth.agrawal.96"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/shresth-agrawal-b5935024a/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a>
+                                </div>
                             </div>
-                            <div class="profile-thumb-block">
-                                <img src="{% static 'assets/img/testimonials/madhav.webp' %}" alt="profile-image"
-                                    class="profile" />
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/abhinav.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/abhinav.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Abhinav Srivastava<small><b style="font-size: medium;">Coordinator- Social and
+                                                Cultural
+                                            </b><br><br>Department
+                                            of
+                                            Mechanical Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/divyanshu-sharma-308a86240/"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/divyanshu-sharma-308a86240/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="card-content">
-                                <h2>Madhav Samdhani<small><b>Developer</b><br><br>
-                                        <p style="font-size:13px;">Department Of Agricultural and Food Engineering</p>
-                                    </small></h3>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/bhoumik.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/bhoumik.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Bhoumik Mhatre<small><b style="font-size: medium;">General Secretary - Alumni
+                                                Affairs
+                                            </b><br><br>Department of
+                                            Mining Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/bhoumik.mhatre.1"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/bhoumik-mhatre-5396b623a/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-                            <div class="icon-block"><a href="https://www.facebook.com/profile.php?id=100086694198133" target="_blank"
-                                    class="facebook"><i class="bx bxl-facebook"></i></a><a
-                                    href="https://www.linkedin.com/in/madhav-samdani-889505257/" target="_blank"
-                                    class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/ashwini.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/ashwini.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Ashwini Kumar Biswal<small><b style="font-size: medium;">General Secretary -
+                                                Technology </b><br><br>Department of
+                                            Mechanical
+                                            Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100074009486922" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/ashwini-kumar-biswal-a78b62226/"
+                                        target="_blank" class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/chimyang.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/chimyang.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Manne Chimyang<small><b style="font-size: medium;">General Secretary -
+                                                Maintenance</b><br><br>Department of
+                                            Civil Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100070149875931" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/manne-chimyang-996035254/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/pranjal.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/pranjal.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Pranjal Chouhan<small><b style="font-size: medium;">General Secretary - Mess and
+                                                Library
+                                            </b><br><br>Department
+                                            of
+                                            Metallurgical and Materials Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/pranjal.pranjalchouhan"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/pranjal-chouhan-9b359b189/" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="static\img\hcm\Somnath_mishra.webp" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="static\img\hcm\Somnath_mishra.webp" alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Somnath Mishra<small><b style="font-size: medium;">General Secretary - Mess and
+                                                Library
+                                            </b><br><br>Department
+                                            of
+                                            Metallurgical and Materials Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100073668615779" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/somnath-mishra-3153b8225/" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/hcm/aditya.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'img/hcm/aditya.webp' %}" alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Aditya Sharma<small><b style="font-size: medium;">General Secretary - Students'
+                                                Welfare
+                                            </b><br><br>Department
+                                            of
+                                            Civil Engineering </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100002888868638" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/aditya-sharma-356671233/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
                         </div>
                     </div>
-            </section>
+                </section>
+                <section id="testimonials" class="testimonials section-bg">
+                    <div class="container">
+
+                        <div class="section-title">
+                            <h2>Web Team<select name="year" id="web-year">
+                                    <option value="2022-23">2022-2023</option>
+                                    <option value="2023-24" selected>2023-2024</option>
+                                </select></h2>
+                            <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+                        </div>
+                        <div class="col-md-4 webMembers" data-aos="fade-up" id="web2022-23"
+                            style="display: none;width: 100%; grid-template-columns:repeat(1, 1fr) !important; grid-gap:25px; margin: auto; margin-bottom: 25px;">
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'img/azad.webp' %}" alt="profile-sample1" class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/nishakar.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Nishakar Kumar<small><b>Lead Developer</b><br><br>Department
+                                            of Electrical Engineering</small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/nishakar.kumar.984"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/nishakar-kumar-7016451ba/" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/aditya1.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/aditya1.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Aditya N. Sahoo<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Mechanical Engineering</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100075469157629" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/aditya-narayan-sahoo-aa772722b/"
+                                        target="_blank" class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/ashwini.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/ashwini.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Ashwini K. Biswal<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Mechanical Engineering</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100074009486922&mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/ashwini-kumar-biswal-a78b62226" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Hariom<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Mechanical Engineering</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="http://facebook.com/hariom.raj.12532" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/mwlite/in/kgpian" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
 
 
-            <a href="{% url 'about' %}" style="display: block; margin: 5px;" class="btn btn-default next">Explore
-                Azad Hall Of Residence</a>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/ojas.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/ojas.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Ojas Modak<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Industrial & Systems Engineering
+                                            </p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100075299778518&mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/ojas-modak-9b890a237" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/raunak.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/raunak.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Raunak Raj<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Mathematics</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100074308419553" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/raunak-raj-03319b227" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/shrish.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/shrish.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Shrish Tripathi<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Mathematics</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100075425263403&mibextid=ZbWKwL"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/shrish-tripathi-3808471aa" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/Smarak.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/Smarak.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Smarak Kanjilal<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Computer Science & Engineering</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/Smarak.Kanjilal?mibextid=ZbWKwL" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/smarak-kanjilal-105474222" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/somya.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/somya.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Somya<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Computer Science & Engineering</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100074586707397" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/somya-kumar-584a55222/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/ash.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/ash.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Ashutosh Tiwari<small><b>Management</b><br><br>
+                                            <p style="font-size:13px;">Department Of Geology and Geophysics</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100075431893143" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/ashutosh-tiwari-758957226/" target="_blank"
+                                        class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 webMembers" data-aos="fade-up" id="web2023-24"
+                            style="display:grid;width: 100%; grid-template-columns:repeat(1, 1fr) !important; grid-gap:25px; margin: auto; margin-bottom: 25px;">
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets\img\testimonials\hariom.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Hariom<small><b>Lead Developer</b><br><br>Department
+                                            of Mechanical Engineering</small></h3>
+                                </div>
+                                <div class="icon-block"><a href="http://facebook.com/hariom.raj.12532" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/kgpian/" target="_blank" class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+
+
+                            <div class="col-md-4" data-aos="fade-up" id="hcm"
+                                style="display: grid;width: 100%;grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(3,1fr); column-gap:25px; row-gap:25px;">
+
+
+                            </div>
+
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/harshvardhan.webp' %}"
+                                        alt="profile-sample1" class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/harshvardhan.webp' %}"
+                                        alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Harsh Vardhan Gupta<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Mathematics</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100086304926374" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/harsh-vardhan-gupta-51446224b/"
+                                        target="_blank" class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/harshGupta.webp' %}"
+                                        alt="profile-sample1" class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/harshGupta.webp' %}"
+                                        alt="profile-image" class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Harsh Gupta<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Industrial and Systems Engineering
+                                            </p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/harsh90731" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/harsh90731/" target="_blank" class="linkedin">
+                                        <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/dhatrik.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/dhatrik.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Dhatrik Kumar <small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Mining Engineering</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a href="https://www.facebook.com/dhatrikkumar.09"
+                                        target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/dhatrik-kumar-9ab249256/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets\img\testimonials\meet1355.webp' %}"
+                                        alt="profile-sample1" class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets\img\testimonials\meet1355.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Meet Raju Meshram <small><b>Developer And Manager</b><br><br>
+                                            <p style="font-size:13px;">Department Of Aerospace Engineering</p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100087764894345" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/meet-meshram-2a6423260/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+
+                            <div class="card profile-card-3">
+                                <div class="background-block">
+                                    <img src="{% static 'assets/img/testimonials/madhav.webp' %}" alt="profile-sample1"
+                                        class="background" />
+                                </div>
+                                <div class="profile-thumb-block">
+                                    <img src="{% static 'assets/img/testimonials/madhav.webp' %}" alt="profile-image"
+                                        class="profile" />
+                                </div>
+                                <div class="card-content">
+                                    <h2>Madhav Samdhani<small><b>Developer</b><br><br>
+                                            <p style="font-size:13px;">Department Of Agricultural and Food Engineering
+                                            </p>
+                                        </small></h3>
+                                </div>
+                                <div class="icon-block"><a
+                                        href="https://www.facebook.com/profile.php?id=100086694198133" target="_blank"
+                                        class="facebook"><i class="bx bxl-facebook"></i></a><a
+                                        href="https://www.linkedin.com/in/madhav-samdani-889505257/" target="_blank"
+                                        class="linkedin"> <i class="bx bxl-linkedin"></i></a></div>
+                            </div>
+                        </div>
+                </section>
+
+
+                <a href="{% url 'about' %}" style="display: block; margin: 5px;" class="btn btn-default next">Explore
+                    Azad Hall Of Residence</a>
+            </div>
         </div>
     </div>
-</div>
     <!--end page-wrapper-->
 
     <!-- Modal -->
