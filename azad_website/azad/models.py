@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.utils import timezone
 
 # Create your models here.
 
@@ -58,7 +59,7 @@ class Event(models.Model):
     subtitle = models.CharField(max_length=2000)
     description = models.TextField()
     image = models.ImageField(upload_to='event_images', default='static/images/logo/logo.svg')
-    date = models.DateTimeField(default=datetime.now())
+    date = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return (self.title)
@@ -66,7 +67,7 @@ class Event(models.Model):
 
 class Para(models.Model):
     text = models.TextField()
-    date = models.DateTimeField(default=datetime.now())
+    date = models.DateTimeField(default=timezone.now())
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -82,7 +83,7 @@ class Imagemodel(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='azad/static/img/', null=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    date = models.DateTimeField(default=datetime.now())
+    date = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return (self.caption)
@@ -111,7 +112,7 @@ class Notice(models.Model):
     subtitle = models.CharField(max_length=2500)
     description = models.TextField()
     image = models.ImageField(upload_to='media/', default='static/images/logo/logo.svg')
-    date = models.DateTimeField(default=datetime.now(), blank=True)
+    date = models.DateTimeField(default=timezone.now(), blank=True)
 
     def __str__(self):
         return (self.title)
@@ -122,7 +123,7 @@ class Achievements(models.Model):
     subtitle = models.CharField(max_length=2500)
     description = models.TextField()
     image = models.ImageField(upload_to='media/', default='static/images/logo/logo.svg')
-    date = models.DateTimeField(default=datetime.now(), blank=True)
+    date = models.DateTimeField(default=timezone.now(), blank=True)
 
     def __str__(self):
         return (self.title)

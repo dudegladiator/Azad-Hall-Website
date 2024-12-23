@@ -1,495 +1,578 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <!-- responsive tag -->
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- favicon -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.html">
-    <link rel="shortcut icon" type="image/x-icon" href="../static/images/alumni_images/fav.webp">
+    <link rel="apple-touch-icon" href="apple-touch-icon.html" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../static/images/alumni_images/fav.webp"
+    />
     <!-- Bootstrap v4.4.1 css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/bootstrap.min.css"
+    />
     <!-- font-awesome css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/font-awesome.min.css"
+    />
     <!-- flaticon css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/flaticon.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/flaticon.css"
+    />
     <!-- animate css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/animate.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/animate.css"
+    />
     <!-- owl.carousel css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/owl.carousel.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/owl.carousel.css"
+    />
     <!-- off canvas css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/off-canvas.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/off-canvas.css"
+    />
     <!-- magnific popup css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/magnific-popup.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/magnific-popup.css"
+    />
     <!-- Main Menu css -->
-    <link rel="stylesheet" href="../static/css/alumni_css/rsmenu-main.css">
+    <link rel="stylesheet" href="../static/css/alumni_css/rsmenu-main.css" />
     <!-- spacing css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/rs-spacing.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/rs-spacing.css"
+    />
     <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/style.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/style.css"
+    />
     <!-- This stylesheet dynamically changed from style.less -->
     <!-- responsive css -->
-    <link rel="stylesheet" type="text/css" href="../static/css/alumni_css/responsive.css">
-    <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/alumni_css/responsive.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/faviconaz.webp' %}"
+      type="image/png"
+    />
 
     <title>Alum Page</title>
+  </head>
 
-</head>
-
-<body class="layout-boxed">
-
+  <body class="layout-boxed">
     <div class="offwrap"></div>
 
     <!--Preloader start here-->
     <div id="pre-load">
-        <div id="loader" class="loader">
-            <div class="loader-container">
-                <div class="loader-icon"><img src="" alt=""></div>
-            </div>
+      <div id="loader" class="loader">
+        <div class="loader-container">
+          <div class="loader-icon"><img src="" alt="" /></div>
         </div>
+      </div>
     </div>
 
     <div class="main-content">
-
-        <div class="full-width-header">
-            <!--Header Start-->
-            <header id="rs-header" class="rs-header header-transparent">
-                <!-- Menu Start -->
-                <div class="menu-area menu-sticky">
-                    <div class="container">
-                        <div class="row-table">
-                            <div class="col-cell header-logo">
-                                <div class="logo-area">
-                                    <a href="/">
-
-
-                                        <img class="logoimg" src="../static/images/alumni_images/logo.webp" alt="logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-cell">
-                                <div class="rs-menu-area">
-                                    <div class="main-menu">
-                                        <nav class="rs-menu hidden-md">
-                                            <ul class="nav-menu">
-                                                <li>
-                                                    <a href="/">HOME</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{% url 'khoj' %}">KHOJ</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="{% url 'library' %}">LIBRARY</a>
-                                                </li>
-                                            </ul> <!-- //.nav-menu -->
-                                        </nav>
-                                    </div> <!-- //.main-menu -->
-                                </div>
-                            </div>
-                            <div class="col-cell">
-                                <div class="expand-btn-inner">
-                                    <ul>
-                                        <li class="humburger">
-                                            <a id="nav-expander" class="nav-expander bar" href="#">
-                                                <div class="bar">
-                                                    <span class="dot1"></span>
-                                                    <span class="dot2"></span>
-                                                    <span class="dot3"></span>
-                                                    <span class="dot4"></span>
-                                                    <span class="dot5"></span>
-                                                    <span class="dot6"></span>
-                                                    <span class="dot7"></span>
-                                                    <span class="dot8"></span>
-                                                    <span class="dot9"></span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="full-width-header">
+        <!--Header Start-->
+        <header id="rs-header" class="rs-header header-transparent">
+          <!-- Menu Start -->
+          <div class="menu-area menu-sticky">
+            <div class="container">
+              <div class="row-table">
+                <div class="col-cell header-logo">
+                  <div class="logo-area">
+                    <a href="/">
+                      <img
+                        class="logoimg"
+                        src="../static/images/alumni_images/logo.webp"
+                        alt="logo"
+                      />
+                    </a>
+                  </div>
                 </div>
-                <!-- Menu End -->
+                <div class="col-cell">
+                  <div class="rs-menu-area">
+                    <div class="main-menu">
+                      <nav class="rs-menu hidden-md">
+                        <ul class="nav-menu">
+                          <li>
+                            <a href="/">HOME</a>
+                          </li>
+                          <li>
+                            <a href="{% url 'khoj' %}">KHOJ</a>
+                          </li>
 
-                <!-- Canvas Mobile Menu start -->
-                <nav class="right_menu_togle mobile-navbar-menu" id="mobile-navbar-menu">
-                    <div class="close-btn">
-                        <a id="nav-close2" class="nav-close">
-                            <div class="line">
-                                <span class="line1"></span>
-                                <span class="line2"></span>
-                            </div>
+                          <li>
+                            <a href="{% url 'library' %}">LIBRARY</a>
+                          </li>
+                        </ul>
+                        <!-- //.nav-menu -->
+                      </nav>
+                    </div>
+                    <!-- //.main-menu -->
+                  </div>
+                </div>
+                <div class="col-cell">
+                  <div class="expand-btn-inner">
+                    <ul>
+                      <li class="humburger">
+                        <a id="nav-expander" class="nav-expander bar" href="#">
+                          <div class="bar">
+                            <span class="dot1"></span>
+                            <span class="dot2"></span>
+                            <span class="dot3"></span>
+                            <span class="dot4"></span>
+                            <span class="dot5"></span>
+                            <span class="dot6"></span>
+                            <span class="dot7"></span>
+                            <span class="dot8"></span>
+                            <span class="dot9"></span>
+                          </div>
                         </a>
-                    </div>
-                    <ul class="nav-menu">
-                        <li>
-                            <a href="">HOME</a>
-                        </li>
-                        <li>
-                            <a href="">KHOJ</a>
-                        </li>
-                        <li>
-                            <a href="">LIBRARY</a>
-                        </li>
-                    </ul> <!-- //.nav-menu -->
-                    <div class="canvas-contact">
-                        <div class="address-area">
-                            <div class="address-list">
-                                <div class="info-icon">
-                                    <i class="flaticon-location"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h4 class="title">Address</h4>
-                                    <em>Azad Hall of Residence, IIT Kharagpur <br>
-                                        Kharagpur, West Bengal 721302</em>
-                                </div>
-                            </div>
-                            <div class="address-list">
-                                <div class="info-icon">
-                                    <i class="flaticon-email"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h4 class="title">Email</h4>
-                                    <em><a href="mailto:azadhall@iitkgp.ac.in">azadhall@iitkgp.ac.in</a></em>
-                                </div>
-                            </div>
-                            <div class="address-list">
-                                <div class="info-icon">
-                                    <i class="flaticon-call"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h4 class="title">Phone</h4>
-                                    <em>+91 8087562959</em>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-                <!-- Canvas Menu end -->
-            </header>
-            <!--Header End-->
-        </div>
-        <!-- Banner Section Start -->
-        <div class="rs-banner main-home">
-            <div class="container">
-                <div class="content-wrap">
-                    <div class="icon-wrap mb-50">
-                        <img src="../static/images/alumni_images/brands.webp" alt="Images">
-                    </div>
-                    <!--<br class="nonebr">-->
-                    <div class="prelements-heading water__slide_yes default text-center">
-                        <div class="title-inner">
-                            <!--<h2 class="title"><span class="watermark">Yuvan</span>D'evolu<span>thon</span>2.0</h2> -->
-                            <h2 class="title"><span class="watermark">AZAD HALL</span>AZAD HALL</h2>
-                        </div>
-                    </div>
-                    <h2 class="conference-title">ALUMNI MEET <span class="year">2024</span></h2>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-        <!-- Banner Section End -->
+          </div>
+          <!-- Menu End -->
 
-        <!-- Choose Section Start -->
-        <div class="rs-services style1 bg1 pt-110 pb-60 md-pt-75 md-pb-80">
-            <div class="container">
-                <div class="sec-title text-center mb-60 md-mb-40">
-                    <span class="sub-text">Join the Event</span>
-                    <h2 class="title pb-27">
-                        Why You Should Attend
-                    </h2>
-                    <div class="heading-border-line"></div>
+          <!-- Canvas Mobile Menu start -->
+          <nav
+            class="right_menu_togle mobile-navbar-menu"
+            id="mobile-navbar-menu"
+          >
+            <div class="close-btn">
+              <a id="nav-close2" class="nav-close">
+                <div class="line">
+                  <span class="line1"></span>
+                  <span class="line2"></span>
                 </div>
-                <div class="row y-middle">
-                    <div class="col-lg-4 col-md-6 md-mb-30">
-                        <div class="services-item">
-                            <div class="services-wrap">
-                                <div class="services-icon">
-                                    <img src="../static/images/alumni_images/2_1.webp" alt="Services">
-                                </div>
-                                <div class="services-text">
-                                    <h4 class="title"> Mentorship and Guidance</h4>
-                                    <p class="services-txt">
-                                        Alumni meets facilitate mentorship opportunities, where experienced graduates
-                                        can offer guidance to those in the early stages of their careers. This
-                                        mentorship fosters personal and professional growth for both mentors and
-                                        mentees.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="services-item">
-                            <div class="services-wrap">
-                                <div class="services-icon">
-                                    <img src="../static/images/alumni_images/1.webp" alt="Services">
-                                </div>
-                                <div class="services-text">
-                                    <h4 class="title"> Lifelong Connections</h4>
-                                    <p class="services-txt">
-                                        Alumni meets foster a sense of belonging and a lifelong
-                                        connection between graduates and their educational institution. This connection
-                                        goes beyond academic years and contributes to a strong and supportive alumni
-                                        network.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="services-item">
-                            <div class="services-wrap">
-                                <div class="services-icon">
-                                    <img src="../static/images/alumni_images/money.webp" alt="Services">
-                                </div>
-                                <div class="services-text">
-                                    <h4 class="title"> Philanthropy and Fundraising</h4>
-                                    <p class="services-txt">
-                                        Alumni meets provide opportunities for graduates
-                                        to contribute to their alma mater through philanthropy and fundraising
-                                        initiatives. A strong connection between alumni and the institution often leads
-                                        to increased support for educational programs and facilities.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </a>
             </div>
-        </div>
-        <!-- Choose Section End -->
-
-       
-
-        <!-- About Section Start -->
-        <div class="rs-about main-home bg3 pt-120 pb-120 md-pt-80 md-pb-80">
-            <div class="container">
-                <div class="row y-middle">
-                    <div class="col-lg-7 pr-55 md-pr-15 md-mb-50">
-                        <div class="images-part">
-                            <img src="../static/images/alumni_images/alumnimeet.webp" alt="Images" >
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="sec-title">
-                            <span class="subtext">About <br>
-                                <h3>ALUMNI MEET</h3>
-
-                            </span>
-                            <h2 class="title pb-22">
-                            </h2>
-                            <div class="heading-border-line left-style"></div>
-                            <p class="desc margin-0 pt-40 pb-25">
-                                Alumni meet is a reunion where former students of Azad Hall of Residence, IIT Kharagpur
-                                Organized by Alumni Affairs, Azad Hall of Residence, IIT Kharagpur gather to reconnect
-                                and celebrate
-                                shared memories. The event offer a platform for networking,
-                                professional growth, and updates on the alma mater's progress. Typically featuring guest
-                                speakers, class reunions, and cultural activities, alumni meets foster a sense of
-                                community and pride.
-                                They provide a valuable opportunity for graduates to exchange experiences, receive
-                                career insights, and maintain a lasting connection with their educational roots.
-                                Overall, these gatherings strengthen the bond between alumni and their alma mater,
-                                creating a supportive and enduring network.
-
-                            </p>
-                            <div class="rs-counter about-style">
-                                <div class="row">
-                                    <div class="col-lg-6 md-mb-30">
-                                        <div class="counter-list">
-
-
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="counter-list">
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+            <ul class="nav-menu">
+              <li>
+                <a href="">HOME</a>
+              </li>
+              <li>
+                <a href="">KHOJ</a>
+              </li>
+              <li>
+                <a href="">LIBRARY</a>
+              </li>
+            </ul>
+            <!-- //.nav-menu -->
+            <div class="canvas-contact">
+              <div class="address-area">
+                <div class="address-list">
+                  <div class="info-icon">
+                    <i class="flaticon-location"></i>
+                  </div>
+                  <div class="info-content">
+                    <h4 class="title">Address</h4>
+                    <em
+                      >Azad Hall of Residence, IIT Kharagpur <br />
+                      Kharagpur, West Bengal 721302</em
+                    >
+                  </div>
                 </div>
+                <div class="address-list">
+                  <div class="info-icon">
+                    <i class="flaticon-email"></i>
+                  </div>
+                  <div class="info-content">
+                    <h4 class="title">Email</h4>
+                    <em
+                      ><a href="mailto:azadhall@iitkgp.ac.in"
+                        >azadhall@iitkgp.ac.in</a
+                      ></em
+                    >
+                  </div>
+                </div>
+                <div class="address-list">
+                  <div class="info-icon">
+                    <i class="flaticon-call"></i>
+                  </div>
+                  <div class="info-content">
+                    <h4 class="title">Phone</h4>
+                    <em>+91 8087562959</em>
+                  </div>
+                </div>
+              </div>
             </div>
+          </nav>
+          <!-- Canvas Menu end -->
+        </header>
+        <!--Header End-->
+      </div>
+      <!-- Banner Section Start -->
+      <div class="rs-banner main-home">
+        <div class="container">
+          <div class="content-wrap">
+            <div class="icon-wrap mb-50">
+              <img
+                src="../static/images/alumni_images/brands.webp"
+                alt="Images"
+              />
+            </div>
+            <!--<br class="nonebr">-->
+            <div
+              class="prelements-heading water__slide_yes default text-center"
+            >
+              <div class="title-inner">
+                <!--<h2 class="title"><span class="watermark">Yuvan</span>D'evolu<span>thon</span>2.0</h2> -->
+                <h2 class="title">
+                  <span class="watermark">AZAD HALL</span>AZAD HALL
+                </h2>
+              </div>
+            </div>
+            <h2 class="conference-title">
+              ALUMNI MEET <span class="year">2024</span>
+            </h2>
+          </div>
         </div>
-        <!-- About Section End -->
+      </div>
+      <!-- Banner Section End -->
 
-        <!-- Event Section Start -->
-        <!-- Event Section End -->
+      <!-- Choose Section Start -->
+      <div class="rs-services style1 bg1 pt-110 pb-60 md-pt-75 md-pb-80">
+        <div class="container">
+          <div class="sec-title text-center mb-60 md-mb-40">
+            <span class="sub-text">Join the Event</span>
+            <h2 class="title pb-27">Why You Should Attend</h2>
+            <div class="heading-border-line"></div>
+          </div>
+          <div class="row y-middle">
+            <div class="col-lg-4 col-md-6 md-mb-30">
+              <div class="services-item">
+                <div class="services-wrap">
+                  <div class="services-icon">
+                    <img
+                      src="../static/images/alumni_images/2_1.webp"
+                      alt="Services"
+                    />
+                  </div>
+                  <div class="services-text">
+                    <h4 class="title">Mentorship and Guidance</h4>
+                    <p class="services-txt">
+                      Alumni meets facilitate mentorship opportunities, where
+                      experienced graduates can offer guidance to those in the
+                      early stages of their careers. This mentorship fosters
+                      personal and professional growth for both mentors and
+                      mentees.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="services-item">
+                <div class="services-wrap">
+                  <div class="services-icon">
+                    <img
+                      src="../static/images/alumni_images/1.webp"
+                      alt="Services"
+                    />
+                  </div>
+                  <div class="services-text">
+                    <h4 class="title">Lifelong Connections</h4>
+                    <p class="services-txt">
+                      Alumni meets foster a sense of belonging and a lifelong
+                      connection between graduates and their educational
+                      institution. This connection goes beyond academic years
+                      and contributes to a strong and supportive alumni network.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="services-item">
+                <div class="services-wrap">
+                  <div class="services-icon">
+                    <img
+                      src="../static/images/alumni_images/money.webp"
+                      alt="Services"
+                    />
+                  </div>
+                  <div class="services-text">
+                    <h4 class="title">Philanthropy and Fundraising</h4>
+                    <p class="services-txt">
+                      Alumni meets provide opportunities for graduates to
+                      contribute to their alma mater through philanthropy and
+                      fundraising initiatives. A strong connection between
+                      alumni and the institution often leads to increased
+                      support for educational programs and facilities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Choose Section End -->
+
+      <!-- About Section Start -->
+      <div class="rs-about main-home bg3 pt-120 pb-120 md-pt-80 md-pb-80">
+        <div class="container">
+          <div class="row y-middle">
+            <div class="col-lg-7 pr-55 md-pr-15 md-mb-50">
+              <div class="images-part">
+                <img
+                  src="../static/images/alumni_images/alumnimeet.webp"
+                  alt="Images"
+                />
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="sec-title">
+                <span class="subtext"
+                  >About <br />
+                  <h3>ALUMNI MEET</h3>
+                </span>
+                <h2 class="title pb-22"></h2>
+                <div class="heading-border-line left-style"></div>
+                <p class="desc margin-0 pt-40 pb-25">
+                  Alumni meet is a reunion where former students of Azad Hall of
+                  Residence, IIT Kharagpur Organized by Alumni Affairs, Azad
+                  Hall of Residence, IIT Kharagpur gather to reconnect and
+                  celebrate shared memories. The event offer a platform for
+                  networking, professional growth, and updates on the alma
+                  mater's progress. Typically featuring guest speakers, class
+                  reunions, and cultural activities, alumni meets foster a sense
+                  of community and pride. They provide a valuable opportunity
+                  for graduates to exchange experiences, receive career
+                  insights, and maintain a lasting connection with their
+                  educational roots. Overall, these gatherings strengthen the
+                  bond between alumni and their alma mater, creating a
+                  supportive and enduring network.
+                </p>
+                <div class="rs-counter about-style">
+                  <div class="row">
+                    <div class="col-lg-6 md-mb-30">
+                      <div class="counter-list"></div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="counter-list"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- About Section End -->
+
+      <!-- Event Section Start -->
+      <!-- Event Section End -->
+
+      <!-- Team Section Start -->
+      <div id="rs-team" class="rs-team style2 bg12 pt-120 pb-70 md-pt-80">
+        <div class="container pb-50">
+          <div class="sec-title text-center mb-60 md-mb-40">
+            <span class="sub-text">OUR NOTABLE</span>
+            <h2 class="title title-color pb-35">ALUMNI</h2>
+            <div class="heading-border-line"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-20">
+              <div class="team-item">
+                <div class="team-inner-wrap">
+                  <div class="images-wrap">
+                    <img
+                      src="../static/images/alumni_images/gauravtaneja.webp"
+                      alt="Team"
+                      width="4000px"
+                      height="4000px"
+                    />
+                  </div>
+                  <div class="team-content">
+                    <h3 class="title-name">Gaurav Taneja</h3>
+                    <div class="team-title">
+                      Youtuber popularly known as <b>'Flying Beast'</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-20">
+              <div class="team-item">
+                <div class="team-inner-wrap">
+                  <div class="images-wrap">
+                    <img
+                      src="../static/images/alumni_images/arunsarin.jfif"
+                      alt="Team"
+                      width="4000px"
+                      height="4000px"
+                    />
+                  </div>
+                  <div class="team-content">
+                    <h3 class="title-name">Arun Sarin</h3>
+                    <div class="team-title">
+                      Former Chief Executive Officer at Vodafone Group plc
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-20">
+              <div class="team-item">
+                <div class="team-inner-wrap">
+                  <div class="images-wrap">
+                    <img
+                      src="../static/images/alumni_images/rajtilakroushan.jfif"
+                      alt="Team"
+                      width="4000px"
+                      height="4000px"
+                    />
+                  </div>
+                  <div class="team-content">
+                    <h3 class="title-name">Raj Tilak Roushan</h3>
+                    <div class="team-title">
+                      Deputy Commissioner of Police, Crime Branch (Detection-1)
+                      Mumbai at Indian Police Service
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-20">
+              <div class="team-item">
+                <div class="team-inner-wrap">
+                  <div class="images-wrap">
+                    <img
+                      src="../static/images/alumni_images/rajkamaljha.jfif"
+                      alt="Team"
+                      width="4000px"
+                      height="4000px"
+                    />
+                  </div>
+                  <div class="team-content">
+                    <h3 class="title-name">Raj Kamal Jha</h3>
+                    <div class="team-title">
+                      Chief Editor at The Indian Express
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-20">
+              <div class="team-item">
+                <div class="team-inner-wrap">
+                  <div class="images-wrap">
+                    <img
+                      src="../static/images/alumni_images/deepitpurkayastha.jfif"
+                      alt="Team"
+                      width="4000px"
+                      height="4000px"
+                    />
+                  </div>
+                  <div class="team-content">
+                    <h3 class="title-name">Deepit Purkayastha</h3>
+                    <div class="team-title">Co-Founder at Inshorts Group</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sec-title text-center mb-60 md-mb-40">
+            <span class="sub-text"></span>
+            <h2 class="title title-color pb-35">MAJOR ALUMNI CONTRIBUTIONS</h2>
+            <div class="heading-border-line"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-20">
+              <div class="team-item">
+                <div class="team-inner-wrap">
+                  <div class="images-wrap">
+                    <img
+                      src="../static/images/alumni_images/supriyosircar.jfif"
+                      alt="Team"
+                      width="4000px"
+                      height="4000px"
+                    />
+                  </div>
+                  <div class="team-content">
+                    <h3 class="title-name">Supriyo Sircar</h3>
+                    <div class="team-title">Basketball Ground</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-20">
+              <div class="team-item">
+                <div class="team-inner-wrap">
+                  <div class="images-wrap">
+                    <img
+                      src="../static/images/alumni_images/subhendumandal.jfif"
+                      alt="Team"
+                    />
+                  </div>
+                  <div class="team-content">
+                    <h3 class="title-name">Subhendu Mandal</h3>
+                    <div class="team-title">Football Ground</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-20">
+              <div class="team-item">
+                <div class="team-inner-wrap">
+                  <div class="images-wrap">
+                    <img
+                      src="../static/images/alumni_images/bhaskardutta.jfif"
+                      alt="Team"
+                      width="4000px"
+                      height="4000px"
+                    />
+                  </div>
+                  <div class="team-content">
+                    <h3 class="title-name">Bhaskar Dutta</h3>
+                    <div class="team-title">Music Room</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Team Section Start -->
-        <div id="rs-team" class="rs-team style2 bg12 pt-120 pb-70 md-pt-80">
-            <div class="container pb-50">
-                <div class="sec-title text-center mb-60 md-mb-40">
-                    <span class="sub-text">OUR NOTABLE</span>
-                    <h2 class="title title-color pb-35">
-                        ALUMNI
-                    </h2>
-                    <div class="heading-border-line"></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-20">
-                        <div class="team-item">
-                            <div class="team-inner-wrap">
-                                <div class="images-wrap">
-                                   <img src="../static/images/alumni_images/gauravtaneja.webp" alt="Team" width="4000px" height="4000px" >
-                                </div>
-                                <div class="team-content">
-                                   
-                                    <h3 class="title-name">Gaurav Taneja</h3>
-                                    <div class="team-title">Youtuber popularly known as <b>'Flying Beast'</b> </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-20">
-                        <div class="team-item">
-                            <div class="team-inner-wrap">
-                                <div class="images-wrap">
-                                   <img src="../static/images/alumni_images/arunsarin.jfif" alt="Team" width="4000px" height="4000px">
-                                </div>
-                                <div class="team-content">
-                                   
-                                    <h3 class="title-name">Arun Sarin</h3>
-                                    <div class="team-title">Former Chief Executive Officer at Vodafone Group plc</div>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-20">
-                        <div class="team-item">
-                            <div class="team-inner-wrap">
-                                <div class="images-wrap">
-                                    <img src="../static/images/alumni_images/rajtilakroushan.jfif" alt="Team" width="4000px" height="4000px">
-                                </div>
-                                <div class="team-content">
-                                   
-                                    <h3 class="title-name">Raj Tilak Roushan</h3>
-                                    <div class="team-title">Deputy Commissioner of Police, Crime Branch (Detection-1) Mumbai at Indian Police Service</div>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-20">
-                        <div class="team-item">
-                            <div class="team-inner-wrap">
-                                <div class="images-wrap">
-                                  <img src="../static/images/alumni_images/rajkamaljha.jfif" alt="Team" width="4000px" height="4000px">
-                                </div>
-                                <div class="team-content">
-                                   
-                                    <h3 class="title-name">Raj Kamal Jha</h3>
-                                    <div class="team-title">Chief Editor at The Indian Express</div>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+        <!-- faq section starts  -->
 
-
-
-
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-20">
-                        <div class="team-item">
-                            <div class="team-inner-wrap">
-                                <div class="images-wrap">
-                                  <img src="../static/images/alumni_images/deepitpurkayastha.jfif" alt="Team" width="4000px" height="4000px">
-                                </div>
-                                <div class="team-content">
-                                   
-                                    <h3 class="title-name">Deepit Purkayastha</h3>
-                                    <div class="team-title">Co-Founder at Inshorts Group</div>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
-                <div class="sec-title text-center mb-60 md-mb-40">
-                    <span class="sub-text"></span>
-                    <h2 class="title title-color pb-35">
-                        MAJOR ALUMNI CONTRIBUTIONS
-                    </h2>
-                    <div class="heading-border-line"></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-20">
-                        <div class="team-item">
-                            <div class="team-inner-wrap">
-                                <div class="images-wrap">
-                                    <img src="../static/images/alumni_images/supriyosircar.jfif" alt="Team" width="4000px" height="4000px">
-                                </div>
-                                <div class="team-content">
-                                    
-                                    <h3 class="title-name">Supriyo Sircar</h3>
-                                    <div class="team-title">Basketball Ground</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-20">
-                        <div class="team-item">
-                            <div class="team-inner-wrap">
-                               
-                                <div class="images-wrap">
-                                    <img src="../static/images/alumni_images/subhendumandal.jfif" alt="Team">
-                                </div>
-                                <div class="team-content">
-                                    
-                                    <h3 class="title-name">Subhendu Mandal</h3>
-                                    <div class="team-title">Football Ground</div>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-lg-3 col-md-6 mb-20">
-                        <div class="team-item">
-                            <div class="team-inner-wrap">
-                                <div class="images-wrap">
-                                    <img src="../static/images/alumni_images/bhaskardutta.jfif" alt="Team" width="4000px" height="4000px">
-                                </div>
-                                <div class="team-content">
-                                   
-                                    <h3 class="title-name">Bhaskar Dutta</h3>
-                                    <div class="team-title">Music Room</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-                </div>
-            </div>
-
-            <!-- Team Section Start -->
-
-
-
-           
-
-            <!-- faq section starts  -->
-
-            <!-- <div class="rs-our-faqm style1 pt-120 pb-50 md-pt-75 md-pb-80">
+        <!-- <div class="rs-our-faqm style1 pt-120 pb-50 md-pt-75 md-pb-80">
                 <section>
                     <div class="container">
                         <div class="sec-title text-center mb-85 md-mb-50">
@@ -810,167 +893,197 @@
                 </section>
             </div> -->
 
-            <!-- faq section ends  -->
+        <!-- faq section ends  -->
 
-            <!-- Contact Section Start -->
-            <div class="rs-contact home-style1 pt-110 pb-120 md-pt-70 md-pb-80">
-                <div class="container">
-                    <div class="sec-title text-center mb-85 md-mb-50">
-                        <span class="sub-text">Venue</span>
-                        <h2 class="title pb-26">
-                            Event Location
-                        </h2>
-                        <div class="heading-border-line"></div>
-                    </div>
-                    <div class="row y-middle">
-                        <div class="col-lg-8 pr-50 md-pr-15 md-mb-50">
-                            <div class="contact-map">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1181.2714971910118!2d87.29835419907812!3d22.31883831911455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1703416286763!5m2!1sen!2sin"
-                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="widget-item mb-20">
-                                <div class="widget-img">
-                                    <img src="../static/images/alumni_images/2-1.webp" alt="Images">
-                                </div>
-                                <div class="address-item">
-                                    <div class="address-icon">
-                                        <img src="../static/images/alumni_images/1_2.webp" alt="Images">
-                                    </div>
-                                    <div class="address-text">
-                                        <h3 class="title"> Address</h3>
-                                        <p class="services-txt">
-                                            Azad Hall of Residence, IIT Kharagpur <br>
-                                            Kharagpur, West Bengal 721302
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-item mb-20">
-                                <div class="widget-img">
-                                    <img src="../static/images/alumni_images/2-2.webp" alt="Images">
-                                </div>
-                                <div class="address-item">
-                                    <div class="address-icon">
-                                        <img src="../static/images/alumni_images/2_2.webp" alt="Images">
-                                    </div>
-                                    <div class="address-text">
-                                        <h3 class="title">Email us</h3>
-                                        <p class="services-txt">
-                                            azadhall@iitkgp.ac.in <br>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-item">
-                                <div class="widget-img">
-                                    <img src="../static/images/alumni_images/2-3.webp" alt="Images">
-                                </div>
-                                <div class="address-item">
-                                    <div class="address-icon">
-                                        <img src="../static/images/alumni_images/3_1.webp" alt="Images">
-                                    </div>
-                                    <div class="address-text">
-                                        <h3 class="title">Call us</h3>
-                                        <p class="services-txt">
-                                            <a href="tel:+918087562959"> <b>Bhoumik Mhatre</b> <br>General secretary
-                                                Alumni Affairs <br>+918087562959</a><br>
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+        <!-- Contact Section Start -->
+        <div class="rs-contact home-style1 pt-110 pb-120 md-pt-70 md-pb-80">
+          <div class="container">
+            <div class="sec-title text-center mb-85 md-mb-50">
+              <span class="sub-text">Venue</span>
+              <h2 class="title pb-26">Event Location</h2>
+              <div class="heading-border-line"></div>
             </div>
-            <!-- Contact Section End -->
-
-
-        </div>
-
-        <!-- start scrollUp  -->
-        <div id="scrollUp" class="orange-color">
-            <i><svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 6V18M12 6L7 11M12 6L17 11" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg></i>
-        </div>
-        <!-- End scrollUp  -->
-
-
-        <!-- Search Modal Start -->
-        <div class="modal fade search-modal" id="searchModal" tabindex="-1">
-            <button type="button" class="close" data-bs-dismiss="modal">
-                <span class="flaticon-cross"></span>
-            </button>
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="search-block clearfix">
-                        <form>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Search Here..." type="text">
-                                <button type="submit" value="Search"><i class="flaticon-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
+            <div class="row y-middle">
+              <div class="col-lg-8 pr-50 md-pr-15 md-mb-50">
+                <div class="contact-map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1181.2714971910118!2d87.29835419907812!3d22.31883831911455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1703416286763!5m2!1sen!2sin"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="widget-item mb-20">
+                  <div class="widget-img">
+                    <img
+                      src="../static/images/alumni_images/2-1.webp"
+                      alt="Images"
+                    />
+                  </div>
+                  <div class="address-item">
+                    <div class="address-icon">
+                      <img
+                        src="../static/images/alumni_images/1_2.webp"
+                        alt="Images"
+                      />
+                    </div>
+                    <div class="address-text">
+                      <h3 class="title">Address</h3>
+                      <p class="services-txt">
+                        Azad Hall of Residence, IIT Kharagpur <br />
+                        Kharagpur, West Bengal 721302
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="widget-item mb-20">
+                  <div class="widget-img">
+                    <img
+                      src="../static/images/alumni_images/2-2.webp"
+                      alt="Images"
+                    />
+                  </div>
+                  <div class="address-item">
+                    <div class="address-icon">
+                      <img
+                        src="../static/images/alumni_images/2_2.webp"
+                        alt="Images"
+                      />
+                    </div>
+                    <div class="address-text">
+                      <h3 class="title">Email us</h3>
+                      <p class="services-txt">azadhall@iitkgp.ac.in <br /></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="widget-item">
+                  <div class="widget-img">
+                    <img
+                      src="../static/images/alumni_images/2-3.webp"
+                      alt="Images"
+                    />
+                  </div>
+                  <div class="address-item">
+                    <div class="address-icon">
+                      <img
+                        src="../static/images/alumni_images/3_1.webp"
+                        alt="Images"
+                      />
+                    </div>
+                    <div class="address-text">
+                      <h3 class="title">Call us</h3>
+                      <p class="services-txt">
+                        <a href="tel:+918087562959">
+                          <b>Bhavik Nanure</b> <br />General secretary Alumni
+                          Affairs <br />+918805033538</a
+                        ><br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- Search Modal End -->
+        <!-- Contact Section End -->
+      </div>
 
+      <!-- start scrollUp  -->
+      <div id="scrollUp" class="orange-color">
+        <i
+          ><svg
+            width="40px"
+            height="40px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 6V18M12 6L7 11M12 6L17 11"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+        ></i>
+      </div>
+      <!-- End scrollUp  -->
 
+      <!-- Search Modal Start -->
+      <div class="modal fade search-modal" id="searchModal" tabindex="-1">
+        <button type="button" class="close" data-bs-dismiss="modal">
+          <span class="flaticon-cross"></span>
+        </button>
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="search-block clearfix">
+              <form>
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    placeholder="Search Here..."
+                    type="text"
+                  />
+                  <button type="submit" value="Search">
+                    <i class="flaticon-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Search Modal End -->
 
+      <script>
+        const faqs = document.querySelectorAll(".faqm");
 
-        <script>
-            const faqs = document.querySelectorAll(".faqm");
+        faqs.forEach((faqm) => {
+          faqm.addEventListener("click", () => {
+            faqs.forEach((faqm) => {
+              faqm.classList.remove("active");
+            });
+            faqm.classList.toggle("active");
+          });
+        });
+      </script>
 
-            faqs.forEach(faqm => {
-                faqm.addEventListener("click", () => {
-                    faqs.forEach(faqm => { faqm.classList.remove("active") });
-                    faqm.classList.toggle("active");
-                })
-            })
-        </script>
-
-        <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-        <!-- modernizr js -->
-        <script src="../static/js/alumni_js/modernizr-2.8.3.min.js"></script>
-        <!-- jquery latest version -->
-        <script src="../static/js/alumni_js/jquery.min.js"></script>
-        <!-- Bootstrap v4.4.1 js -->
-        <script src="../static/js/alumni_js/bootstrap.min.js"></script>
-        <!-- op nav js -->
-        <script src="../static/js/alumni_js/jquery.nav.js"></script>
-        <!-- isotope.pkgd.min js -->
-        <script src="../static/js/alumni_js/isotope.pkgd.min.js"></script>
-        <!-- owl.carousel js -->
-        <script src="../static/js/alumni_js/owl.carousel.min.js"></script>
-        <!-- wow js -->
-        <script src="../static/js/alumni_js/wow.min.js"></script>
-        <!-- Time Circle js -->
-        <script src="../static/js/alumni_js/time-circle.js"></script>
-        <!-- Skill bar js -->
-        <script src="../static/js/alumni_js/skill.bars.jquery.js"></script>
-        <!-- imagesloaded js -->
-        <script src="../static/js/alumni_js/imagesloaded.pkgd.min.js"></script>
-        <!-- waypoints.min js -->
-        <script src="../static/js/alumni_js/waypoints.min.js"></script>
-        <!-- counterup.min js -->
-        <script src="../static/js/alumni_js/jquery.counterup.min.js"></script>
-        <!-- magnific popup js -->
-        <script src="../static/js/alumni_js/jquery.magnific-popup.min.js"></script>
-        <!-- contact form js -->
-        <script src="../static/js/alumni_js/contact.form.js"></script>
-        <!-- main js -->
-        <script src="../static/js/alumni_js/mainn.js"></script>
-
-
-
+      <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+      <!-- modernizr js -->
+      <script src="../static/js/alumni_js/modernizr-2.8.3.min.js"></script>
+      <!-- jquery latest version -->
+      <script src="../static/js/alumni_js/jquery.min.js"></script>
+      <!-- Bootstrap v4.4.1 js -->
+      <script src="../static/js/alumni_js/bootstrap.min.js"></script>
+      <!-- op nav js -->
+      <script src="../static/js/alumni_js/jquery.nav.js"></script>
+      <!-- isotope.pkgd.min js -->
+      <script src="../static/js/alumni_js/isotope.pkgd.min.js"></script>
+      <!-- owl.carousel js -->
+      <script src="../static/js/alumni_js/owl.carousel.min.js"></script>
+      <!-- wow js -->
+      <script src="../static/js/alumni_js/wow.min.js"></script>
+      <!-- Time Circle js -->
+      <script src="../static/js/alumni_js/time-circle.js"></script>
+      <!-- Skill bar js -->
+      <script src="../static/js/alumni_js/skill.bars.jquery.js"></script>
+      <!-- imagesloaded js -->
+      <script src="../static/js/alumni_js/imagesloaded.pkgd.min.js"></script>
+      <!-- waypoints.min js -->
+      <script src="../static/js/alumni_js/waypoints.min.js"></script>
+      <!-- counterup.min js -->
+      <script src="../static/js/alumni_js/jquery.counterup.min.js"></script>
+      <!-- magnific popup js -->
+      <script src="../static/js/alumni_js/jquery.magnific-popup.min.js"></script>
+      <!-- contact form js -->
+      <script src="../static/js/alumni_js/contact.form.js"></script>
+      <!-- main js -->
+      <script src="../static/js/alumni_js/mainn.js"></script>
     </div>
-</body>
-
+  </body>
 </html>
