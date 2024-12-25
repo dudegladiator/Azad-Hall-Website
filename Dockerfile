@@ -20,7 +20,7 @@ fi' > /app/create_env.sh
 
 RUN chmod +x /app/create_env.sh
 
-#WORKDIR /app
+WORKDIR /app
 
 COPY /entrypoint.sh /
 # Modify entrypoint.sh to run create_env.sh first
