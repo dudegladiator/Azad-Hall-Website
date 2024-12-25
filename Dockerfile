@@ -22,7 +22,7 @@ RUN chmod +x /app/create_env.sh
 
 #WORKDIR /app
 
-COPY /app/entrypoint.sh /
+COPY /entrypoint.sh /
 # Modify entrypoint.sh to run create_env.sh first
 RUN sed -i '1i/app/create_env.sh' /entrypoint.sh
 
