@@ -287,7 +287,8 @@ def khoj(request):
 
 
 def library(request, searchedBooks=None, str=None):
-    if request.user.is_authenticated:
+    #if request.user.is_authenticated:
+    if 1:
         if searchedBooks:
             books = searchedBooks
             return render(
