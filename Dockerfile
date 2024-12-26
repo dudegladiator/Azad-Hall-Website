@@ -22,9 +22,9 @@ RUN chmod +x /app/create_env.sh
 
 WORKDIR /app
 
-COPY /entrypoint.sh /
+COPY ./entrypoint.sh /
 # Modify entrypoint.sh to run create_env.sh first
-RUN sed -i '1i/app/create_env.sh' /entrypoint.sh
+RUN sed -i '1i/create_env.sh' /entrypoint.sh
 
 EXPOSE 10000
 
