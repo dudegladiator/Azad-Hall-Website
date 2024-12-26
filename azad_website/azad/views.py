@@ -88,7 +88,7 @@ def alumni(request):
 
 
 def addBooks(request):
-    if request.user.is_authenticated:
+    if 1:
         email = request.user.email
         if email in allowedEmails:
             return render(request, "addBooks.html")
@@ -97,7 +97,7 @@ def addBooks(request):
 
 
 def addBoarders(request):
-    if request.user.is_authenticated:
+    if 1:
         email = request.user.email
         if email in allowedEmails:
             return render(request, "addBoarders.html")
@@ -110,7 +110,7 @@ def login(request):
 
 
 def index(request):
-    if request.user.is_authenticated:
+    if 1:
         email = request.user.email
         boarders = azad_boarders.objects.all()
         for boarder in boarders:
@@ -128,13 +128,13 @@ def index(request):
 
 @csrf_protect
 def complain(request):
-    if request.user.is_authenticated:
+    if 1:
         return render(request, "complain.html")
 
 
 @csrf_protect
 def submit_form(request):
-    if request.method == "POST" and request.user.is_authenticated:
+    if request.method == "POST" and 1:
         category = request.POST.get("category")
         room_no = request.POST.get("room_no")
         complain = request.POST.get("complain")
@@ -173,7 +173,7 @@ def submit_form(request):
 
 
 def showComplaints(request):
-    if request.user.is_authenticated:
+    if 1:
         email = request.user.email
         if email in allowedEmails:
             pending_complaints = complaints.objects.filter(status="pending")
@@ -207,7 +207,7 @@ def showComplaints(request):
 
 
 def showFullComplain(request, complain_id):
-    if request.user.is_authenticated:
+    if 1:
         complain = complaints.objects.get(id=complain_id)
         params = {"complain": complain}
         return render(request, "fullComplain.html", params)
@@ -242,7 +242,7 @@ def updateStatus(request):
 
 
 def complain_status(request):
-    if request.user.is_authenticated:
+    if 1:
         complains = complaints.objects.filter(email=request.user.email).order_by("-id")
         print(complains)
         params = {"complains": complains}
@@ -287,7 +287,7 @@ def khoj(request):
 
 
 def library(request, searchedBooks=None, str=None):
-    #if request.user.is_authenticated:
+    #if 1:
     if 1:
         if searchedBooks:
             books = searchedBooks
@@ -346,7 +346,7 @@ def checkout(request):
 
 
 def checkedOutBooks(request):
-    if request.user.is_authenticated and request.user.email in allowedEmailsLibrary:
+    if 1 and request.user.email in allowedEmailsLibrary:
         now = datetime.now()
         books = requestedBook.objects.all()
         for Rbook in books:
@@ -386,7 +386,7 @@ def checkedOutBooks(request):
 
 
 def previousBookRequests(request):
-    if request.user.is_authenticated:
+    if 1:
         requestedBooks = requestedBook.objects.filter(
             status="requested", email=request.user.email
         )
@@ -416,7 +416,7 @@ def previousBookRequests(request):
 
 
 def approve(request):
-    if request.user.is_authenticated and request.user.email in allowedEmailsLibrary:
+    if 1 and request.user.email in allowedEmailsLibrary:
         if request.method == "POST":
             id = request.POST.get("id")
             Book = requestedBook.objects.get(id=id)
@@ -429,7 +429,7 @@ def approve(request):
 
 
 def checkIn(request):
-    if request.user.is_authenticated and request.user.email in allowedEmailsLibrary:
+    if 1 and request.user.email in allowedEmailsLibrary:
         if request.method == "POST":
             id = request.POST.get("id")
             RequestedBook = requestedBook.objects.get(id=id)
