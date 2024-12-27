@@ -45,7 +45,7 @@
   },
   {
     "model": "azad.azad_boarders",
-    "pk": 5
+    "pk": 5,
     "fields": {
       "roll_no": "23EE10036",
       "name": "Kushagra Poonia",
