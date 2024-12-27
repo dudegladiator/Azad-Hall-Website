@@ -23,6 +23,7 @@ allowedEmails = [
     "rajumeshram767@gmail.com",
     "hariomk628@gmail.com",
     "sg06959.sgsg@gmail.com",
+    "pooniakushagra20@gmail.com",
     "somnathmishra1802@gmail.com",
 ]
 allowedEmailsLibrary = [
@@ -98,7 +99,7 @@ def addBooks(request):
 
 
 def addBoarders(request):
-    if 1:
+    if request.user.is_authenticated:
         email = request.user.email
         if email in allowedEmails:
             return render(request, "addBoarders.html")
