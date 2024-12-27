@@ -14,7 +14,7 @@
     "model": "azad.azad_boarders",
     "pk": 2,
     "fields": {
-      "roll_no": "22IM3FP29",
+      "roll_no": "22IM3FP291",
       "name": "Harsh Gupta",
       "emails": "gladiator098123@gmail.com",
       "contact": "9073108195",
@@ -40,6 +40,17 @@
       "name": "Harsh Vardhan",
       "emails": "harsh247gupta@gmail.com",
       "contact": "9634277956",
+      "books": 0
+    }
+  },
+  {
+    "model": "azad.azad_boarders",
+    "pk": 5
+    "fields": {
+      "roll_no": "23EE10036",
+      "name": "Kushagra Poonia",
+      "emails": "pooniakushagra20@gmail.com",
+      "contact": "8950354224",
       "books": 0
     }
   }
