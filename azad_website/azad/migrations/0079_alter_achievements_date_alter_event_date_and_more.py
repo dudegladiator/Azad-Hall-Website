@@ -14,26 +14,26 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='achievements',
             name='date',
-            field=models.DateTimeField(blank=True, default=datetime.datetime(2024, 11, 6, 21, 17, 10, 958049)),
+            field=models.DateTimeField(blank=True, default=datetime.datetime(2024, 11, 6, 22, 47, 11, 134058)),
         ),
         migrations.AlterField(
             model_name='event',
             name='date',
-            field=models.DateTimeField(default=datetime.datetime(2024, 11, 6, 21, 17, 10, 956046)),
+            field=models.DateTimeField(default=datetime.datetime(2024, 11, 6, 22, 47, 11, 132057)),
         ),
         migrations.AlterField(
             model_name='imagemodel',
             name='date',
-            field=models.DateTimeField(default=datetime.datetime(2024, 11, 6, 21, 17, 10, 957045)),
+            field=models.DateTimeField(default=datetime.datetime(2024, 11, 6, 22, 47, 11, 133038)),
         ),
         migrations.AlterField(
             model_name='notice',
             name='date',
-            field=models.DateTimeField(blank=True, default=datetime.datetime(2024, 11, 6, 21, 17, 10, 957045)),
+            field=models.DateTimeField(blank=True, default=datetime.datetime(2024, 11, 6, 22, 47, 11, 134058)),
         ),
         migrations.AlterField(
             model_name='para',
             name='date',
-            field=models.DateTimeField(default=datetime.datetime(2024, 11, 6, 21, 17, 10, 957045)),
+            field=models.DateTimeField(default=datetime.datetime(2024, 11, 6, 22, 47, 11, 132057)),
         ),
     ]
