@@ -23,10 +23,12 @@ allowedEmails = [
     "rajumeshram767@gmail.com",
     "hariomk628@gmail.com",
     "sg06959.sgsg@gmail.com",
+    "pooniakushagra20@gmail.com",
     "somnathmishra1802@gmail.com",
 ]
 allowedEmailsLibrary = [
     "harsh247gupta@gmail.com",
+    "pooniakushagra20@gmail.com",
     "harsh90731@gmail.com",
     "rajumeshram767@gmail.com",
     "hariomk628@gmail.com",
