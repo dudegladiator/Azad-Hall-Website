@@ -125,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http"
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -136,7 +136,9 @@ SOCIALACCOUNT_PROVIDERS = {
             'secret': os.getenv('SECRET'),
             'key': '',  # Optional, you can leave this empty
         },
-        'redirect_uris': ['https://azadian.org/accounts/google/login/callback/'],  # Update with your HTTPS domain
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
     }
 }
 
