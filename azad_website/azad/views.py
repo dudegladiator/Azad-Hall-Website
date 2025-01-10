@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
-from .forms import ContactForm, CommentForm
+from .forms import ContactForm, CommentForm,UserForm
 from django.core.mail import BadHeaderError, send_mail
 from django.http import JsonResponse
 from django.core import serializers
@@ -16,7 +16,7 @@ from django.core.paginator import Paginator, Page
 from django.views.decorators.csrf import csrf_protect
 from datetime import datetime
 
-
+allowedEmailsecratary=True
 allowedEmails = [
     "harsh247gupta@gmail.com",
     "harsh90731@gmail.com",
@@ -288,6 +288,7 @@ def khoj(request):
 
 def library(request, searchedBooks=None, str=None):
     if request.user.is_authenticated:
+        form_data = request.session.get('form_data', None)
         if searchedBooks:
             books = searchedBooks
             return render(
@@ -300,11 +301,12 @@ def library(request, searchedBooks=None, str=None):
         # message=None
         # if checkout:
         #     message="Request submitted successfully"
-        return render(
-            request,
-            "library.html",
-            {"books": current_page_books, "searchedString": str},
-        )
+        context = {
+            "books": current_page_books,
+            "searchedString": str,
+            "form_data": form_data,
+        }
+        return render(request, "library.html", context)
     messages.info(request, "Please login with valid ID to access library")
     return redirect("/")
 
@@ -570,3 +572,23 @@ def custom_logout(request):
     message = "Logged out successfully"
     params = {"message": message}
     return render(request, "index.html", params)
+
+
+
+def user_form_view(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = UserForm(request.POST)
+            if form.is_valid():
+                # Get cleaned data
+                data=form.cleaned_data
+                request.session['form_data'] = form.cleaned_data
+                # return redirect('library')
+                return render(request, 'user.html', {'form': form})
+
+        else:
+            form = UserForm()
+            return render(request, 'user.html', {'form': form})
+    messages.info(request, "Please login with valid ID")
+    return redirect("/")
+
