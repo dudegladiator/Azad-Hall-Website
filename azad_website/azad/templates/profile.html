@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Edit Profile</h1>
+        <form action="/profile" method="POST">
+        {% csrf_token %}
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <div id="email" name="email">{{ user.emails }}</div>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{ user.name }}" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="roll">Roll Number:</label>
+                <input type="text" id="roll_no" name="roll_no" value="{{ user.roll_no }}" placeholder="Enter your roll number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="contact_no" value="{{ user.contact_no }}" placeholder="Enter your phone number">
+            </div>
+
+            <button type="submit" class="submit-btn">Update</button>
+        </form>
+    </div>
+</body>
+</html>

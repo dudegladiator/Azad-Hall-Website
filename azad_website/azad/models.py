@@ -10,6 +10,7 @@ class azad_boarders(models.Model):
     emails=models.EmailField()
     contact=models.CharField(max_length=12, null=True)
     books=models.IntegerField(null=True)
+    role=models.CharField(max_length=500)
     
 class complaints(models.Model):
     name=models.CharField(max_length=500)

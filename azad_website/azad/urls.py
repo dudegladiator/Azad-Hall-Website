@@ -38,6 +38,7 @@ urlpatterns = [
     path('previousBookRequests', views.previousBookRequests, name='previousBookRequests'),
     path('cancelBookRequest', views.cancelBookRequest, name='cancelBookRequest'),
     path('alumni', views.alumni, name='alumni'),
+    path('profile', views.profile, name='profile'),
 ]
 
 if settings.DEBUG:  
