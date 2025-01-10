@@ -137,13 +137,13 @@ def profile(request):
     if request.method == "POST" and 1:
         boarder = azad_boarders.objects.get(emails=request.user.email)
         if boarder:
-            contact_no = request.POST.get("contact")
+            contact = request.POST.get("contact_no")
             name = request.POST.get("name")
             roll_no = request.POST.get("roll_no")
             register = azad_boarders.objects.update(
                 roll_no=roll_no,
                 name=name,
-                contact=contact_no,
+                contact=contact,
             )
             messages.info(request, "Saved Successfully")
             return redirect("/profile")
