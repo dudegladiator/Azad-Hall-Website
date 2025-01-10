@@ -88,7 +88,6 @@ def importBooksFromExcel(request):
 def alumni(request):
     return render(request, "alumni.html")
 
-
 def addBooks(request):
     if request.user.is_authenticated:
         email = request.user.email
@@ -133,6 +132,26 @@ def complain(request):
     if request.user.is_authenticated:
         return render(request, "complain.html")
 
+@csrf_protect
+def profile(request):
+    if request.method == "POST" and 1:
+        boarder = azad_boarders.objects.get(emails=request.user.email)
+        if boarder:
+            contact_no = request.POST.get("contact")
+            name = request.POST.get("name")
+            roll_no = request.POST.get("roll_no")
+            register = azad_boarders.objects.update(
+                roll_no=roll_no,
+                name=name,
+                contact=contact_no,
+            )
+            messages.info(request, "Saved Successfully")
+            return redirect("/profile")
+        else:
+            messages.info(request, "Email not found")
+    
+    boarder = azad_boarders.objects.get(emails=request.user.email)
+    return render(request, "profile.html", {"user":boarder})
 
 @csrf_protect
 def submit_form(request):
