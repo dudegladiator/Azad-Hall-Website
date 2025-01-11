@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
-from .forms import ContactForm, CommentForm, ComplaintForm
+from .forms import ContactForm, CommentForm, ComplaintForm, LibraryDutyForm
 from django.core.mail import BadHeaderError, send_mail
 from django.http import JsonResponse
 from django.core import serializers
@@ -15,13 +15,23 @@ from django.contrib import messages
 from django.core.paginator import Paginator, Page
 from django.views.decorators.csrf import csrf_protect
 from datetime import datetime
+from django.conf import settings
 import requests
 import base64
 from django.utils.timezone import make_aware
 
-allowedEmailsecratary = True
+allowedEmailSecratary = [
+    "gladiator098123@gmail.com",
+    "arnabdas.9039@gmail.com",
+    "pooniakushagra20@gmail.com",
+]
 
-allowedEmailsNotice = ["arnabdas.9039@gmail.com"]
+allowedEmailsNotice = [
+    "arnabdas.9039@gmail.com",
+    "gladiator098123@gmail.com",
+    "pooniakushagra20@gmail.com",
+]
+
 allowedEmails = [
     "harsh247gupta@gmail.com",
     "harsh90731@gmail.com",
@@ -30,6 +40,9 @@ allowedEmails = [
     "sg06959.sgsg@gmail.com",
     "pooniakushagra20@gmail.com",
     "somnathmishra1802@gmail.com",
+    "arnabdas.9039@gmail.com",
+    "gladiator098123@gmail.com",
+    "aryandongre53@gmail.com",
 ]
 allowedEmailsLibrary = [
     "harsh247gupta@gmail.com",
@@ -40,6 +53,9 @@ allowedEmailsLibrary = [
     "sg06959.sgsg@gmail.com",
     "pranjalchouhan2014@gmail.com",
     "somnathmishra1802@gmail.com",
+    "arnabdas.9039@gmail.com",
+    "gladiator098123@gmail.com",
+    "aryandongre53@gmail.com",
 ]
 
 
@@ -116,8 +132,8 @@ def index(request):
                 params = {"name": name}
                 return render(request, "index.html", params)
         logout(request)
-        messages.info("Please login with valid EmailID")
-        return render(request, "khoj.html")
+        messages.info(request, "Please login with valid EmailID")
+        return render(request, "index.html")
 
     return render(request, "index.html")
 
@@ -307,7 +323,6 @@ def submit_complain(request):
             # Handle image upload via ImageKit
             if "upload_image" in request.FILES:
                 upload_image = request.FILES["upload_image"]
-                api_key = "private_iXnU83xFLdR99tM9YEFMOQLuwus="
 
                 # Read the uploaded file as binary
                 response = upload_file_to_imagekit(
@@ -343,44 +358,47 @@ def noticeboard(request):
 
 @csrf_protect
 def noticeadd(request):
-    if request.method == "POST" and request.user.is_authenticated:
+    if request.user.is_authenticated:
         email = request.user.email
         if email in allowedEmailsNotice:
-            title = request.POST.get("title")
-            subtitle = request.POST.get("subtitle")
-            description = request.POST.get("description")
-            image_link = request.POST.get("image")
-            event_date_time = request.POST.get("event")
-            issue_date_time = datetime.now()
-            author = request.POST.get("author")
-            Notice.objects.create(
-                title=title,
-                subtitle=subtitle,
-                description=description,
-                image=image_link,
-                event_date_time=event_date_time,
-                issue_date_time=make_aware(issue_date_time),
-                author=author,
-            )
-            users = list(User.objects.all())
-            if not users:
-                messages.info(request, "Recipients not found")
-            emails = [user.email for user in users]
-            try:
-                send_mail(
-                    subject=title,
-                    message=description,
-                    from_email="arnabdas.9039@gmail.com",
-                    recipient_list=emails,
-                    fail_silently=False,
+            if request.method == "POST":
+                title = request.POST.get("title")
+                subtitle = request.POST.get("subtitle")
+                description = request.POST.get("description")
+                image_link = request.POST.get("image")
+                event_date_time = request.POST.get("event")
+                issue_date_time = datetime.now()
+                author = request.POST.get("author")
+                Notice.objects.create(
+                    title=title,
+                    subtitle=subtitle,
+                    description=description,
+                    image=image_link,
+                    event_date_time=event_date_time,
+                    issue_date_time=make_aware(issue_date_time),
+                    author=author,
                 )
-                messages.info(request, "Notice posted and emailed successfully")
-            except BadHeaderError:
-                messages.info(request, "Notice posted successfully")
-            return redirect("/noticeboard")
-        messages.info(request, "Please login with valid ID.")
+                users = list(User.objects.all())
+                if not users:
+                    messages.info(request, "Recipients not found")
+                emails = [user.email for user in users]
+                try:
+                    send_mail(
+                        subject=title,
+                        message=description,
+                        from_email="settings.EMAIL_HOST_USER",
+                        recipient_list=emails,
+                        fail_silently=False,
+                    )
+                    messages.info(request, "Notice posted and emailed successfully")
+                except BadHeaderError:
+                    messages.info(request, "Notice posted successfully")
+                return redirect("/noticeboard")
+            return render(request, "addnotice.html")
+        messages.info(request, "Not Allowed")
         return redirect("/")
-    return render(request, "addnotice.html")
+    messages.info(request, "Please login with valid ID.")
+    return redirect("/")
 
 
 def achievements(request):
@@ -559,16 +577,20 @@ def checkIn(request):
             return redirect("/checkedOutBooks")
 
 
+@csrf_protect
 def cancelBookRequest(request):
-    id = request.POST.get("id")
-    RequestedBook = requestedBook.objects.get(id=id)
-    boarder = azad_boarders.objects.get(emails=RequestedBook.email)
-    boarder.books -= 1
-    boarder.save()
-    Book = book.objects.get(id=RequestedBook.bookID)
-    Book.available += 1
-    Book.save()
-    RequestedBook.delete()
+    if request.method == "POST" and request.user.is_authenticated:
+        id = request.POST.get("id")
+        print(id)
+        RequestedBook = requestedBook.objects.get(id=id)
+        boarder = azad_boarders.objects.get(emails=RequestedBook.email)
+        boarder.books -= 1
+        boarder.save()
+        Book = book.objects.get(id=RequestedBook.bookID)
+        Book.available += 1
+        Book.save()
+        RequestedBook.delete()
+        return redirect("/previousBookRequests")
     return redirect("/previousBookRequests")
 
 
@@ -683,6 +705,34 @@ def event(request, eventid):
 
 def custom_logout(request):
     logout(request)
-    message = "Logged out successfully"
-    params = {"message": message}
-    return render(request, "index.html", params)
+    messages.info(request, "Logged out successfully.")
+    return redirect("/")
+
+
+def libraryFormView(request):
+    if request.user.is_authenticated and request.user.email in allowedEmailSecratary:
+        if request.method == "POST":
+            form = LibraryDutyForm(request.POST)
+            if form.is_valid():
+                data = form.cleaned_data
+                # Example: Converting time and date to string before saving
+                time1_str = data["time1"].strftime("%H:%M:%S")
+                time2_str = data["time2"].strftime("%H:%M:%S")
+                date_str = data["date"].strftime("%Y-%m-%d")
+
+                # Store serialized values in session
+                request.session["form_data"] = {
+                    "name": data["name"],
+                    "phone_number": data["phone_number"],
+                    "time1": time1_str,
+                    "time2": time2_str,
+                    "date": date_str,
+                }
+                # return redirect('library')
+                return render(request, "user.html", {"form": form})
+
+        else:
+            form = LibraryDutyForm()
+            return render(request, "user.html", {"form": form})
+    messages.info(request, "Please login with valid ID")
+    return redirect("/")

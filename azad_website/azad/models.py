@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.validators import RegexValidator
 from datetime import datetime
 from django.utils import timezone
 from django import forms
@@ -12,33 +11,6 @@ class azad_boarders(models.Model):
     contact = models.CharField(max_length=12, null=True, blank=True)
     books = models.IntegerField(null=True, default=0)
     role = models.CharField(max_length=500, default="Boarder")
-
-
-class UserForm(forms.Form):
-    name = forms.CharField(
-        label="Name",
-        max_length=100,
-        widget=forms.TextInput(attrs={"placeholder": "Enter your full name"}),
-    )
-    phone_number = forms.CharField(
-        label="Phone Number",
-        max_length=15,
-        validators=[
-            RegexValidator(
-                regex=r"^\+?1?\d{9,15}$",
-                message="Phone number must be in the format: '+999999999'. Up to 15 digits allowed.",
-            ),
-        ],
-        widget=forms.TextInput(
-            attrs={"placeholder": "Enter phone number with country code"}
-        ),
-    )
-    details = forms.CharField(
-        label="Details",
-        widget=forms.Textarea(
-            attrs={"placeholder": "Enter additional details here", "rows": 5}
-        ),
-    )
 
 
 class complaints(models.Model):

@@ -93,7 +93,7 @@ WSGI_APPLICATION = "azad_website.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {}
-if os.getenv("DATABASE") == "clou":
+if os.getenv("DATABASE") == "cloud":
     DATABASES = {
         "default": {
             "ENGINE": os.getenv("DB_ENGINE"),
@@ -179,11 +179,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # MEDIA_URL = "/media/"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "azad/media/")
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "arnabdas.9039@gmail.com"
-EMAIL_HOST_PASSWORD = "scbo vfas ytpj exzq"
-EMAIL_PORT = 587
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS")
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
 AUTHENTICATION_BACKENDS = [
