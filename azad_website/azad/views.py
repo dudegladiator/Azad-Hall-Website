@@ -588,6 +588,7 @@ def event(request, eventid):
     )
 
 
+
 def custom_logout(request):
     logout(request)
     message = "Logged out successfully"
