@@ -246,7 +246,8 @@
     /**
      * Animation on scroll
      */
-    window.addEventListener('load', () => {
+    window.addEventListener('onload', () => {
+        onRefresh();
         AOS.init({
             duration: 1000,
             easing: 'ease-in-out',
@@ -261,9 +262,9 @@
     new PureCounter();
 
     /*to display hcm members based on year selected*/
-    let hcmYear = document.getElementById("hcm-year");
-    hcmYear.addEventListener('click', ()=>{
+    function hcmYearFun(){
         let id = "hcm" + hcmYear.value;
+        // let id = "hcm2024-25";
         console.log(id);
         let elems = document.querySelectorAll(".hcmMembers");
         elems.forEach((elem)=>{
@@ -271,20 +272,24 @@
         })
         let selectedElem = document.getElementById(id);
         selectedElem.style.display = "grid";
+    }
+    let hcmYear = document.getElementById("hcm-year");
+    hcmYear.addEventListener('click', hcmYearFun);
 
-    })
-
-    let webYear = document.getElementById("web-year");
-    webYear.addEventListener('click', ()=>{
+    function webYearFun(){
         let id = "web" + webYear.value;
         console.log(id);
+        // let id = "web2024-25";
         let elems = document.querySelectorAll(".webMembers");
         elems.forEach((elem)=>{
             elem.style.display = "none";
         })
         let selectedElem = document.getElementById(id);
         selectedElem.style.display = "grid";
-    })
+    }
+    let webYear = document.getElementById("web-year");
+    webYear.addEventListener('click', webYearFun);
+
     let capYear = document.getElementById("gccaptain-year");
     capYear.addEventListener('click', ()=>{
         let id = "captains" + capYear.value;
@@ -296,4 +301,13 @@
         let selectedElem = document.getElementById(id);
         selectedElem.style.display = "flex";
     })
+
+    //we have to update the hcm and webteam page after loading the page
+    function onRefresh(){
+        console.log("Azad Op");
+        webYearFun();
+        hcmYearFun();
+    }
+
+    window.onload = onRefresh;
 })()

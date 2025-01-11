@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
-from .forms import ContactForm, CommentForm
+from .forms import ContactForm, CommentForm,UserForm
 from django.core.mail import BadHeaderError, send_mail
 from django.http import JsonResponse
 from django.core import serializers
@@ -18,17 +18,19 @@ from datetime import datetime
 import requests
 import base64
 
-
+allowedEmailsecratary=True
 allowedEmails = [
     "harsh247gupta@gmail.com",
     "harsh90731@gmail.com",
     "rajumeshram767@gmail.com",
     "hariomk628@gmail.com",
     "sg06959.sgsg@gmail.com",
+    "pooniakushagra20@gmail.com",
     "somnathmishra1802@gmail.com",
 ]
 allowedEmailsLibrary = [
     "harsh247gupta@gmail.com",
+    "pooniakushagra20@gmail.com",
     "harsh90731@gmail.com",
     "rajumeshram767@gmail.com",
     "hariomk628@gmail.com",
@@ -87,7 +89,6 @@ def importBooksFromExcel(request):
 
 def alumni(request):
     return render(request, "alumni.html")
-
 
 def addBooks(request):
     if request.user.is_authenticated:
@@ -170,7 +171,27 @@ def complain(request):
     else:
         return HttpResponse(status=405)
 
-# Function to submit a complaint form
+@csrf_protect
+def profile(request):
+    if request.method == "POST" and 1:
+        boarder = azad_boarders.objects.get(emails=request.user.email)
+        if boarder:
+            contact = request.POST.get("contact_no")
+            name = request.POST.get("name")
+            roll_no = request.POST.get("roll_no")
+            register = azad_boarders.objects.update(
+                roll_no=roll_no,
+                name=name,
+                contact=contact,
+            )
+            messages.info(request, "Saved Successfully")
+            return redirect("/profile")
+        else:
+            messages.info(request, "Email not found")
+    
+    boarder = azad_boarders.objects.get(emails=request.user.email)
+    return render(request, "profile.html", {"user":boarder})
+
 @csrf_protect
 def submit_form(request):
     if request.method == "POST" and request.user.is_authenticated:
@@ -338,6 +359,7 @@ def khoj(request):
 
 def library(request, searchedBooks=None, str=None):
     if request.user.is_authenticated:
+        form_data = request.session.get('form_data', None)
         if searchedBooks:
             books = searchedBooks
             return render(
@@ -350,11 +372,12 @@ def library(request, searchedBooks=None, str=None):
         # message=None
         # if checkout:
         #     message="Request submitted successfully"
-        return render(
-            request,
-            "library.html",
-            {"books": current_page_books, "searchedString": str},
-        )
+        context = {
+            "books": current_page_books,
+            "searchedString": str,
+            "form_data": form_data,
+        }
+        return render(request, "library.html", context)
     messages.info(request, "Please login with valid ID to access library")
     return redirect("/")
 
@@ -620,3 +643,23 @@ def custom_logout(request):
     message = "Logged out successfully"
     params = {"message": message}
     return render(request, "index.html", params)
+
+
+
+def user_form_view(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = UserForm(request.POST)
+            if form.is_valid():
+                # Get cleaned data
+                data=form.cleaned_data
+                request.session['form_data'] = form.cleaned_data
+                # return redirect('library')
+                return render(request, 'user.html', {'form': form})
+
+        else:
+            form = UserForm()
+            return render(request, 'user.html', {'form': form})
+    messages.info(request, "Please login with valid ID")
+    return redirect("/")
+
