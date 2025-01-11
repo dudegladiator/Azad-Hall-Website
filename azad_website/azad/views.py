@@ -30,6 +30,7 @@ allowedEmails = [
     "sg06959.sgsg@gmail.com",
     "pooniakushagra20@gmail.com",
     "somnathmishra1802@gmail.com",
+    "aryandongre53@gmail.com",
 ]
 allowedEmailsLibrary = [
     "harsh247gupta@gmail.com",
@@ -40,6 +41,7 @@ allowedEmailsLibrary = [
     "sg06959.sgsg@gmail.com",
     "pranjalchouhan2014@gmail.com",
     "somnathmishra1802@gmail.com",
+    "aryandongre53@gmail.com",
 ]
 
 
