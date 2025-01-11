@@ -19,8 +19,8 @@
   <link rel="shortcut icon" href="favicon.ico">
   <meta name="next-head-count" content="8">
   <link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous">
-  <link rel="preload" href="../static/css/library/dab1868370809cf7.css" as="style" crossorigin="">
-  <link rel="stylesheet" href="../static/css/library/dab1868370809cf7.css" crossorigin="" data-n-g="">
+  <!-- <link rel="preload" href="../static/css/library/dab1868370809cf7.css" as="style" crossorigin=""> -->
+  <!-- <link rel="stylesheet" href="../static/css/library/dab1868370809cf7.css" crossorigin="" data-n-g=""> -->
   <link rel="stylesheet" href="../static/css/library/library.css" type="text/css">
   <!-- <link rel="stylesheet" href="../static/css/library/header-1.css" type="text/css"> -->
 
@@ -407,62 +407,77 @@
   <div class="container">
     <div class="notification-box">
       {% if form_data.name and form_data.phone_number and form_data.date and form_data.time1 and form_data.time2 %}
-        <div style="display: flex; align-items: center; justify-content: center; padding: 0; margin-bottom: 5px;">
-          <p style="font-size: large;">
-            <strong>Notification from </strong>
-            <b>{{ form_data.name }}</b>
-            <b>(+91{{ form_data.phone_number }}):</b>
-            <strong>
-              Book Collection time from Hall Library on {{ form_data.date }} is from {{ form_data.time1 }} to {{ form_data.time2 }}
-            </strong>
-          </p>
-        </div>
+      <div style="display: flex; align-items: center; justify-content: center; padding: 0; margin-bottom: 5px;">
+        <p style="font-size: large;">
+          <strong>Notification from </strong>
+          <b>{{ form_data.name }}</b>
+          <b>(+91{{ form_data.phone_number }}):</b>
+          <strong>
+            Book Collection time from Hall Library on {{ form_data.date }} is from {{ form_data.time1 }} to
+            {{form_data.time2 }}
+          </strong>
+        </p>
+      </div>
       {% else %}
-        <div style="display: flex; align-items: center; justify-content: center; padding: 10px; margin-bottom: 5px;">
-          <p style="font-size: large; color: gray;">
-            <strong>No new Notification</strong>
-          </p>
-        </div>
+      <div style="display: flex; align-items: center; justify-content: center; padding: 10px; margin-bottom: 5px;">
+        <p style="font-size: large; color: gray;">
+          <strong>No new Notification</strong>
+        </p>
+      </div>
       {% endif %}
     </div>
   </div>
-  
-  
+
+
   <style>
     /* Add styling for the container to center the box */
     .container {
       margin-top: 0;
-      display: flex; /* Enables flexbox layout */
-      justify-content: center; /* Centers horizontally */
-      align-items: center; /* Centers vertically */
+      display: flex;
+      /* Enables flexbox layout */
+      justify-content: center;
+      /* Centers horizontally */
+      align-items: center;
+      /* Centers vertically */
       margin-bottom: 2em;
     }
-  
+
     /* Notification box styles */
     .notification-box {
-      border: 2px solid #007BFF; /* Blue border */
-      border-radius: 8px; /* Rounded corners */
-      padding: 16px; /* Padding inside the box */
-      background-color: #ffffff; /* White background for clarity */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-      min-width: 60vw; /* Maximum width of the box */
+      border: 2px solid #007BFF;
+      /* Blue border */
+      border-radius: 8px;
+      /* Rounded corners */
+      padding: 16px;
+      /* Padding inside the box */
+      background-color: #ffffff;
+      /* White background for clarity */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Subtle shadow for depth */
+      min-width: 60vw;
+      /* Maximum width of the box */
       max-height: 10vh;
-      font-family: Arial, sans-serif; /* Clean font style */
-      text-align: left; /* Align text to the left */
+      font-family: Arial, sans-serif;
+      /* Clean font style */
+      text-align: left;
+      /* Align text to the left */
       display: flex;
       justify-content: center;
     }
-  
+
     /* Paragraph styling inside the box */
     .notification-box p {
-      margin: 8px 0; /* Space between paragraphs */
-      font-size: 16px; /* Text size */
-     
+      margin: 8px 0;
+      /* Space between paragraphs */
+      font-size: 16px;
+      /* Text size */
+
     }
-  
+
     /* Strong text styling */
     .notification-box p strong {
-      color: #007BFF; /* Match the border color for consistency */
+      color: #007BFF;
+      /* Match the border color for consistency */
     }
   </style>
   {% comment %} alert message {% endcomment %}
@@ -511,7 +526,6 @@
       <div class="table" style="padding:.5rem;">
 
         <style>
-      
           table {
             width: 100%;
             border-collapse: collapse;

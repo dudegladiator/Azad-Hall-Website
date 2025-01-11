@@ -1,7 +1,3 @@
-from .models import Coveritem
-from .models import Team
-
-
 from django.contrib import admin
 from .models import *
 
