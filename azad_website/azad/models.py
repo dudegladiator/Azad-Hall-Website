@@ -5,12 +5,12 @@ from django.utils import timezone
 # Create your models here.
 
 class azad_boarders(models.Model):
-    roll_no=models.CharField(max_length=15, null=True)
-    name=models.CharField(max_length=500, null=True)
+    roll_no=models.CharField(max_length=15, null=True, blank=True)
+    name=models.CharField(max_length=500, null=True, blank=True)
     emails=models.EmailField()
-    contact=models.CharField(max_length=12, null=True)
-    books=models.IntegerField(null=True)
-    role=models.CharField(max_length=500)
+    contact=models.CharField(max_length=12, null=True, blank=True)
+    books=models.IntegerField(null=True, default=0)
+    role=models.CharField(max_length=500, default="User")
     
 class complaints(models.Model):
     name=models.CharField(max_length=500)
