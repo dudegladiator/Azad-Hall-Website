@@ -4,8 +4,6 @@
 
 <html lang="en-US">
 
-<!-- Mirrored from www.themestarz.net/html/photollax/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Jan 2023 13:44:55 GMT -->
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +23,6 @@
         type="image/png" />
 
     <!-- Vendor CSS Files -->
-    <!-- <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet"> -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
@@ -312,26 +309,26 @@
         <div class="off-screen-navigation">
             <ul class="nav">
 
-                <!-- <li onclick="window.open(`{% url 'khoj' %}`, '_self')"> -->
-                <a class="Online" target="blank" href="{% url 'khoj' %}">Khoj
-                    <i class="fas fa-map-marked-alt"></i>
-                    <span>Khoj</span>
-                </a>
-                <!-- </li> -->
+                <li onclick="window.open(`{% url 'khoj' %}`, '_self')">
+                    <a class="Online" href="{% url 'khoj' %}">Khoj
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Khoj</span>
+                    </a>
+                </li>
                 <li onclick="window.open(`{% url 'alumni' %}`, '_self')">
-                    <a class="Online" target="blank" href="{% url 'alumni' %}">
+                    <a class="Online" href="{% url 'alumni' %}">
                         <i class="fas fa-graduation-cap"></i>
                         <span>Alumni</span>
                     </a>
                 </li>
                 <li onclick="window.open(`{% url 'complain' %}`, '_self')">
-                    <a class="Online" target="blank" href="{% url 'complain' %}">
+                    <a class="Online" href="{% url 'complain' %}">
                         <i class="fas fa-exclamation-triangle"></i>
                         <span>Complain</span>
                     </a>
                 </li>
                 <li onclick="window.open(`{% url 'library' %}`, '_self')">
-                    <a class="Online" target="blank" href="{% url 'library' %}">
+                    <a class="Online" href="{% url 'library' %}">
                         <i class="fa-solid fa-book"></i>
                         <span>Library</span>
                     </a>
@@ -367,28 +364,15 @@
         </div>
         <!--end off-screen-navigation-->
 
-        {% comment %} alert message {% endcomment %}
         <nav class="navigation">
-            {% comment %} sending message as parameter {% endcomment %}
-            {% if message %}
-            <div id="alert">
-                <div class="inner">
-                    <div>{{ message }}</div>
-                    <div id="icon"><svg id="close-alert" xmlns="http://www.w3.org/2000/svg" height="1em"
-                            viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-                        </svg></div>
-                </div>
-            </div>
-            {% elif messages %}
+            {% if messages %}
             {% comment %} using in-built message feature {% endcomment %}
             {% for message in messages %}
             <div id="alert">
                 <div class="inner">
                     <div>{{ message }}</div>
                     <div id="icon"><svg id="close-alert" xmlns="http://www.w3.org/2000/svg" height="1em"
-                            viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            viewBox="0 0 384 512">
                             <path
                                 d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
                         </svg></div>
@@ -443,20 +427,16 @@
                                 started the tradition of Illumination, or ILLU as today's KGPians know it. Azad Hall is
                                 always reputed for its stellar
                                 performances in Soc-Cult events, especially Dramatics and Choreography.</p>
-                            <a style="margin-bottom: 3px;" href="{% url 'khoj' %}" target="blank"
-                                class="btn btn-default">Khoj</a>
-                            <!-- <a style="margin-bottom: 3px;" href="{% url 'achievements' %}" class="btn btn-default">Achievements</a> -->
-                            <a style="margin-bottom: 3px;" href="{% url 'about' %}" target="blank"
-                                class="btn btn-default">About</a>
-                            <a style="margin-bottom: 3px;" href="{% url 'alumni' %}" target="blank"
-                                class="btn btn-default">Alumni</a>
+                            <a style="margin-bottom: 3px;" href="{% url 'khoj' %}" class="btn btn-default">Khoj</a>
+                            <a style="margin-bottom: 3px;" href="{% url 'about' %}" class="btn btn-default">About</a>
+                            <a style="margin-bottom: 3px;" href="{% url 'alumni' %}" class="btn btn-default">Alumni</a>
                             {% if user.is_authenticated %}
-                            <a style="margin-bottom: 3px;" href="{% url 'library' %}" target="blank"
+                            <a style="margin-bottom: 3px;" href="{% url 'library' %}"
                                 class="btn btn-default">Library</a>
-                            <a style="margin-bottom: 3px;" href="{% url 'complain' %}" target="blank"
+                            <a style="margin-bottom: 3px;" href="{% url 'complain' %}"
                                 class="btn btn-default">Complain</a>
-                            {% comment %} <a style="margin-bottom: 3px;" href="{% url 'custom_logout' %}"
-                                class="btn btn-default">Logout</a> {% endcomment %}
+                            <a style="margin-bottom: 3px;" href="{% url 'custom_logout' %}"
+                                class="btn btn-default">Logout</a>
                             <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;"> Welcome {{ name }}
                             </p>
 
@@ -1559,8 +1539,6 @@
                                         href="https://www.linkedin.com/in/kgpian/" target="_blank" class="linkedin">
                                         <i class="bx bxl-linkedin"></i></a></div>
                             </div>
-
-
 
                             <div class="col-md-4" data-aos="fade-up" id="hcm"
                                 style="display: grid;width: 100%;grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(3,1fr); column-gap:25px; row-gap:25px;">
