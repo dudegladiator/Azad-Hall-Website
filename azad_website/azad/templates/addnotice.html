@@ -1,0 +1,47 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!--head-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Add notice</title>
+    <link rel="stylesheet" href="../static/css/notice.css">
+    <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
+
+
+</head>
+
+<!--body-->
+
+<body>
+    <!--heading and description-->
+    <h1 id="title">Add notice</h1>
+    <form id="survey-form" , method='post' , action="{% url 'add_notice' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+            <label id="title_no-label" for="title">Title:</label>
+            <input type="text" name="title" id="title" placeholder="Title" required>
+            <label id="subtitle_no-label" for="subtitle">Subtitle:</label>
+            <input type="text" name="subtitle" id="subtitle" placeholder="Subtitle" required>
+            <label id="description_no-label" for="description">Description:</label>
+            <textarea id="description" name="description" rows="3" cols="20" placeholder="Description"
+                required></textarea>
+            <label for="image">Image Link(if any):</label>
+            <input type="url" name="image" placeholder="Drive link">
+            <label id="event label" for="event">Event:</label>
+            <input type="datetime-local" name="event" id="event">
+            <label id="author_no-label" for="author">Author:</label>
+            <input type="text" name="author" id="author" placeholder="Add Name" required>
+        </fieldset>
+        <fieldset>
+            <input type="submit" id="submit" value="Submit">
+        </fieldset>
+
+    </form>
+</body>
+
+</html>

@@ -15,7 +15,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator, Page
 from django.views.decorators.csrf import csrf_protect
 from datetime import datetime
-
+from django.utils.timezone import make_aware
 
 allowedEmails = [
     "harsh247gupta@gmail.com",
@@ -88,6 +88,7 @@ def importBooksFromExcel(request):
 def alumni(request):
     return render(request, "alumni.html")
 
+
 def addBooks(request):
     if request.user.is_authenticated:
         email = request.user.email
@@ -132,6 +133,7 @@ def complain(request):
     if request.user.is_authenticated:
         return render(request, "complain.html")
 
+
 @csrf_protect
 def profile(request):
     if request.method == "POST" and 1:
@@ -149,9 +151,10 @@ def profile(request):
             return redirect("/profile")
         else:
             messages.info(request, "Email not found")
-    
+
     boarder = azad_boarders.objects.get(emails=request.user.email)
-    return render(request, "profile.html", {"user":boarder})
+    return render(request, "profile.html", {"user": boarder})
+
 
 @csrf_protect
 def submit_form(request):
@@ -271,8 +274,12 @@ def complain_status(request):
 
 
 def noticeboard(request):
-    noticeboard = Notice.objects.all()
-    return render(request, "noticeboard.html", {"noticeboard": noticeboard})
+    if True:
+        # if request.user.is_authenticated:
+        noticeboard = Notice.objects.all()
+        return render(request, "noticeboard.html", {"noticeboard": noticeboard})
+    messages.info(request, "Please login with valid ID.")
+    return redirect("/")
 
 
 def notice(request, noticeid):
@@ -281,6 +288,51 @@ def notice(request, noticeid):
     return render(
         request, "notice.html", {"notice": notice[0], "noticeboard": noticeboard}
     )
+
+
+@csrf_protect
+def noticeadd(request):
+    if request.method == "POST":
+        # if request.method == "POST" and request.user.is_authenticated:
+        # email = request.user.email
+        # if email in allowedEmailsNotice:
+        if True:
+            title = request.POST.get("title")
+            subtitle = request.POST.get("subtitle")
+            description = request.POST.get("description")
+            image_link = request.POST.get("image")
+            event_date_time = request.POST.get("event")
+            issue_date_time = datetime.now()
+            author = request.POST.get("author")
+            Notice.objects.create(
+                title=title,
+                subtitle=subtitle,
+                description=description,
+                image=image_link,
+                event_date_time=event_date_time,
+                issue_date_time=make_aware(issue_date_time),
+                author=author,
+            )
+            users = list(User.objects.all())
+            if not users:
+                messages.info(request, "Recipients not found")
+            emails = [user.email for user in users]
+            try:
+                # send_mail(subject, message, from_email, ["smarakdev@gmail.com"])
+                send_mail(
+                    subject=title,
+                    message=description,
+                    from_email="arnabdas.9039@gmail.com",
+                    recipient_list=emails,
+                    fail_silently=False,
+                )
+                messages.info(request, "Notice posted and emailed successfully")
+            except BadHeaderError:
+                messages.info(request, "Notice posted successfully")
+            return redirect("/noticeboard")
+        messages.info(request, "Please login with valid ID.")
+        return redirect("/")
+    return render(request, "addnotice.html")
 
 
 def achievements(request):
