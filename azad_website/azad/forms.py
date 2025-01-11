@@ -23,3 +23,9 @@ class CommentForm(forms.ModelForm):
         fields = ('event', 'name', 'email', 'body')
 
 
+class ComplaintForm(forms.ModelForm):
+    upload_image = forms.FileField(required=False)
+
+    class Meta:
+        model = complaints
+        fields = ['name', 'roll_no', 'category', 'email', 'contact_no', 'room_no', 'complain', 'upload_image']

@@ -400,53 +400,10 @@
     style="height:fit-content;margin-bottom:50px;display:flex;flex-direction:column;align-items: center;font-size:1.4rem"
     class="header row">
     <h1 class="Meet"
-      style="margin:20px 0px 0px 0px;padding-bottom:0;font: Raleway sans-serif;font-size:3rem;color:#173B63;font-weight:bold;text-align:center">
+      style="margin:20px auto 0px auto;font: Raleway sans-serif;font-size:3rem;color:#173B63;font-weight:bold;text-align:center">
       HALL LIBRARY</h1>
 
   </div>
-  <div class="container">
-    <div class="notification-box">
-      <div style="display: flex; align-items: center; justify-content: center; padding: 0;margin-bottom: 5px;"><p style="font-size: large;"><strong>Notification from </strong> <b>{{ form_data.name }}</b><b>(+91{{ form_data.phone_number }}):</b><strong> {{ form_data.details }}</strong></p> </div>
-    </div>
-  </div>
-  
-  <style>
-    /* Add styling for the container to center the box */
-    .container {
-      margin-top: 0;
-      display: flex; /* Enables flexbox layout */
-      justify-content: center; /* Centers horizontally */
-      align-items: center; /* Centers vertically */
-      margin-bottom: 2em;
-    }
-  
-    /* Notification box styles */
-    .notification-box {
-      border: 2px solid #007BFF; /* Blue border */
-      border-radius: 8px; /* Rounded corners */
-      padding: 16px; /* Padding inside the box */
-      background-color: #ffffff; /* White background for clarity */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-      min-width: 60vw; /* Maximum width of the box */
-      max-height: 10vh;
-      font-family: Arial, sans-serif; /* Clean font style */
-      text-align: left; /* Align text to the left */
-      display: flex;
-      justify-content: center;
-    }
-  
-    /* Paragraph styling inside the box */
-    .notification-box p {
-      margin: 8px 0; /* Space between paragraphs */
-      font-size: 16px; /* Text size */
-     
-    }
-  
-    /* Strong text styling */
-    .notification-box p strong {
-      color: #007BFF; /* Match the border color for consistency */
-    }
-  </style>
   {% comment %} alert message {% endcomment %}
   {% comment %} sending message as parameter {% endcomment %}
   {% if message %}
