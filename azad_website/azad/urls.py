@@ -39,7 +39,7 @@ urlpatterns = [
     path('cancelBookRequest', views.cancelBookRequest, name='cancelBookRequest'),
     path('alumni', views.alumni, name='alumni'),
     path('user_form', views.user_form_view, name='user_form')
-
+]
 
 if settings.DEBUG:  
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) 
