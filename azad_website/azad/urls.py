@@ -8,7 +8,6 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("event/<int:eventid>", views.event, name="event"),
     path("events", views.events, name="events"),
-    path("notice/<int:noticeid>", views.notice, name="notice_detail"),
     path("noticeboard", views.noticeboard, name="noticeboard"),
     path("notice/add", views.noticeadd, name="add_notice"),
     path("achievement/<int:achievementid>", views.achievement, name="achievement"),
