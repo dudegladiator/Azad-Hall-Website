@@ -17,10 +17,11 @@ from django.views.decorators.csrf import csrf_protect
 from datetime import datetime
 import requests
 import base64
-
-allowedEmailsecratary = True
 from django.utils.timezone import make_aware
 
+allowedEmailsecratary = True
+
+allowedEmailsNotice = ["arnabdas.9039@gmail.com"]
 allowedEmails = [
     "harsh247gupta@gmail.com",
     "harsh90731@gmail.com",
@@ -165,6 +166,7 @@ def upload_file_to_imagekit(api_key, file, file_name):
     except requests.exceptions.RequestException as e:
         return {"error": str(e)}
 
+
 # Function to handle complaints page
 def complain(request):
     if request.method == "GET" and request.user.is_authenticated:
@@ -205,7 +207,7 @@ def submit_form(request):
         complain_text = request.POST.get("complain")
         contact_no = request.POST.get("contact_no")
         image_link = request.POST.get("image")
-        upload_image = request.POST.get('file')
+        upload_image = request.POST.get("file")
         boarder = azad_boarders.objects.get(emails=request.user.email)
         now = datetime.now()
         t_string = now.strftime("%d/%m/%Y %H:%M %p")
@@ -229,6 +231,7 @@ def submit_form(request):
     else:
         return HttpResponse("Invalid request method")
 
+
 # Function to display complaints
 def showComplaints(request):
     if request.user.is_authenticated:
@@ -239,7 +242,9 @@ def showComplaints(request):
             current_page_pending = pending_paginator.page(
                 request.GET.get("pending_page", 1)
             )
-            completed_complaints = complaints.objects.filter(status="Completed").order_by("-id")
+            completed_complaints = complaints.objects.filter(
+                status="Completed"
+            ).order_by("-id")
             completed_paginator = Paginator(completed_complaints, 10)
             current_page_completed = completed_paginator.page(
                 request.GET.get("completed_page", 1)
@@ -250,15 +255,22 @@ def showComplaints(request):
                 request.GET.get("ongoing_page", 1)
             )
             params = {
-                "pending_complaints": Paginator(pending_complaints, 10).get_page(request.GET.get("pending_page", 1)),
-                "completed_complaints": Paginator(completed_complaints, 10).get_page(request.GET.get("completed_page", 1)),
-                "ongoing_complaints": Paginator(ongoing_complaints, 10).get_page(request.GET.get("ongoing_page", 1)),
+                "pending_complaints": Paginator(pending_complaints, 10).get_page(
+                    request.GET.get("pending_page", 1)
+                ),
+                "completed_complaints": Paginator(completed_complaints, 10).get_page(
+                    request.GET.get("completed_page", 1)
+                ),
+                "ongoing_complaints": Paginator(ongoing_complaints, 10).get_page(
+                    request.GET.get("ongoing_page", 1)
+                ),
             }
             return render(request, "showComplaints.html", params)
         else:
             messages.info(request, "Please login with a valid ID to access complaints")
             return redirect("/")
     return HttpResponse("Unauthorized", status=401)
+
 
 # Function to display a single complaint
 def showFullComplain(request, complain_id):
@@ -267,6 +279,7 @@ def showFullComplain(request, complain_id):
         return render(request, "fullComplain.html", {"complain": complaint})
     else:
         return HttpResponse("Unauthorized", status=401)
+
 
 # Function to update complaint status
 def updateStatus(request):
@@ -284,71 +297,67 @@ def updateStatus(request):
         return redirect("/showComplaints")
     return HttpResponse("Invalid request method", status=405)
 
+
 # Function to display user's complaint status
 def complain_status(request):
     if request.user.is_authenticated:
-        user_complaints = complaints.objects.filter(email=request.user.email).order_by("-id")
+        user_complaints = complaints.objects.filter(email=request.user.email).order_by(
+            "-id"
+        )
         return render(request, "complain_status.html", {"complains": user_complaints})
     else:
         return HttpResponse("Unauthorized", status=401)
 
+
 # Function to handle complaint submission with ImageKit integration
 def submit_complain(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = ComplaintForm(request.POST, request.FILES)
         if form.is_valid():
             complaint = form.save(commit=False)
 
             # Handle image upload via ImageKit
-            if 'upload_image' in request.FILES:
-                upload_image = request.FILES['upload_image']
+            if "upload_image" in request.FILES:
+                upload_image = request.FILES["upload_image"]
                 api_key = "private_iXnU83xFLdR99tM9YEFMOQLuwus="
-                
+
                 # Read the uploaded file as binary
-                response = upload_file_to_imagekit(api_key, upload_image, upload_image.name)
+                response = upload_file_to_imagekit(
+                    api_key, upload_image, upload_image.name
+                )
 
                 # Check response for success
-                if 'error' not in response:
-                    complaint.image_link = response.get('url')
-                    complaint.imagekit_file_id = response.get('fileId')
+                if "error" not in response:
+                    complaint.image_link = response.get("url")
+                    complaint.imagekit_file_id = response.get("fileId")
                 else:
                     messages.error(request, f"Image upload failed: {response['error']}")
 
             # Save complaint
             complaint.save()
             messages.success(request, "Complaint submitted successfully!")
-            return redirect('complaint_status')
+            return redirect("complaint_status")
         else:
             messages.error(request, "Form is invalid. Please correct the errors.")
     else:
         form = ComplaintForm()
 
-    return render(request, 'complaint_form.html', {'form': form})
+    return render(request, "complaint_form.html", {"form": form})
+
 
 def noticeboard(request):
-    if True:
-        # if request.user.is_authenticated:
+    if request.user.is_authenticated:
         noticeboard = Notice.objects.all()
         return render(request, "noticeboard.html", {"noticeboard": noticeboard})
     messages.info(request, "Please login with valid ID.")
     return redirect("/")
 
 
-def notice(request, noticeid):
-    notice = Notice.objects.filter(id=noticeid)
-    noticeboard = Notice.objects.all()
-    return render(
-        request, "notice.html", {"notice": notice[0], "noticeboard": noticeboard}
-    )
-
-
 @csrf_protect
 def noticeadd(request):
-    if request.method == "POST":
-        # if request.method == "POST" and request.user.is_authenticated:
-        # email = request.user.email
-        # if email in allowedEmailsNotice:
-        if True:
+    if request.method == "POST" and request.user.is_authenticated:
+        email = request.user.email
+        if email in allowedEmailsNotice:
             title = request.POST.get("title")
             subtitle = request.POST.get("subtitle")
             description = request.POST.get("description")
@@ -370,7 +379,6 @@ def noticeadd(request):
                 messages.info(request, "Recipients not found")
             emails = [user.email for user in users]
             try:
-                # send_mail(subject, message, from_email, ["smarakdev@gmail.com"])
                 send_mail(
                     subject=title,
                     message=description,
