@@ -26,12 +26,12 @@ class UserForm(forms.Form):
         widget=forms.Textarea(attrs={'placeholder': 'Enter additional details here', 'rows': 5}),
     )
 class azad_boarders(models.Model):
-    roll_no=models.CharField(max_length=15)
-    name=models.CharField(max_length=500)
+    roll_no=models.CharField(max_length=15, null=True, blank=True)
+    name=models.CharField(max_length=500, null=True, blank=True)
     emails=models.EmailField()
-    contact=models.CharField(max_length=12, null=True)
-    books=models.IntegerField(null=True)
-    role=models.CharField(max_length=500)
+    contact=models.CharField(max_length=12, null=True, blank=True)
+    books=models.IntegerField(null=True, default=0)
+    role=models.CharField(max_length=500, default="User")
     
 class complaints(models.Model):
     name=models.CharField(max_length=500)
