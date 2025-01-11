@@ -489,6 +489,19 @@
           <button class="search_button" type="submit">Search</button>
         </form>
       </div>
+      <div class="complain_navigation">
+        {% if books.has_previous %}
+        <a href="?books_page={{ books.previous_page_number }}">Previous</a>
+        {% endif %}
+        <span>
+          {% if books.number %}
+          Page {{ books.number }} of {{ books.paginator.num_pages }}.
+          {% endif %}
+        </span>
+        {% if books.has_next %}
+        <a href="?books_page={{ books.next_page_number }}">Next</a>
+        {% endif %}
+      </div>
 
       <div class="table" style="padding:.5rem;">
 
