@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
-from .forms import ContactForm, CommentForm, UserForm
+from .forms import ContactForm, CommentForm, ComplaintForm
 from django.core.mail import BadHeaderError, send_mail
 from django.http import JsonResponse
 from django.core import serializers
