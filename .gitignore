@@ -1,8 +1,8 @@
 venv
-./azad_website/db.json
-./azad_website/db.sqlite3
-./azad_website/Procfile
-migrations
+azad_website/db.json
+azad_website/db.sqlite3
+azad_website/Procfile
+azad_website/azad/migrations/
 .gitignore
 .pyvenv.cfg
 .README.md
