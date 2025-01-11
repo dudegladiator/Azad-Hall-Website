@@ -406,9 +406,27 @@
   </div>
   <div class="container">
     <div class="notification-box">
-      <div style="display: flex; align-items: center; justify-content: center; padding: 0;margin-bottom: 5px;"><p style="font-size: large;"><strong>Notification from </strong> <b>{{ form_data.name }}</b><b>(+91{{ form_data.phone_number }}):</b><strong> {{ form_data.details }}</strong></p> </div>
+      {% if form_data.name and form_data.phone_number and form_data.date and form_data.time1 and form_data.time2 %}
+        <div style="display: flex; align-items: center; justify-content: center; padding: 0; margin-bottom: 5px;">
+          <p style="font-size: large;">
+            <strong>Notification from </strong>
+            <b>{{ form_data.name }}</b>
+            <b>(+91{{ form_data.phone_number }}):</b>
+            <strong>
+              Book Collection time from Hall Library on {{ form_data.date }} is from {{ form_data.time1 }} to {{ form_data.time2 }}
+            </strong>
+          </p>
+        </div>
+      {% else %}
+        <div style="display: flex; align-items: center; justify-content: center; padding: 10px; margin-bottom: 5px;">
+          <p style="font-size: large; color: gray;">
+            <strong>No new Notification</strong>
+          </p>
+        </div>
+      {% endif %}
     </div>
   </div>
+  
   
   <style>
     /* Add styling for the container to center the box */

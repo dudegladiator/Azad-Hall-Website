@@ -5,6 +5,8 @@ from django.core.validators import RegexValidator
 from django import forms
  
  
+
+
 class UserForm(forms.Form):
     name = forms.CharField(
         label='Name',
@@ -22,10 +24,28 @@ class UserForm(forms.Form):
         ],
         widget=forms.TextInput(attrs={'placeholder': 'Enter phone number with country code'}),
     )
-    details = forms.CharField(
-        label='Details',
-        widget=forms.Textarea(attrs={'placeholder': 'Enter additional details here', 'rows': 5}),
+    time1 = forms.TimeField(
+        label='Time 1',
+        widget=forms.TimeInput(
+            format='%I:%M %p',  # 12-hour format with AM/PM
+            attrs={'placeholder': 'Enter time (e.g., 02:30 PM)', 'type': 'time'}
+        ),
     )
+    time2 = forms.TimeField(
+        label='Time 2',
+        widget=forms.TimeInput(
+            format='%I:%M %p',
+            attrs={'placeholder': 'Enter time (e.g., 04:45 PM)', 'type': 'time'}
+        ),
+    )
+    date = forms.DateField(
+        label='Date',
+        widget=forms.DateInput(
+            format='%Y-%m-%d',
+            attrs={'placeholder': 'Enter date (e.g., 2025-01-11)', 'type': 'date'}
+        ),
+    )
+
 class azad_boarders(models.Model):
     roll_no=models.CharField(max_length=15)
     name=models.CharField(max_length=500)

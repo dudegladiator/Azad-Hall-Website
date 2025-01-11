@@ -602,9 +602,20 @@ def user_form_view(request):
         if request.method == 'POST':
             form = UserForm(request.POST)
             if form.is_valid():
-                # Get cleaned data
-                data=form.cleaned_data
-                request.session['form_data'] = form.cleaned_data
+                data = form.cleaned_data
+                # Example: Converting time and date to string before saving
+                time1_str = data['time1'].strftime('%H:%M:%S')
+                time2_str = data['time2'].strftime('%H:%M:%S')
+                date_str = data['date'].strftime('%Y-%m-%d')
+                
+                # Store serialized values in session
+                request.session['form_data'] = {
+                    'name': data['name'],
+                    'phone_number': data['phone_number'],
+                    'time1': time1_str,
+                    'time2': time2_str,
+                    'date': date_str,
+                }
                 # return redirect('library')
                 return render(request, 'user.html', {'form': form})
 
