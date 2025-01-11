@@ -348,12 +348,21 @@
                         <span>About</span>
                     </a>
                 </li>
+                {%if user.is_authenticated%}
                 <li onclick="window.open(`{% url 'custom_logout' %}`, '_self')" i>
                     <a class="Online" href="{% url 'about' %}">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span>Log out</span>
                     </a>
                 </li>
+                {%else%}
+                <li>
+                    <a class="Online" href="{% url 'login' %}">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Log in</span>
+                    </a>
+                </li>
+                {% endif %}
             </ul>
         </div>
         <!--end off-screen-navigation-->
