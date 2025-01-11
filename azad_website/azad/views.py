@@ -173,7 +173,7 @@ def complain(request):
 
 @csrf_protect
 def profile(request):
-    if request.method == "POST" and 1:
+    if request.method == "POST" and request.user.is_authenticated:
         boarder = azad_boarders.objects.get(emails=request.user.email)
         if boarder:
             contact = request.POST.get("contact_no")
