@@ -3,40 +3,483 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../static/css/showComplaints.css">
-    <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="../static/css/showComplaints.css"> -->
+  <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
+  <style type="text/css">
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
+    thead {
+      background: linear-gradient(135deg, #040B14, #0C5479);
+    }
+
+    th {
+      padding: 1rem;
+      text-align: left;
+      color: white;
+      font-size: 1.1rem;
+      border-bottom: 2px solid #ddd;
+    }
+
+    td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* Style for even rows */
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Hover style for rows excluding thead */
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Explicitly maintain the thead's background color */
+    thead tr:hover {
+      background-color: inherit;
+      /* Keeps the original background */
+    }
+
+
+    button {
+      background-color: #149DDD;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+
+    input[type="text"] {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .brand {
+      font-weight: bold;
+      font-size: 20px;
+      margin: 1rem;
+    }
+
+    .search_button {
+      width: 5rem;
+      height: 2.5rem;
+      transform: translate(-14px, 0);
+      border: .1rem solid black;
+      border-radius: 0 5px 5px 0;
+      border-left: none;
+      background: linear-gradient(135deg, #040B14, #0C5479);
+      font-size: 1rem;
+      margin-left: 0.3em;
+      padding: 0;
+    }
+
+    .search_button:hover {
+      opacity: 0.9;
+    }
+
+    /* Header Styles */
+    .site-header {
+      background: linear-gradient(135deg, #040B14, #0C5479);
+      color: #fff;
+      padding: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+    }
+
+    .site-header__wrapper {
+      padding-top: .3rem;
+      padding-bottom: .3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand img {
+      transition: transform 0.3s ease;
+    }
+
+    .brand img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Navigation Styles */
+    .nav {
+      position: relative;
+    }
+
+    .nav__toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .nav__toggle i {
+      transition: transform 0.3s ease;
+    }
+
+    .nav__toggle:hover i {
+      transform: rotate(90deg);
+    }
+
+    /* Remove white background and blend with the header */
+    .nav__wrapper {
+      background: transparent;
+      /* No white background */
+    }
+
+    /* Adjust spacing for alignment */
+    .nav__wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      /* Evenly distribute space between items */
+      align-items: center;
+      /* Align items vertically */
+      gap: 0;
+      /* Remove unnecessary gaps */
+      list-style: none;
+      /* Remove bullets */
+      margin: 0;
+      padding: 0;
+      flex-grow: 1;
+      /* Ensure it uses all available space */
+    }
+
+    .nav__item {
+      position: relative;
+    }
+
+    .nav__item a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 15px;
+      /* Add consistent padding */
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav__item a:hover {
+      color: #149DDD;
+      transform: translateY(-2px);
+    }
+
+    .nav__item::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #149DDD;
+      transition: width 0.3s ease;
+    }
+
+    .nav__item:hover::after {
+      width: 100%;
+    }
+
+    /* Responsive Navigation */
+    @media (max-width: 768px) {
+      .nav__toggle {
+        display: block;
+      }
+
+      .nav__wrapper {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        display: none;
+        border-radius: 8px;
+      }
+
+      .nav__wrapper.active {
+        display: flex;
+        animation: slideIn 0.3s ease forwards;
+      }
+
+      .nav__item a {
+        color: #FFEB3B;
+        display: block;
+        padding: .8rem .5rem;
+        margin-bottom: 0.5rem;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+
+    #complain-head {
+      width: 20% !important;
+    }
+
+    #manager_review,
+    .manager_review {
+      width: 15% !important;
+    }
+
+    #id {
+      width: 2%;
+      background-color: transparent;
+      border: none;
+      text-align: center;
+
+    }
+
+    textarea {
+      padding: .2rem;
+    }
+
+
+    table {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
+      font-size: .85rem;
+      font-family: "Raleway", sans-serif;
+    }
+
+    table caption {
+      font-size: 1.2rem;
+      margin: .3em 0 .45em;
+      text-decoration: underline;
+
+    }
+
+    table tr {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: .35em;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ebebeb;
+    }
+
+
+    table th,
+    table td {
+      padding: .625em;
+      text-align: center;
+
+    }
+
+
+
+    table th {
+      font-size: .85em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    input {
+      /* all: unset; */
+      width: 20px;
+
+    }
+
+    .complain_navigation {
+      /* width: 100%; */
+      text-align: center;
+      padding: .5rem;
+      font-size: 1.2rem;
+      text-decoration: unset;
+    }
+
+
+    @media screen and (max-width: 800px) {
+      table {
+        border: 0;
+        font-size: .9rem;
+      }
+
+      table caption {
+        font-size: 1.3em;
+      }
+
+      table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+
+      table tr {
+        border: 2px solid #646464;
+        display: block;
+        margin-bottom: 1.2em;
+      }
+
+      td:nth-child(even) {
+        background-color: #ebebeb;
+        /* background-color: #cecece; */
+      }
+
+      td:nth-child(odd) {
+        background-color: #d2d1d1;
+
+      }
+
+
+      table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 1em;
+        text-align: right;
+      }
+
+      table td::before {
+        /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      table td:last-child {
+        border-bottom: 0;
+      }
+    }
+
+
+    table a {
+      text-decoration: none;
+    }
+  </style>
+  </style>
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="wrapper site-header__wrapper">
+      <a href="/" class="brand"><img id="logo" src="../static/img/khoj/logo.webp" height="50rem"
+          style="margin-left: 0px;"></a>
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          <i class="fa-solid fa-bars fa-2xl"></i>
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/">Home</a></li>
+          <li class="nav__item"><a href="/previousBookRequests">Previous Book Requests</a></li>
+          <li class="nav__item"><a href="/khoj">Khoj</a></li>
+          <li class="nav__item"><a href="/alumni">Alumni</a></li>
+          <li class="nav__item"><a href="/complain">Mess/Maintenance</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
 
-    <table id="pending_complaints">
+  <script>
+    const navT_oggle = document.querySelector(".nav__toggle");
+    const nav_Wrapper = document.querySelector(".nav__wrapper");
+
+    nav_Toggle.addEventListener("click", () => {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true" || false;
+      nav_Toggle.setAttribute("aria-expanded", !expanded);
+      nav_Wrapper.classList.toggle("active");
+    });
+  </script>
+
+
+
+
+  <div
+    style="height:fit-content;margin-bottom:50px;display:flex;flex-direction:column;align-items: center;font-size:1.4rem"
+    class="header row">
+    <h1 class="Meet"
+      style="margin:20px auto 0px auto;font: Raleway sans-serif;font-size:3rem;color:#173B63;font-weight:bold;text-align:center">
+      HALL LIBRARY</h1>
+    <div class="table" style="padding:.5rem;">
+      <table id="pending_complaints">
         <caption>
           <h2>REQUESTS</h2>
-         <div class="complain_navigation">
+          <div class="complain_navigation">
             {% if requestedBooks.has_previous %}
-      <a href="?requestedBooks_page={{ requestedBooks.previous_page_number }}">Previous</a>
-    {% endif %}
-    <span>
-      Page {{ requestedBooks.number }} of {{ requestedBooks.paginator.num_pages }}.
-    </span>
-    {% if requestedBooks.has_next %}
-      <a href="?requestedBooks_page={{ requestedBooks.next_page_number }}">Next</a>
-    {% endif %}
+            <a href="?requestedBooks_page={{ requestedBooks.previous_page_number }}">Previous</a>
+            {% endif %}
+            <span>
+              Page {{ requestedBooks.number }} of {{ requestedBooks.paginator.num_pages }}.
+            </span>
+            {% if requestedBooks.has_next %}
+            <a href="?requestedBooks_page={{ requestedBooks.next_page_number }}">Next</a>
+            {% endif %}
           </div>
-          {% comment %} <a href="#ongoing_complaints">Go to Ongoing complaints</a>  |  <a href="#completed_complaints">Go to Completed complaints</a> {% endcomment %}
+          {% comment %} <a href="#ongoing_complaints">Go to Ongoing complaints</a> | <a href="#completed_complaints">Go
+            to
+            Completed complaints</a> {% endcomment %}
         </caption>
-        
+
         <thead>
           <tr>
-            <th scope="col" >ID</th>
+            <th scope="col">ID</th>
             <th scope="col">Date</th>
-            <th scope="col">Name</th>
-            <th scope="col">Roll Number</th>
             <th scope="col">Book Name</th>
             <th scope="col">Author</th>
             <th scope="col">Department</th>
@@ -45,76 +488,75 @@
         </thead>
         <tbody>
 
-        {% for requestedBook in requestedBooks %}
-        <form action="/cancelBookRequest" method='post'>
+          {% for requestedBook in requestedBooks %}
+          <form action="/cancelBookRequest" method='post'>
             {% csrf_token %}
-        <tr>
-          <td data-label="id"><input id="id" name="id" type="text" readonly value={{requestedBook.id}} style="width:4rem;"></input></td>
-            <td data-label="Created at">{{requestedBook.created_at}}</td>
-            <td data-label="Name">{{requestedBook.studentName}}</td>
-            <td data-label="Roll Number">{{requestedBook.studentRoll_no}}</td>
-            <td data-label="Book Name">{{requestedBook.title}}</td>
-            <td data-label="Author">{{requestedBook.author}}</td>
-            <td data-label="Department">{{requestedBook.department}}</td>
-            <td data-label="button"><button type="submit">Cancel Request</button></td>
+            <tr>
+              <td data-label="id">{{requestedBook.id}}</td>
+              <td data-label="Created at">{{requestedBook.created_at}}</td>
+              <td data-label="Book Name">{{requestedBook.title}}</td>
+              <td data-label="Author">{{requestedBook.author}}</td>
+              <td data-label="Department">{{requestedBook.department}}</td>
+              <td data-label="button"><button type="submit">Cancel Request</button></td>
 
-          </tr>
-        </form>
-        {% endfor %} 
+            </tr>
+          </form>
+          {% endfor %}
         </tbody>
       </table>
+    </div>
 
 
 
-
+    <div class="class" style="padding:.5rem;">
       <table id="pending_complaints">
         <caption>
           <h2>CHECKED-OUT BOOKS</h2>
-         <div class="complain_navigation">
+          <div class="complain_navigation">
             {% if checkedOutBooks.has_previous %}
-      <a href="?checkedOutBooks_page={{ checkedOutBooks.previous_page_number }}">Previous</a>
-    {% endif %}
-    <span>
-      Page {{ checkedOutBooks.number }} of {{ checkedOutBooks.paginator.num_pages }}.
-    </span>
-    {% if checkedOutBooks.has_next %}
-      <a href="?checkedOutBooks_page={{ checkedOutBooks.next_page_number }}">Next</a>
-    {% endif %}
+            <a href="?checkedOutBooks_page={{ checkedOutBooks.previous_page_number }}">Previous</a>
+            {% endif %}
+            <span>
+              Page {{ checkedOutBooks.number }} of {{ checkedOutBooks.paginator.num_pages }}.
+            </span>
+            {% if checkedOutBooks.has_next %}
+            <a href="?checkedOutBooks_page={{ checkedOutBooks.next_page_number }}">Next</a>
+            {% endif %}
           </div>
-          {% comment %} <a href="#ongoing_complaints">Go to Ongoing complaints</a>  |  <a href="#completed_complaints">Go to Completed complaints</a> {% endcomment %}
+          {% comment %} <a href="#ongoing_complaints">Go to Ongoing complaints</a> | <a href="#completed_complaints">Go
+            to
+            Completed complaints</a> {% endcomment %}
         </caption>
-        
+
         <thead>
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Date</th>
-            <th scope="col">Name</th>
-            <th scope="col">Contact Number</th>
             <th scope="col">Book Name</th>
             <th scope="col">Author</th>
             <th scope="col">Department</th>
-            
+
           </tr>
         </thead>
         <tbody>
 
-        {% for checkedOutBook in checkedOutBooks %}
-        <form action="/checkIn" method='post'>
+          {% for checkedOutBook in checkedOutBooks %}
+          <form action="/checkIn" method='post'>
             {% csrf_token %}
-        <tr>
-            <td data-label="id"><input id="id" name="id" type="text" readonly value={{checkedOutBook.id}} style="width:4rem;"></td>
-            <td data-label="Created at">{{checkedOutBook.created_at}}</td>
-            <td data-label="Name">{{checkedOutBook.studentName}}</td>
-            <td data-label="Roll Nummber">{{checkedOutBook.studentRoll_no}}</td>
-            <td data-label="Book Name">{{checkedOutBook.title}}</td>
-            <td data-label="Author">{{checkedOutBook.author}}</td>
-            <td data-label="Department">{{checkedOutBook.department}}</td>
-           
+            <tr>
+              <td data-label="id">{{checkedOutBook.id}}</td>
+              <td data-label="Created at">{{checkedOutBook.created_at}}</td>
+              <td data-label="Book Name">{{checkedOutBook.title}}</td>
+              <td data-label="Author">{{checkedOutBook.author}}</td>
+              <td data-label="Department">{{checkedOutBook.department}}</td>
 
-          </tr>
-        </form>
-        {% endfor %} 
+
+            </tr>
+          </form>
+          {% endfor %}
         </tbody>
       </table>
+    </div>
 </body>
+
 </html>

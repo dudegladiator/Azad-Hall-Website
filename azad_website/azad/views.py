@@ -30,6 +30,7 @@ allowedEmails = [
     "sg06959.sgsg@gmail.com",
     "pooniakushagra20@gmail.com",
     "somnathmishra1802@gmail.com",
+    "aryandongre53@gmail.com",
 ]
 allowedEmailsLibrary = [
     "harsh247gupta@gmail.com",
@@ -40,25 +41,19 @@ allowedEmailsLibrary = [
     "sg06959.sgsg@gmail.com",
     "pranjalchouhan2014@gmail.com",
     "somnathmishra1802@gmail.com",
+    "aryandongre53@gmail.com",
 ]
 
 
-def import_from_excel(request):
+def importBoardersFromExcel(request):
     if request.method == "POST":
         excel_file = request.FILES["excel_file"]
         wb = load_workbook(excel_file)
         ws = wb.active
-
         azad_boarders_to_create = []
-
         for row in ws.iter_rows(values_only=True):
-            roll_no, name, email, number = row
-            azad_boarder = azad_boarders(
-                name=name, roll_no=roll_no, emails=email, contact=number, books=0
-            )
+            azad_boarder = azad_boarders(emails=row[0], books=0)
             azad_boarders_to_create.append(azad_boarder)
-
-        # Use bulk_create to create objects in bulk
         azad_boarders.objects.bulk_create(azad_boarders_to_create)
 
         return render(request, "index.html")
@@ -70,7 +65,6 @@ def importBooksFromExcel(request):
         excel_file = request.FILES["excel_file"]
         wb = load_workbook(excel_file)
         ws = wb.active
-
         books_to_create = []
 
         for row in ws.iter_rows(values_only=True):
@@ -83,8 +77,6 @@ def importBooksFromExcel(request):
                 available=row[4],
             )
             books_to_create.append(book1)
-
-        # Use bulk_create to create objects in bulk
         book.objects.bulk_create(books_to_create)
 
         return render(request, "index.html")
@@ -99,7 +91,7 @@ def addBooks(request):
         email = request.user.email
         if email in allowedEmails:
             return render(request, "addBooks.html")
-    messages.info(request, "Please login with valid ID to add boarders")
+    messages.info(request, "Please login with valid ID to add books")
     return redirect("/")
 
 
@@ -126,15 +118,13 @@ def index(request):
                 params = {"name": name}
                 return render(request, "index.html", params)
         logout(request)
-        message = "Please login with valid EmailID"
-        params = {"message": message}
-        return render(request, "index.html", params)
+        messages.info("Please login with valid EmailID")
+        return render(request, "khoj.html")
 
     return render(request, "index.html")
 
 
 @csrf_protect
-# Helper function to upload files to ImageKit
 def upload_file_to_imagekit(api_key, file, file_name):
     """
     Upload a file to ImageKit.io V2 API.
@@ -431,9 +421,6 @@ def library(request, searchedBooks=None, str=None):
             books = book.objects.all().order_by("id")
         books_paginator = Paginator(books, 30)
         current_page_books = books_paginator.page(request.GET.get("books_page", 1))
-        # message=None
-        # if checkout:
-        #     message="Request submitted successfully"
         context = {
             "books": current_page_books,
             "searchedString": str,
@@ -459,7 +446,7 @@ def checkout(request):
                 department=Book.department,
                 shelf=Book.shelf,
                 studentName=boarder.name,
-                studentRoll_no=boarder.roll_no,
+                studentContact=boarder.contact,
                 email=boarder.emails,
                 created_at=t_string,
                 status="requested",
@@ -472,9 +459,6 @@ def checkout(request):
         else:
             messages.info(request, "You can only apply for 2 books at a time")
             return redirect("/library")
-
-        # print(book)
-        # messages.info(request, "Request submitted successfully")
         messages.info(request, "Request submitted successfully")
         return redirect("/library")
 
@@ -608,7 +592,6 @@ def search(request):
                 return redirect("/library")
 
     books = book.objects.all()
-    # messages.info(request, 'No books found')
     return redirect("/library")
 
 
@@ -705,20 +688,3 @@ def custom_logout(request):
     message = "Logged out successfully"
     params = {"message": message}
     return render(request, "index.html", params)
-
-def user_form_view(request):
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            form = UserForm(request.POST)
-            if form.is_valid():
-                # Get cleaned data
-                data=form.cleaned_data
-                request.session['form_data'] = form.cleaned_data
-                # return redirect('library')
-                return render(request, 'user.html', {'form': form})
-
-        else:
-            form = UserForm()
-            return render(request, 'user.html', {'form': form})
-    messages.info(request, "Please login with valid ID")
-    return redirect("/")

@@ -1,8 +1,17 @@
 from django.db import models
+from django.core.validators import RegexValidator
 from datetime import datetime
 from django.utils import timezone
-from django.core.validators import RegexValidator
 from django import forms
+
+
+class azad_boarders(models.Model):
+    roll_no = models.CharField(max_length=15, null=True, blank=True)
+    name = models.CharField(max_length=500, null=True, blank=True)
+    emails = models.EmailField()
+    contact = models.CharField(max_length=12, null=True, blank=True)
+    books = models.IntegerField(null=True, default=0)
+    role = models.CharField(max_length=500, default="Boarder")
 
 
 class UserForm(forms.Form):
@@ -30,15 +39,6 @@ class UserForm(forms.Form):
             attrs={"placeholder": "Enter additional details here", "rows": 5}
         ),
     )
-
-
-class azad_boarders(models.Model):
-    roll_no = models.CharField(max_length=15, null=True, blank=True)
-    name = models.CharField(max_length=500, null=True, blank=True)
-    emails = models.EmailField()
-    contact = models.CharField(max_length=12, null=True, blank=True)
-    books = models.IntegerField(null=True, default=0)
-    role = models.CharField(max_length=500, default="User")
 
 
 class complaints(models.Model):
@@ -79,7 +79,7 @@ class requestedBook(models.Model):
     department = models.CharField(max_length=200, null=True)
     shelf = models.IntegerField(null=True)
     studentName = models.CharField(max_length=500)
-    studentRoll_no = models.CharField(max_length=15)
+    studentContact = models.CharField(max_length=15)
     email = models.EmailField()
     created_at = models.CharField(max_length=200)
     status = models.CharField(max_length=200)

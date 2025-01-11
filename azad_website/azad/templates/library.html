@@ -27,10 +27,78 @@
   <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
   <!-- <link rel="stylesheet" href="../static/css/showComplaints.css"> -->
   <!-- <link rel="stylesheet" href="../static/css/alert.css"> -->
-</head>
+  <style type="text/css">
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-<body>
-  <style>
+    thead {
+      background: linear-gradient(135deg, #040B14, #0C5479);
+    }
+
+    th {
+      padding: 1rem;
+      text-align: left;
+      color: white;
+      font-size: 1.1rem;
+      border-bottom: 2px solid #ddd;
+    }
+
+    td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* Style for even rows */
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Hover style for rows excluding thead */
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Explicitly maintain the thead's background color */
+    thead tr:hover {
+      background-color: inherit;
+      /* Keeps the original background */
+    }
+
+
+    button {
+      background-color: #149DDD;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+
+    input[type="text"] {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
     /* Global Styles */
     body {
       margin: 0;
@@ -68,7 +136,6 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
-      z-index: 1000;
     }
 
     .site-header__wrapper {
@@ -362,6 +429,9 @@
       text-decoration: none;
     }
   </style>
+</head>
+
+<body>
   <header class="site-header">
     <div class="wrapper site-header__wrapper">
       <a href="/" class="brand"><img id="logo" src="../static/img/khoj/logo.webp" height="50rem"
@@ -491,81 +561,6 @@
       </div>
 
       <div class="table" style="padding:.5rem;">
-
-        <style>
-      
-          table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            margin: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          }
-
-          thead {
-            background: linear-gradient(135deg, #040B14, #0C5479);
-          }
-
-          th {
-            padding: 1rem;
-            text-align: left;
-            color: white;
-            font-size: 1.1rem;
-            border-bottom: 2px solid #ddd;
-          }
-
-          td {
-            padding: 0.8rem;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-            color: #555;
-            font-size: 1rem;
-          }
-
-          /* Style for even rows */
-          tr:nth-child(even) {
-            background-color: #f9f9f9;
-          }
-
-          /* Hover style for rows excluding thead */
-          tbody tr:hover {
-            background-color: #f1f1f1;
-          }
-
-          /* Explicitly maintain the thead's background color */
-          thead tr:hover {
-            background-color: inherit;
-            /* Keeps the original background */
-          }
-
-
-          button {
-            background-color: #149DDD;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-          }
-
-          button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-          }
-
-          button:hover:not(:disabled) {
-            background-color: #0056b3;
-          }
-
-          input[type="text"] {
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 0.5rem;
-            font-size: 0.9rem;
-          }
-        </style>
-
         <table>
           <thead>
             <tr>
@@ -584,8 +579,7 @@
             <tr>
               <form action="/checkout" method="post">
                 {% csrf_token %}
-                <td style="padding:1rem;" data-label="id"><input id="id" name="id" type="text" readonly
-                    value={{book.id}} style="width:4rem;"></td>
+                <td style="padding:1rem;" data-label="id">{{book.id}}</td>
                 <td style="padding:.8rem;" data-label="Title">{{book.title}}</td>
                 <td style="padding:.8rem;" data-label="Author">{{book.author}}</td>
                 <td style="padding:.8rem;" data-label="Department">{{book.department}}</td>

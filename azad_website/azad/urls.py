@@ -19,7 +19,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("custom_logout", views.custom_logout, name="custom_logout"),
     path("addBoarders", views.addBoarders, name="addBoarders"),
-    path("importFromExcel", views.import_from_excel, name="importFromExcel"),
+    path("importFromExcel", views.importBoardersFromExcel, name="importFromExcel"),
     path("complain", views.complain, name="complain"),
     path("submit", views.submit_form, name="submit_form"),
     path("showComplaints", views.showComplaints, name="showComplaints"),
