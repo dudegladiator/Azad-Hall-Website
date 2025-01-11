@@ -705,3 +705,20 @@ def custom_logout(request):
     message = "Logged out successfully"
     params = {"message": message}
     return render(request, "index.html", params)
+
+def user_form_view(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = UserForm(request.POST)
+            if form.is_valid():
+                # Get cleaned data
+                data=form.cleaned_data
+                request.session['form_data'] = form.cleaned_data
+                # return redirect('library')
+                return render(request, 'user.html', {'form': form})
+
+        else:
+            form = UserForm()
+            return render(request, 'user.html', {'form': form})
+    messages.info(request, "Please login with valid ID")
+    return redirect("/")
