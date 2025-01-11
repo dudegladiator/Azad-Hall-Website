@@ -143,7 +143,7 @@ class Coveritem(models.Model):
     )
 
 
-class Notices(models.Model):
+class Notice(models.Model):
     title = models.CharField(max_length=500)
     subtitle = models.CharField(max_length=500)
     description = models.TextField()

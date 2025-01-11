@@ -9,7 +9,7 @@ from .models import *
 admin.site.register(Event)
 admin.site.register(Coveritem)
 admin.site.register(Imagemodel)
-admin.site.register(Notices)
+admin.site.register(Notice)
 admin.site.register(Achievements)
 admin.site.register(Team)
 admin.site.register(Year)
