@@ -16,6 +16,7 @@ from django.core.paginator import Paginator, Page
 from django.views.decorators.csrf import csrf_protect
 from datetime import datetime
 from django.conf import settings
+import os
 import requests
 import base64
 from django.utils.timezone import make_aware
@@ -138,19 +139,8 @@ def index(request):
     return render(request, "index.html")
 
 
-@csrf_protect
 def upload_file_to_imagekit(api_key, file, file_name):
-    """
-    Upload a file to ImageKit.io V2 API.
-
-    Parameters:
-        api_key (str): Your ImageKit private API key.
-        file (binary): The file to upload.
-        file_name (str): Name of the file to upload.
-
-    Returns:
-        dict: API response in JSON format.
-    """
+    # Upload a file to ImageKit.io V2 API.
     url = "https://upload.imagekit.io/api/v2/files/upload"
     auth_header = base64.b64encode(f"{api_key}:".encode()).decode()
 
@@ -158,9 +148,13 @@ def upload_file_to_imagekit(api_key, file, file_name):
         "Authorization": f"Basic {auth_header}",
     }
 
-    payload = {
-        "file": file,
-        "fileName": file_name,
+    # Prepare the payload for file upload
+    files = {
+        "file": file,  # The actual file object (not just the name)
+        "fileName": (
+            None,
+            file_name,
+        ),  # Pass file name explicitly as a separate form field
     }
 
     try:
@@ -323,6 +317,11 @@ def submit_complain(request):
             # Handle image upload via ImageKit
             if "upload_image" in request.FILES:
                 upload_image = request.FILES["upload_image"]
+                api_key = os.getenv("IMAGEKIT_PRIVATE_API_KEY")
+                if not api_key:
+                    raise ValueError(
+                        "ImageKit API key is not set in environment variables"
+                    )
 
                 # Read the uploaded file as binary
                 response = upload_file_to_imagekit(

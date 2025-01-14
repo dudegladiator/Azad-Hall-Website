@@ -2,55 +2,65 @@
 {% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complaints</title>
-    <link rel="stylesheet" href="../static/css/showComplaints.css">
-    <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaints</title>
+  <link rel="stylesheet" href="{% static 'css/showComplaints.css' %}">
+  <link rel="shortcut icon" href="{% static 'images/faviconaz.webp' %}" type="image/png" />
 </head>
+
 <body>
-    <table>
-        <caption>COMPLAINTS</caption>
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Date</th>
-            <th scope="col">Room number</th>
-            <th scope="col">Contact Number</th>
-            <th scope="col" id="complain-head">Complain</th>
-            <th scope="col">Status</th>
-            <th scope="col">Completed on</th>
-            <th scope="col" id="manager_review">Manager review</th>
-            <th scope="col">Link</th>
-          </tr>
-        </thead>
-        <tbody>
+  <table>
+    <caption>COMPLAINTS</caption>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Room number</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col" id="complain-head">Complain</th>
+        <th scope="col">Status</th>
+        <th scope="col">Completed on</th>
+        <th scope="col" id="manager_review">Manager review</th>
+        <th scope="col">Image</th> <!-- New column for the image -->
+        <th scope="col">Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for complain in complains %}
+      <tr>
+        <td data-label="id">{{ complain.id }}</td>
+        <td data-label="Created at">{{ complain.created_at }}</td>
+        <td data-label="Room Number">{{ complain.room_no }}</td>
+        <td data-label="Contact">{{ complain.contact_no }}</td>
+        <td data-label="complain" class="complain">{{ complain.complain }} <a
+            href="{% url 'fullComplain' complain.id %}">Read more</a></td>
+        <td data-label="Status">{{ complain.status }}</td>
+        {% if complain.status == "pending" %}
+        <td data-label="Completed_on">NA</td>
+        <td data-label="review">None</td>
+        {% else %}
+        <td data-label="Completed_on">{{ complain.modified_at }}</td>
+        <td data-label="review">{{ complain.manager_review }}</td>
+        {% endif %}
+        <td data-label="Image">
+          {% if complain.image_link %}
+          <img src="{{ complain.image_link }}" alt="Uploaded Image" style="max-width: 100px; height: auto;">
+          {% else %}
+          No image uploaded
+          {% endif %}
+        </td>
+        <td data-label="link"><a href="{% url 'fullComplain' complain.id %}">Complete details</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
-        {% for complain in complains %}
-        <tr>
-            <td data-label="id">{{complain.id}}</td>
-            <td data-label="Created at">{{complain.created_at}}</td>
-            <td data-label="Room Number">{{complain.room_no}}</td>
-            <td data-label="Contact">{{complain.contact_no}}</td>
-            <td data-label="complain" class="complain">{{complain.complain}} <a href="{% url 'fullComplain' complain.id %}">Read more</a></td>
-            <td data-label="Status">{{complain.status}}</td>
-            {% if complain.status == "pending" %}
-            <td data-label="Completed_on">NA</td>
-            <td data-label="review">None</td>
-            {% else %}
-            <td data-label="Completed_on">{{complain.modified_at}}</td>
-            <td data-label="review">{{complain.manager_review}}</td>
-            {% endif %}
-            <td data-label="link"><a href="{% url 'fullComplain' complain.id %}">Complete details</a></td>
-          </tr>
-        {% endfor %} 
-        </tbody>
-      </table>
-
-      <!-- script to limit length of displayed complain to specified characters -->
-      <!-- add class "complain" to apply -->
-      <script src="../static/js/complain.js"></script>
+  <!-- script to limit length of displayed complain to specified characters -->
+  <!-- add class "complain" to apply -->
+  <script src="{% static 'js/complain.js' %}"></script>
 </body>
+
 </html>
