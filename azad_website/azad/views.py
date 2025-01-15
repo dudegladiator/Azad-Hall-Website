@@ -188,8 +188,8 @@ def profile(request):
                 name=name,
                 contact=contact,
             )
-            messages.info(request, "Saved Successfully")
-            return redirect("/profile")
+            messages.info(request, "Profile saved Successfully")
+            return redirect("/")
         else:
             messages.info(request, "Email not found")
 
