@@ -337,12 +337,12 @@
                     </a>
                 </li>
                 {% if user.is_authenticated %}
-                <li onclick="window.open(`{% url 'complain' %}`, '_self')">
+                <!-- <li onclick="window.open(`{% url 'complain' %}`, '_self')">
                     <a class="Online" href="{% url 'complain' %}">
                         <i class="fas fa-exclamation-triangle"></i>
                         <span>Complain</span>
                     </a>
-                </li>
+                </li> -->
                 <li onclick="window.open(`{% url 'library' %}`, '_self')">
                     <a class="Online" href="{% url 'library' %}">
                         <i class="fa-solid fa-book"></i>
@@ -441,8 +441,10 @@
                             {% if user.is_authenticated %}
                             <a style="margin-bottom: 3px;" href="{% url 'library' %}"
                                 class="btn btn-default">Library</a>
-                            <a style="margin-bottom: 3px;" href="{% url 'complain' %}"
-                                class="btn btn-default">Complain</a>
+                            <a style="margin-bottom: 3px;" href="{% url 'profile' %}"
+                                class="btn btn-default">Account</a>
+                            <!-- <a style="margin-bottom: 3px;" href="{% url 'complain' %}"
+                                class="btn btn-default">Complain</a> -->
                             <!-- <a style="margin-bottom: 3px;" href="{% url 'custom_logout' %}"
                                 class="btn btn-default">Logout</a> -->
                             <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;"> Welcome {{ name }}
@@ -452,7 +454,7 @@
                             <a style="margin-bottom: 3px;" href="{% provider_login_url 'google' %}"
                                 class="btn btn-default">Login</a>
                             <p style="margin: 0;font-size: 16px;margin-bottom: 10px;color: white;">Login with your
-                                registered personal mail ID to access Mess/Maintenanace complain</p>
+                                registered personal mail ID to access Library</p>
                             {% endif %}
                         </div>
                     </div>

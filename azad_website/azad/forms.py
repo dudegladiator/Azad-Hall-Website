@@ -33,7 +33,7 @@ class LibraryDutyForm(forms.Form):
             ),
         ],
         widget=forms.TextInput(
-            attrs={"placeholder": "Enter phone number with country code"}
+            attrs={"placeholder": "Enter phone number without country code"}
         ),
     )
     time1 = forms.TimeField(

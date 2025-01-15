@@ -461,7 +461,7 @@ def checkout(request):
                 department=Book.department,
                 shelf=Book.shelf,
                 studentName=boarder.name,
-                studentContact=boarder.contact,
+                studentRoll_no=boarder.contact,
                 email=boarder.emails,
                 created_at=t_string,
                 status="requested",
@@ -727,8 +727,8 @@ def libraryFormView(request):
                     "time2": time2_str,
                     "date": date_str,
                 }
-                # return redirect('library')
-                return render(request, "user.html", {"form": form})
+                return redirect("library")
+                # return render(request, "user.html", {"form": form})
 
         else:
             form = LibraryDutyForm()

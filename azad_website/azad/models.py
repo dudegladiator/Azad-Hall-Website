@@ -51,7 +51,7 @@ class requestedBook(models.Model):
     department = models.CharField(max_length=200, null=True)
     shelf = models.IntegerField(null=True)
     studentName = models.CharField(max_length=500)
-    studentContact = models.CharField(max_length=15)
+    studentRoll_no = models.CharField(max_length=15)
     email = models.EmailField()
     created_at = models.CharField(max_length=200)
     status = models.CharField(max_length=200)
