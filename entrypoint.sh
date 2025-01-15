@@ -7,6 +7,7 @@ if [ -f .env ]; then
 fi
 
 echo "Path of all commands: $PATH"
+python manage.py makemigrations
 python manage.py migrate --no-input
 python manage.py collectstatic --no-input
 python manage.py createsuperuserwithpassword --username harsh90731 --password letmelogin --email gladiator098123@gmail.com --preserve
