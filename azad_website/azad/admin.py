@@ -11,11 +11,15 @@ admin.site.register(Team)
 admin.site.register(Year)
 admin.site.register(Contact)
 admin.site.register(Para)
-admin.site.register(azad_boarders)
 admin.site.register(complaints)
 admin.site.register(book)
 admin.site.register(requestedBook)
 # admin.site.register(Contact)
+
+
+@admin.register(azad_boarders)
+class azad_boardersAdmin(admin.ModelAdmin):
+    list_display = ("roll_no", "name", "emails", "contact", "books", "role")
 
 
 @admin.register(Comment)
