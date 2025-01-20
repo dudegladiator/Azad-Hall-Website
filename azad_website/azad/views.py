@@ -71,7 +71,7 @@ def importBoardersFromExcel(request):
             azad_boarders_to_create.append(azad_boarder)
         azad_boarders.objects.bulk_create(azad_boarders_to_create)
 
-        return render(request, "index.html")
+        return redirect("/")
 
 
 # For books
@@ -94,7 +94,7 @@ def importBooksFromExcel(request):
             books_to_create.append(book1)
         book.objects.bulk_create(books_to_create)
 
-        return render(request, "index.html")
+        return redirect("/")
 
 
 def alumni(request):
@@ -183,11 +183,12 @@ def profile(request):
             contact = request.POST.get("contact_no")
             name = request.POST.get("name")
             roll_no = request.POST.get("roll_no")
-            register = azad_boarders.objects.update(
-                roll_no=roll_no,
-                name=name,
-                contact=contact,
-            )
+
+            azad_boarders.objects.filter(id=boarder.id).update(
+            roll_no=roll_no,
+            name=name,
+            contact=contact,
+            )       
             messages.info(request, "Profile saved Successfully")
             return redirect("/")
         else:
