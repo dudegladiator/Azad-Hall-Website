@@ -36,27 +36,18 @@ allowedEmailsNotice = [
 allowedEmails = [
     "harsh247gupta@gmail.com",
     "harsh90731@gmail.com",
-    "rajumeshram767@gmail.com",
-    "hariomk628@gmail.com",
     "sg06959.sgsg@gmail.com",
     "pooniakushagra20@gmail.com",
-    "somnathmishra1802@gmail.com",
     "arnabdas.9039@gmail.com",
     "gladiator098123@gmail.com",
-    "aryandongre53@gmail.com",
 ]
 allowedEmailsLibrary = [
     "harsh247gupta@gmail.com",
     "pooniakushagra20@gmail.com",
     "harsh90731@gmail.com",
-    "rajumeshram767@gmail.com",
-    "hariomk628@gmail.com",
     "sg06959.sgsg@gmail.com",
-    "pranjalchouhan2014@gmail.com",
-    "somnathmishra1802@gmail.com",
     "arnabdas.9039@gmail.com",
     "gladiator098123@gmail.com",
-    "aryandongre53@gmail.com",
 ]
 
 
@@ -102,19 +93,15 @@ def alumni(request):
 
 
 def addBooks(request):
-    if request.user.is_authenticated:
-        email = request.user.email
-        if email in allowedEmails:
+    if request.user.is_authenticated and request.user.email in allowedEmails:
             return render(request, "addBooks.html")
     messages.info(request, "Please login with valid ID to add books")
     return redirect("/")
 
 
 def addBoarders(request):
-    if request.user.is_authenticated:
-        email = request.user.email
-        if email in allowedEmails:
-            return render(request, "addBoarders.html")
+    if request.user.is_authenticated and request.user.email in allowedEmails:
+        return render(request, "addBoarders.html")
     messages.info(request, "Please login with valid ID to add boarders")
     return redirect("/")
 
@@ -178,7 +165,7 @@ def complain(request):
 @csrf_protect
 def profile(request):
     if request.method == "POST" and request.user.is_authenticated:
-        boarder = azad_boarders.objects.get(emails=request.user.email)
+        boarder = azad_boarders.objects.filter(emails=request.user.email).first()
         if boarder:
             contact = request.POST.get("contact_no")
             name = request.POST.get("name")
@@ -211,6 +198,11 @@ def submit_form(request):
         now = datetime.now()
         t_string = now.strftime("%d/%m/%Y %H:%M %p")
         created_at = t_string
+        if boarder.name is None or boarder.contact is None:
+            messages.info(
+                request, "Please update your profile"
+            )
+            return redirect("/profile")
         complaints.objects.create(
             name=boarder.name,
             roll_no=boarder.roll_no,
@@ -452,6 +444,11 @@ def checkout(request):
         id = request.POST.get("id")
         Book = book.objects.get(id=id)
         boarder = azad_boarders.objects.get(emails=request.user.email)
+        if boarder.name is None or boarder.contact is None:
+            messages.info(
+                request, "Please update your profile"
+            )
+            return redirect("/profile")
         if boarder.books < 2:
             now = datetime.now()
             boarder.books += 1
