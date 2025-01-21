@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.utils import timezone
 from django import forms
+from django.core.validators import RegexValidator
 
 
 class azad_boarders(models.Model):
@@ -179,3 +180,24 @@ class Comment(models.Model):
 
     def __str__(self):
         return "Comment {} by {}".format(self.body, self.name)
+    
+from django.db import models
+
+class LibraryDuty(models.Model):
+    name = models.CharField(max_length=100)
+    phone_number = models.CharField(
+        max_length=15,
+        validators=[
+            RegexValidator(
+                regex=r"^\+?1?\d{9,15}$",
+                message="Phone number must be in the format: '+999999999'. Up to 15 digits allowed.",
+            ),
+        ],
+    )
+    time1 = models.TimeField(default="06:30 PM")
+    details = models.TextField(default="07:00 PM")
+    time2 = models.TimeField()
+    date = models.DateField()
+
+    def __str__(self):
+        return f"{self.name} ({self.date})"
