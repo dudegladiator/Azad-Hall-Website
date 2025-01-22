@@ -43,6 +43,17 @@
       margin: 1rem;
     }
 
+    #search-box {
+      width: 80%;
+      max-width: 20rem;
+      height: 2.5rem;
+      padding: .5rem;
+      border-radius: .5rem;
+      border: .1rem solid black;
+      font-size: 1rem;
+
+    }
+
     .search_button {
       width: 5rem;
       height: 2.5rem;
@@ -54,6 +65,7 @@
       font-size: 1rem;
       margin-left: 0.3em;
       padding: 0;
+      z-index: inherit;
     }
 
     .search_button:hover {
@@ -169,6 +181,19 @@
 
     /* Responsive Navigation */
     @media (max-width: 768px) {
+
+      #search-box {
+        width: 60%;
+      }
+
+      .search_button {
+        width: 4rem;
+      }
+
+      button.navbar-toggler {
+        transform: translate(-50px, 0);
+      }
+
       .nav__toggle {
         display: block;
       }
@@ -512,7 +537,7 @@
   <div style="display:flex;justify-content:center;">
 
     <div class="startups">
-      <div class="search-container ">
+      <div class="search-container">
         <form action="/search" method="post">
           {% csrf_token %}
           {% if searchedString %}
@@ -522,6 +547,20 @@
           {% endif %}
           <button class="search_button" type="submit">Search</button>
         </form>
+      </div>
+
+      <div class="complain_navigation">
+        {% if books.has_previous %}
+        <a href="?books_page={{ books.previous_page_number }}">Previous</a>
+        {% endif %}
+        <span>
+          {% if books.number %}
+          Page {{ books.number }} of {{ books.paginator.num_pages }}.
+          {% endif %}
+        </span>
+        {% if books.has_next %}
+        <a href="?books_page={{ books.next_page_number }}">Next</a>
+        {% endif %}
       </div>
 
       <div class="table" style="padding:.5rem;">
@@ -639,11 +678,11 @@
                 {% endif %}
 
                 {% if book.available == 0 %}
-                <td style="padding:.8rem;" data-label="Completed_on"><button type="submit" disabled>Check out</button>
+                <td style="padding:.8rem;" data-label="Check"><button type="submit" disabled>Check out</button>
                 </td>
 
                 {% else %}
-                <td style="padding:.8rem;" data-label="Completed_on"><button type="submit">Check out</button></td>
+                <td style="padding:.8rem;" data-label="Check"><button type="submit">Check out</button></td>
 
                 {% endif %}
               </form>
@@ -654,15 +693,6 @@
 
 
 
-      </div>
-    </div>
-
-
-
-    <!-- <script async="" src="js/lottie-player.js"></script> -->
-    <div>
-
-      <div style="position:fixed;z-index:9999;top:16px;left:16px;right:16px;bottom:16px;pointer-events:none">
       </div>
     </div>
   </div>
