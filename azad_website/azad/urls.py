@@ -15,7 +15,7 @@ urlpatterns = [
     path("about", views.about, name="about"),
     path("post/comment", views.postComment, name="post_comment"),
     path("login", views.login, name="login"),
-    path("", include("allauth.urls")),
+    # path("", include("allauth.urls")),
     path("accounts/", include("allauth.urls")),
     path("custom_logout", views.custom_logout, name="custom_logout"),
     path("addBoarders", views.addBoarders, name="addBoarders"),

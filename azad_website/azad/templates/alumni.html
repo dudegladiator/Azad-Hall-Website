@@ -79,9 +79,9 @@
                         <li>
                           <a href="{% url 'library' %}">LIBRARY</a>
                         </li>
-                        <li>
+                        <!-- <li>
                           <a href="{% url 'profile' %}">ACCOUNT</a>
-                        </li>
+                        </li> -->
                       </ul>
                       <!-- //.nav-menu -->
                     </nav>
@@ -127,14 +127,17 @@
           </div>
           <ul class="nav-menu">
             <li>
-              <a href="">HOME</a>
+              <a href="/">HOME</a>
             </li>
             <li>
-              <a href="">KHOJ</a>
+              <a href="{% url 'khoj' %}">KHOJ</a>
             </li>
             <li>
-              <a href="">LIBRARY</a>
+              <a href="{% url 'library' %}">LIBRARY</a>
             </li>
+            <!-- <li>
+              <a href="{% url 'profile' %}">ACCOUNT</a>
+            </li> -->
           </ul>
           <!-- //.nav-menu -->
           <div class="canvas-contact">

@@ -94,7 +94,7 @@ def alumni(request):
 
 def addBooks(request):
     if request.user.is_authenticated and request.user.email in allowedEmails:
-            return render(request, "addBooks.html")
+        return render(request, "addBooks.html")
     messages.info(request, "Please login with valid ID to add books")
     return redirect("/")
 
@@ -172,10 +172,10 @@ def profile(request):
             roll_no = request.POST.get("roll_no")
 
             azad_boarders.objects.filter(id=boarder.id).update(
-            roll_no=roll_no,
-            name=name,
-            contact=contact,
-            )       
+                roll_no=roll_no,
+                name=name,
+                contact=contact,
+            )
             messages.info(request, "Profile saved Successfully")
             return redirect("/")
         else:
@@ -199,9 +199,7 @@ def submit_form(request):
         t_string = now.strftime("%d/%m/%Y %H:%M %p")
         created_at = t_string
         if boarder.name is None or boarder.contact is None:
-            messages.info(
-                request, "Please update your profile"
-            )
+            messages.info(request, "Please update your profile")
             return redirect("/profile")
         complaints.objects.create(
             name=boarder.name,
@@ -419,7 +417,6 @@ def khoj(request):
 
 def library(request, searchedBooks=None, str=None):
     if request.user.is_authenticated:
-        form_data = request.session.get("form_data", None)
         if searchedBooks:
             books = searchedBooks
             return render(
@@ -432,7 +429,7 @@ def library(request, searchedBooks=None, str=None):
         context = {
             "books": current_page_books,
             "searchedString": str,
-            "form_data": form_data,
+            "form_data": LibraryDuty.objects.all().order_by("-id").first(),
         }
         return render(request, "library.html", context)
     messages.info(request, "Please login with valid ID to access library")
@@ -445,9 +442,7 @@ def checkout(request):
         Book = book.objects.get(id=id)
         boarder = azad_boarders.objects.get(emails=request.user.email)
         if boarder.name is None or boarder.contact is None:
-            messages.info(
-                request, "Please update your profile"
-            )
+            messages.info(request, "Please update your profile")
             return redirect("/profile")
         if boarder.books < 2:
             now = datetime.now()
@@ -718,13 +713,13 @@ def libraryFormView(request):
                 date_str = data["date"].strftime("%Y-%m-%d")
 
                 # Store serialized values in session
-                request.session["form_data"] = {
-                    "name": data["name"],
-                    "phone_number": data["phone_number"],
-                    "time1": time1_str,
-                    "time2": time2_str,
-                    "date": date_str,
-                }
+                LibraryDuty.objects.create(
+                    name=data["name"],
+                    phone_number=data["phone_number"],
+                    time1=time1_str,
+                    time2=time2_str,
+                    date=date_str,
+                )
                 return redirect("library")
                 # return render(request, "user.html", {"form": form})
 

@@ -180,8 +180,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return "Comment {} by {}".format(self.body, self.name)
-    
-from django.db import models
+
 
 class LibraryDuty(models.Model):
     name = models.CharField(max_length=100)
@@ -194,8 +193,8 @@ class LibraryDuty(models.Model):
             ),
         ],
     )
-    time1 = models.TimeField(default="06:30 PM")
-    details = models.TextField(default="07:00 PM")
+    time1 = models.TimeField()
+    details = models.TextField()
     time2 = models.TimeField()
     date = models.DateField()
 
