@@ -58,6 +58,8 @@ def importBoardersFromExcel(request):
         ws = wb.active
         azad_boarders_to_create = []
         for row in ws.iter_rows(values_only=True):
+            if azad_boarders.objects.filter(emails=row[0]).exists():
+                continue
             azad_boarder = azad_boarders(emails=row[0], books=0)
             azad_boarders_to_create.append(azad_boarder)
         azad_boarders.objects.bulk_create(azad_boarders_to_create)
