@@ -484,7 +484,7 @@ section{
         position: absolute;
         top:100%; left:0; right:0;
         border-top: .1rem solid #707070;
-        background: #173b6c;
+        background: #fff;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
 
@@ -495,10 +495,10 @@ section{
     .fa-times{
         transform: rotate(180deg);
     }
-
+    
     .header .navbar a{
         display: flex;
-        background:#173b6c;
+        background-color:#fff; 
         border-radius: .5rem;
         padding:1.3rem;
         margin:1.3rem;
