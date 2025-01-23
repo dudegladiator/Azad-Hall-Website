@@ -43,22 +43,8 @@
       margin: 1rem;
     }
 
-    .search_button {
-      width: 5rem;
-      height: 2.5rem;
-      transform: translate(-14px, 0);
-      border: .1rem solid black;
-      border-radius: 0 5px 5px 0;
-      border-left: none;
-      background: linear-gradient(135deg, #040B14, #0C5479);
-      font-size: 1rem;
-      margin-left: 0.3em;
-      padding: 0;
-    }
-
-    .search_button:hover {
-      opacity: 0.9;
-    }
+ 
+  
 
     /* Header Styles */
     .site-header {
@@ -457,7 +443,7 @@
       /* Subtle shadow for depth */
       min-width: 60vw;
       /* Maximum width of the box */
-      max-height: 10vh;
+      max-height: 20vh;
       font-family: Arial, sans-serif;
       /* Clean font style */
       text-align: left;
@@ -520,7 +506,8 @@
           {% else %}
           <input type="search" name="search" id="search-box" placeholder="Search books" value="">
           {% endif %}
-          <button class="search_button" type="submit">Search</button>
+          <button  type="submit" 
+          >Search</button>
         </form>
       </div>
 
