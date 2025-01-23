@@ -43,8 +43,8 @@
       margin: 1rem;
     }
 
- 
-  
+
+
 
     /* Header Styles */
     .site-header {
@@ -393,25 +393,29 @@
   </div>
   <div class="container">
     <div class="notification-box">
-      {% if form_data.name and form_data.phone_number and form_data.date and form_data.time1 and form_data.time2 %}
+      <!-- {% if form_data.name and form_data.phone_number and form_data.date and form_data.time1 and form_data.time2 %} -->
       <div style="display: flex; align-items: center; justify-content: center; padding: 0; margin-bottom: 5px;">
         <p style="font-size: large;">
-          <strong>Notification from </strong>
-          <b>{{ form_data.name }}</b>
-          <b>(+91{{ form_data.phone_number }}):</b>
-          <strong>
+          <!-- <strong>Notification from </strong> -->
+          <strong>Notification: </strong>
+          <!-- <b>{{ form_data.name }}</b> -->
+          <!-- <b>(+91{{ form_data.phone_number }}):</b> -->
+          <!-- <strong>
             Book Collection time from Hall Library on {{ form_data.date }} is from {{ form_data.time1 }} to
             {{form_data.time2 }}
+          </strong> -->
+          <strong>
+            Book Collection time from Hall Library is from 06:30 PM to 07:00 PM
           </strong>
         </p>
       </div>
-      {% else %}
+      <!-- {% else %} -->
       <div style="display: flex; align-items: center; justify-content: center; padding: 10px; margin-bottom: 5px;">
         <p style="font-size: large; color: gray;">
           <strong>No new Notification</strong>
         </p>
       </div>
-      {% endif %}
+      <!-- {% endif %} -->
     </div>
   </div>
 
@@ -431,6 +435,8 @@
 
     /* Notification box styles */
     .notification-box {
+      display: flex;
+
       border: 2px solid #007BFF;
       /* Blue border */
       border-radius: 8px;
@@ -443,12 +449,10 @@
       /* Subtle shadow for depth */
       min-width: 60vw;
       /* Maximum width of the box */
-      max-height: 20vh;
       font-family: Arial, sans-serif;
       /* Clean font style */
       text-align: left;
       /* Align text to the left */
-      display: flex;
       justify-content: center;
     }
 
@@ -506,138 +510,138 @@
           {% else %}
           <input type="search" name="search" id="search-box" placeholder="Search books" value="">
           {% endif %}
-          <button  type="submit" 
-          ">Search</button>
+          <button type="submit" ">Search</button>
         </form>
       </div>
 
-      <div class="table" style="padding:.5rem;">
+      <div class=" table" style="padding:.5rem;">
 
-        <style>
-          table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            margin: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          }
+            <style>
+              table {
+                width: 100%;
+                border-collapse: collapse;
+                font-family: Arial, sans-serif;
+                margin: 20px 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              }
 
-          thead {
-            background: linear-gradient(135deg, #040B14, #0C5479);
-          }
+              thead {
+                background: linear-gradient(135deg, #040B14, #0C5479);
+              }
 
-          th {
-            padding: 1rem;
-            text-align: left;
-            color: white;
-            font-size: 1.1rem;
-            border-bottom: 2px solid #ddd;
-          }
+              th {
+                padding: 1rem;
+                text-align: left;
+                color: white;
+                font-size: 1.1rem;
+                border-bottom: 2px solid #ddd;
+              }
 
-          td {
-            padding: 0.8rem;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-            color: #555;
-            font-size: 1rem;
-          }
+              td {
+                padding: 0.8rem;
+                border-bottom: 1px solid #eee;
+                text-align: left;
+                color: #555;
+                font-size: 1rem;
+              }
 
-          /* Style for even rows */
-          tr:nth-child(even) {
-            background-color: #f9f9f9;
-          }
+              /* Style for even rows */
+              tr:nth-child(even) {
+                background-color: #f9f9f9;
+              }
 
-          /* Hover style for rows excluding thead */
-          tbody tr:hover {
-            background-color: #f1f1f1;
-          }
+              /* Hover style for rows excluding thead */
+              tbody tr:hover {
+                background-color: #f1f1f1;
+              }
 
-          /* Explicitly maintain the thead's background color */
-          thead tr:hover {
-            background-color: inherit;
-            /* Keeps the original background */
-          }
+              /* Explicitly maintain the thead's background color */
+              thead tr:hover {
+                background-color: inherit;
+                /* Keeps the original background */
+              }
 
 
-          button {
-            background-color: #149DDD;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-          }
+              button {
+                background-color: #149DDD;
+                color: white;
+                padding: 0.5rem 1rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 0.9rem;
+              }
 
-          button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-          }
+              button:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+              }
 
-          button:hover:not(:disabled) {
-            background-color: #0056b3;
-          }
+              button:hover:not(:disabled) {
+                background-color: #0056b3;
+              }
 
-          input[type="text"] {
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 0.5rem;
-            font-size: 0.9rem;
-          }
-        </style>
+              input[type="text"] {
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                padding: 0.5rem;
+                font-size: 0.9rem;
+              }
+            </style>
 
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Title</th>
-              <th scope="col">Author</th>
-              <th scope="col">Department</th>
-              <th scope="col" id="complain-head">Quantity</th>
-              <th scope="col">Available</th>
-              <th scope="col">Check Out</th>
-            </tr>
-          </thead>
-          <tbody>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Author</th>
+                  <th scope="col">Department</th>
+                  <th scope="col" id="complain-head">Quantity</th>
+                  <th scope="col">Available</th>
+                  <th scope="col">Check Out</th>
+                </tr>
+              </thead>
+              <tbody>
 
-            {% for book in books %}
-            <tr>
-              <form action="/checkout" method="post">
-                {% csrf_token %}
-                <td style="padding:1rem;" data-label="id"><input id="id" name="id" type="text" readonly
-                    value={{book.id}} style="width:4rem;"></td>
-                <td style="padding:.8rem;" data-label="Title">{{book.title}}</td>
-                <td style="padding:.8rem;" data-label="Author">{{book.author}}</td>
-                <td style="padding:.8rem;" data-label="Department">{{book.department}}</td>
-                <td style="padding:.8rem;" data-label="complain">{{book.quantity}}</td>
-                {% if book.available != 0 %}
-                <td style="padding:.8rem;" data-label="Status"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                    viewBox="0 -960 960 960" width="24px" fill="#008000">
-                    <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
-                  </svg></td>
+                {% for book in books %}
+                <tr>
+                  <form action="/checkout" method="post">
+                    {% csrf_token %}
+                    <td style="padding:1rem;" data-label="id"><input id="id" name="id" type="text" readonly
+                        value={{book.id}} style="width:4rem;"></td>
+                    <td style="padding:.8rem;" data-label="Title">{{book.title}}</td>
+                    <td style="padding:.8rem;" data-label="Author">{{book.author}}</td>
+                    <td style="padding:.8rem;" data-label="Department">{{book.department}}</td>
+                    <td style="padding:.8rem;" data-label="complain">{{book.quantity}}</td>
+                    {% if book.available != 0 %}
+                    <td style="padding:.8rem;" data-label="Status"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#008000">
+                        <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                      </svg></td>
 
-                {% else %}
-                <td style="padding:.8rem;" data-label="Status"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                    viewBox="0 -960 960 960" width="24px" fill="#ff0000">
-                    <path
-                      d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                  </svg></td>
+                    {% else %}
+                    <td style="padding:.8rem;" data-label="Status"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                        <path
+                          d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                      </svg></td>
 
-                {% endif %}
+                    {% endif %}
 
-                {% if book.available == 0 %}
-                <td style="padding:.8rem;" data-label="Completed_on"><button type="submit" disabled>Check out</button>
-                </td>
+                    {% if book.available == 0 %}
+                    <td style="padding:.8rem;" data-label="Completed_on"><button type="submit" disabled>Check
+                        out</button>
+                    </td>
 
-                {% else %}
-                <td style="padding:.8rem;" data-label="Completed_on"><button type="submit">Check out</button></td>
+                    {% else %}
+                    <td style="padding:.8rem;" data-label="Completed_on"><button type="submit">Check out</button></td>
 
-                {% endif %}
-              </form>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+                    {% endif %}
+                  </form>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
 
 
 
