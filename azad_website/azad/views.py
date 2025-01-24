@@ -21,34 +21,21 @@ import requests
 import base64
 from django.utils.timezone import make_aware
 
-allowedEmailSecratary = [
+admin_emails = [
     "gladiator098123@gmail.com",
+    "harsh90731@gmail.com"
     "arnabdas.9039@gmail.com",
     "pooniakushagra20@gmail.com",
+    "harsh247gupta@gmail.com",
+    "sg06959.sgsg@gmail.com",
 ]
 
-allowedEmailsNotice = [
-    "arnabdas.9039@gmail.com",
-    "gladiator098123@gmail.com",
-    "pooniakushagra20@gmail.com",
-]
+# Create email lists with admin emails included
+allowedEmailSecratary = admin_emails + ["piyushbisht56@gmail.com", "kandpalaryan720@gmail.com"]
+allowedEmailsLibrary = admin_emails + ["piyushbisht56@gmail.com", "kandpalaryan720@gmail.com"]
 
-allowedEmails = [
-    "harsh247gupta@gmail.com",
-    "harsh90731@gmail.com",
-    "sg06959.sgsg@gmail.com",
-    "pooniakushagra20@gmail.com",
-    "arnabdas.9039@gmail.com",
-    "gladiator098123@gmail.com",
-]
-allowedEmailsLibrary = [
-    "harsh247gupta@gmail.com",
-    "pooniakushagra20@gmail.com",
-    "harsh90731@gmail.com",
-    "sg06959.sgsg@gmail.com",
-    "arnabdas.9039@gmail.com",
-    "gladiator098123@gmail.com",
-]
+allowedEmailsNotice = admin_emails + [] 
+allowedEmails = admin_emails + []
 
 
 def importBoardersFromExcel(request):
