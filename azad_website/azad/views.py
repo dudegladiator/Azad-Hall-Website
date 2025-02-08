@@ -21,21 +21,34 @@ import requests
 import base64
 from django.utils.timezone import make_aware
 
-admin_emails = [
+allowedEmailSecratary = [
     "gladiator098123@gmail.com",
-    "harsh90731@gmail.com"
     "arnabdas.9039@gmail.com",
     "pooniakushagra20@gmail.com",
-    "harsh247gupta@gmail.com",
-    "sg06959.sgsg@gmail.com",
 ]
 
-# Create email lists with admin emails included
-allowedEmailSecratary = admin_emails + ["piyushbisht56@gmail.com", "kandpalaryan720@gmail.com"]
-allowedEmailsLibrary = admin_emails + ["piyushbisht56@gmail.com", "kandpalaryan720@gmail.com"]
+allowedEmailsNotice = [
+    "arnabdas.9039@gmail.com",
+    "gladiator098123@gmail.com",
+    "pooniakushagra20@gmail.com",
+]
 
-allowedEmailsNotice = admin_emails + [] 
-allowedEmails = admin_emails + []
+allowedEmails = [
+    "harsh247gupta@gmail.com",
+    "harsh90731@gmail.com",
+    "sg06959.sgsg@gmail.com",
+    "pooniakushagra20@gmail.com",
+    "arnabdas.9039@gmail.com",
+    "gladiator098123@gmail.com",
+]
+allowedEmailsLibrary = [
+    "harsh247gupta@gmail.com",
+    "pooniakushagra20@gmail.com",
+    "harsh90731@gmail.com",
+    "sg06959.sgsg@gmail.com",
+    "arnabdas.9039@gmail.com",
+    "gladiator098123@gmail.com",
+]
 
 
 def importBoardersFromExcel(request):
@@ -45,9 +58,17 @@ def importBoardersFromExcel(request):
         ws = wb.active
         azad_boarders_to_create = []
         for row in ws.iter_rows(values_only=True):
-            if azad_boarders.objects.filter(emails=row[0]).exists():
+            if azad_boarders.objects.filter(emails=row[2]).exists():
                 continue
-            azad_boarder = azad_boarders(emails=row[0], books=0)
+            if row[2] is None:
+                continue
+            azad_boarder = azad_boarders(
+                name=row[0],
+                emails=row[1],
+                contact=row[2],
+                books=0,
+            )
+            # azad_boarder = azad_boarders(emails=row[0], books=0)
             azad_boarders_to_create.append(azad_boarder)
         azad_boarders.objects.bulk_create(azad_boarders_to_create)
 
@@ -329,7 +350,7 @@ def submit_complain(request):
 
 def noticeboard(request):
     if request.user.is_authenticated:
-        noticeboard = Notice.objects.all()
+        noticeboard = Notice.objects.all().order_by("-id")
         return render(request, "noticeboard.html", {"noticeboard": noticeboard})
     messages.info(request, "Please login with valid ID.")
     return redirect("/")
@@ -357,23 +378,24 @@ def noticeadd(request):
                     issue_date_time=make_aware(issue_date_time),
                     author=author,
                 )
-                users = list(User.objects.all())
-                if not users:
-                    messages.info(request, "Recipients not found")
-                emails = [user.email for user in users]
-                try:
-                    send_mail(
-                        subject=title,
-                        message=description,
-                        from_email="settings.EMAIL_HOST_USER",
-                        recipient_list=emails,
-                        fail_silently=False,
-                    )
-                    messages.info(request, "Notice posted and emailed successfully")
-                except BadHeaderError:
-                    messages.info(request, "Notice posted successfully")
+                # users = list(User.objects.all())
+                # if not users:
+                #     messages.info(request, "Recipients not found")
+                # emails = [user.email for user in users]
+                # try:
+                #     send_mail(
+                #         subject=title,
+                #         message=description,
+                #         from_email="settings.EMAIL_HOST_USER",
+                #         recipient_list=emails,
+                #         fail_silently=False,
+                #     )
+                #     messages.info(request, "Notice posted and emailed successfully")
+                # except BadHeaderError:
+                #     messages.info(request, "Notice posted successfully")
+                messages.info(request, "Notice posted successfully")
                 return redirect("/noticeboard")
-            return render(request, "addnotice.html")
+            return render(request, "addNotice.html")
         messages.info(request, "Not Allowed")
         return redirect("/")
     messages.info(request, "Please login with valid ID.")
