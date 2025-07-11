@@ -96,9 +96,6 @@ Meet the dedicated individuals working behind the scenes to make the Azad Hall w
 - **[Harsh Vardhan Gupta](https://github.com/harshvg247)**
   - *Role:* Front-end and Back-end
 
-- **[Hariom ](https://github.com/hariom1)**
-  - *Role:* Manager
-
 <!-- Add more team members as needed -->
 
 
